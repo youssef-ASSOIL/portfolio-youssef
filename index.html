@@ -17,6 +17,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Accueil</a></li>
                 <li><a href="#skills">Compétences</a></li>
+                <li><a href="#experience">Expérience</a></li>
                 <li><a href="#portfolio">Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -26,7 +27,6 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <!-- Vertical Text Decor -->
         <div class="vertical-text">
             <div class="v-line"></div>
             <div class="v-label">Full Stack</div>
@@ -34,15 +34,13 @@
         </div>
 
         <div class="container hero-main-content">
-            <!-- Left: Image Box -->
             <div class="hero-img-box">
                 <img src="profile.jpg" alt="Youssef ASSOIL">
                 <div class="testimonial-overlay">
-                    <p>"I have worked with over 25 successful tech projects and counting."</p>
+                    <p>"Expert en solutions critiques et architectures sécurisées."</p>
                 </div>
             </div>
 
-            <!-- Right: Content -->
             <div class="hero-right">
                 <h3>Bonjour, je suis</h3>
                 <h1>ASSOIL <span>Youssef</span></h1>
@@ -54,7 +52,6 @@
             </div>
         </div>
 
-        <!-- Sidebar Socials -->
         <div class="social-sidebar">
             <a href="https://www.linkedin.com/in/assoilyoussef/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
             <a href="#"><i class="fa-brands fa-github"></i></a>
@@ -63,10 +60,31 @@
         </div>
     </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Compétences Techniques</h2>
+            <div class="skills-grid">
+                <div class="skill-card"><i class="fa-brands fa-java"></i><h3>Spring Boot / JAVA</h3></div>
+                <div class="skill-card"><i class="fa-brands fa-microsoft"></i><h3>.NET / C#</h3></div>
+                <div class="skill-card"><i class="fa-brands fa-react"></i><h3>React / TS / JS</h3></div>
+                <div class="skill-card"><i class="fa-brands fa-angular"></i><h3>Angular</h3></div>
+                <div class="skill-card"><i class="fa-brands fa-docker"></i><h3>Docker</h3></div>
+                <div class="skill-card"><i class="fa-solid fa-cloud"></i><h3>Google Cloud</h3></div>
+                <div class="skill-card"><i class="fa-brands fa-python"></i><h3>Python / AI</h3></div>
+                <div class="skill-card"><i class="fa-brands fa-linux"></i><h3>Linux / Ubuntu</h3></div>
+                <div class="skill-card"><i class="fa-solid fa-cubes"></i><h3>SOLID Principles</h3></div>
+                <div class="skill-card"><i class="fa-solid fa-sitemap"></i><h3>UML / Patterns</h3></div>
+                <div class="skill-card"><i class="fa-solid fa-gears"></i><h3>API REST / JWT</h3></div>
+                <div class="skill-card"><i class="fa-brands fa-php"></i><h3>PHP / Symfony / CI4</h3></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Experience Section -->
     <section id="experience" class="section">
         <div class="container">
-            <h2 class="section-title">Expérience</h2>
+            <h2 class="section-title">Parcours Professionnel</h2>
             <div class="timeline">
                 <!-- Proxiel -->
                 <div class="timeline-item">
@@ -74,16 +92,19 @@
                     <span class="timeline-date">Févr. 2026 - Aujourd'hui</span>
                     <div class="timeline-content">
                         <h3>Ingénieur Logiciel Full Stack</h3>
-                        <h4>Proxiel (Alternance) - Montpellier</h4>
-                        
-                        <div style="margin-top: 20px;">
-                            <h5 style="color: #fff; margin-bottom: 5px;">1. Système d'Astreinte (Web & Mobile)</h5>
-                            <p style="font-size: 0.95rem; color: var(--text-gray);">Architecture REST API avec CodeIgniter 4 et sécurisation par JWT. Application .NET MAUI avec synchronisation SQLite hors-ligne.</p>
+                        <h4>Proxiel (Alternance/Stage) - Montpellier</h4>
+                        <div style="margin-top: 15px;">
+                            <h5 style="color: #fff;">1. Système d'Astreinte (Web & Mobile)</h5>
+                            <ul style="list-style: disc; margin-left: 20px; color: var(--text-gray); font-size: 0.85rem;">
+                                <li>Architecture <strong>REST API</strong> avec CodeIgniter 4 et <strong>JWT</strong>.</li>
+                                <li>Application mobile <strong>.NET MAUI</strong> avec synchronisation SQLite hors-ligne.</li>
+                            </ul>
                         </div>
-
-                        <div style="margin-top: 20px;">
-                            <h5 style="color: #fff; margin-bottom: 5px;">2. Solution SEPA Pro</h5>
-                            <p style="font-size: 0.95rem; color: var(--text-gray);">Automatisation des flux financiers et génération de fichiers XML bancaires conformes ISO 20022.</p>
+                        <div style="margin-top: 15px;">
+                            <h5 style="color: #fff;">2. Pipeline SEPA Pro</h5>
+                            <ul style="list-style: disc; margin-left: 20px; color: var(--text-gray); font-size: 0.85rem;">
+                                <li>Automatisation financière et génération de fichiers <strong>XML SEPA</strong> (ISO 20022).</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -95,7 +116,11 @@
                     <div class="timeline-content">
                         <h3>Développeur Full Stack</h3>
                         <h4>Assala Iskane (Stage) - Maroc (Remote)</h4>
-                        <p><strong>ERP de Pilotage de Chantiers :</strong> Architecture Spring Boot 3 & React 18. Workflow de validation à 6 niveaux et système RBAC complexe.</p>
+                        <ul style="list-style: disc; margin-left: 20px; color: var(--text-gray); font-size: 0.85rem;">
+                            <li>Conception d'un ERP de Pilotage de Chantiers Immobiliers (Spring Boot 3, React 18).</li>
+                            <li>Chaîne de validation à 6 niveaux et système RBAC sécurisé.</li>
+                            <li>Monitoring en temps réel des stocks et effectifs via Docker.</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -106,34 +131,63 @@
                     <div class="timeline-content">
                         <h3>Développeur Full Stack (Web & Mobile)</h3>
                         <h4>Medzair (Stage) - France (Remote)</h4>
-                        <p><strong>Gestion des Remplacements Médicaux :</strong> Solution Full Stack (Node.js, React, Flutter) avec synchronisation temps réel via Firebase.</p>
+                        <ul style="list-style: disc; margin-left: 20px; color: var(--text-gray); font-size: 0.85rem;">
+                            <li>Plateforme de Gestion Médicale (Node.js, React, Flutter).</li>
+                            <li>Base de données Firebase Realtime pour synchronisation instantanée.</li>
+                            <li>Calendrier interactif et notifications d'acceptation.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
+    <!-- Education Section -->
+    <section id="education" class="section">
         <div class="container">
-            <h2 class="section-title">Expertise</h2>
+            <h2 class="section-title">Formation</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-date">2024 - 2026</span>
+                    <div class="timeline-content">
+                        <h3>Master en Ingénierie (Expert SI)</h3>
+                        <h4>EPSI - L'école d'ingénierie informatique</h4>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-date">2023 - 2024</span>
+                    <div class="timeline-content">
+                        <h3>Master 1 (M1) - Ingénierie des SI</h3>
+                        <h4>ESISA</h4>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-date">2021 - 2023</span>
+                    <div class="timeline-content">
+                        <h3>Licence Computer Engineering</h3>
+                        <h4>ESISA</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fa-brands fa-java"></i>
-                    <h3>Spring Boot / Java</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-brands fa-microsoft"></i>
-                    <h3>.NET / C#</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-brands fa-react"></i>
-                    <h3>React / TS</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-brands fa-docker"></i>
-                    <h3>Docker / DevOps</h3>
-                </div>
+                <div class="skill-card"><i class="fa-brands fa-docker"></i><h4>Docker Foundations</h4><span>Docker, Inc (2025)</span></div>
+                <div class="skill-card"><i class="fa-brands fa-java"></i><h4>Java Foundations</h4><span>JetBrains (2025)</span></div>
+                <div class="skill-card"><i class="fa-brands fa-js"></i><h4>JS Foundations</h4><span>Mozilla (2025)</span></div>
+                <div class="skill-card"><i class="fa-brands fa-linux"></i><h4>Ubuntu Professional</h4><span>Canonical (2025)</span></div>
+                <div class="skill-card"><i class="fa-brands fa-google"></i><h4>GCP Engineering</h4><span>Google (2025)</span></div>
+                <div class="skill-card"><i class="fa-solid fa-cloud"></i><h4>Terraform on GCP</h4><span>Google (2025)</span></div>
+                <div class="skill-card"><i class="fa-brands fa-jenkins"></i><h4>Learning Jenkins</h4><span>LinkedIn (2025)</span></div>
+                <div class="skill-card"><i class="fa-brands fa-react"></i><h4>React Full-Stack</h4><span>LinkedIn (2025)</span></div>
             </div>
         </div>
     </section>
@@ -143,26 +197,10 @@
         <div class="container">
             <h2 class="section-title">Projets Récents</h2>
             <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <span class="tag">PHP / CI4</span>
-                    <h3>Astreinte Web V2</h3>
-                    <p>Backend sécurisé pour la gestion critique des services d'astreinte publique.</p>
-                </div>
-                <div class="portfolio-card">
-                    <span class="tag">.NET MAUI</span>
-                    <h3>Astreinte Mobile</h3>
-                    <p>Application de terrain haute performance avec moteur de synchronisation SQLite.</p>
-                </div>
-                <div class="portfolio-card">
-                    <span class="tag">Spring Boot 3</span>
-                    <h3>Assala Iskane ERP</h3>
-                    <p>Système de gestion immobilière multi-site avec tableaux de bord analytiques.</p>
-                </div>
-                <div class="portfolio-card">
-                    <span class="tag">Flutter / Firebase</span>
-                    <h3>Medzair Platform</h3>
-                    <p>Application médicale de mise en relation hôpitaux/médecins en temps réel.</p>
-                </div>
+                <div class="portfolio-card"><span class="tag">PHP / CI4</span><h3>Astreinte Web V2</h3><p>Backend sécurisé pour la gestion critique des services publics.</p></div>
+                <div class="portfolio-card"><span class="tag">.NET MAUI</span><h3>Astreinte Mobile</h3><p>Application de terrain haute performance (SQLite offline).</p></div>
+                <div class="portfolio-card"><span class="tag">Spring Boot 3</span><h3>Assala Iskane ERP</h3><p>ERP immobilier multi-site avec analytique en temps réel.</p></div>
+                <div class="portfolio-card"><span class="tag">Flutter / Node</span><h3>Medzair Platform</h3><p>Solution médicale de mise en relation hôpitaux/médecins.</p></div>
             </div>
         </div>
     </section>
@@ -174,10 +212,8 @@
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px;">
                 <div>
                     <p style="color: var(--text-gray); margin-bottom: 40px; font-size: 1.1rem;">Une idée de projet ? Un besoin technique ? N'hésitez pas à me contacter.</p>
-                    <div style="display: flex; flex-direction: column; gap: 20px;">
-                        <span><i class="fa fa-envelope" style="margin-right: 15px; color: #fff;"></i> assoilyoussef02@gmail.com</span>
-                        <span><i class="fa-brands fa-linkedin" style="margin-right: 15px; color: #fff;"></i> linkedin.com/in/assoilyoussef</span>
-                    </div>
+                    <span><i class="fa fa-envelope"></i> assoilyoussef02@gmail.com</span><br><br>
+                    <span><i class="fa-brands fa-linkedin"></i> linkedin.com/in/assoilyoussef</span>
                 </div>
                 <form>
                     <input type="text" placeholder="Nom" style="width: 100%; padding: 20px; margin-bottom: 25px; background: #111; border: 1px solid #1a1a1a; color: white; border-radius: 10px;">
