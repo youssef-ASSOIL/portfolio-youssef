@@ -16,39 +16,98 @@
             <a href="#" class="logo">Youssef<span class="dot">.</span></a>
             <ul class="nav-links">
                 <li><a href="#home">Accueil</a></li>
-                <li><a href="#about">À propos</a></li>
                 <li><a href="#skills">Compétences</a></li>
                 <li><a href="#portfolio">Projets</a></li>
-                <li><a href="#contact" class="btn-primary">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
+            <a href="#contact" class="btn-talk">Light Up the Talk</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <video autoplay muted loop playsinline class="back-video">
-            <source src="hero-bg.mp4" type="video/mp4">
-        </video>
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <div class="hero-text">
-                <h3>Bonjour, je suis</h3>
-                <h1>Youssef ASSOIL</h1>
-                <h2>Software Engineer / DevOps</h2>
-                <p>Ingénieur Logiciel & DevOps. Expert en développement Full Stack (Java Spring, .NET C#) et architectures Cloud. Passionné par la qualité logicielle (SOLID, Design Patterns) et l'innovation.</p>
-                <div class="cta-group">
-                    <a href="#contact" class="btn btn-primary">Me contacter</a>
-                    <a href="ASSOIL_YOUSSEF02.pdf" target="_blank" class="btn btn-outline">Télécharger CV <i class="fa fa-download"></i></a>
+        <!-- Vertical Text Decor -->
+        <div class="vertical-text">
+            <div class="v-line"></div>
+            <div class="v-label">Full Stack</div>
+            <div class="v-main">DEVELOPER</div>
+        </div>
+
+        <div class="container hero-main-content">
+            <!-- Left: Image Box -->
+            <div class="hero-img-box">
+                <img src="profile.jpg" alt="Youssef ASSOIL">
+                <div class="testimonial-overlay">
+                    <p>"I have worked with over 25 successful tech projects and counting."</p>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="img-container">
-                    <img src="profile.jpg" alt="Youssef Assoil">
+
+            <!-- Right: Content -->
+            <div class="hero-right">
+                <h3>Bonjour, je suis</h3>
+                <h1>ASSOIL <span>Youssef</span></h1>
+                <p>Ingénieur Logiciel & DevOps. Expert en développement Full Stack et architectures Cloud. Passionné par la qualité logicielle (SOLID, Design Patterns) et l'innovation technique.</p>
+                <div class="cta-group">
+                    <a href="#portfolio" class="btn-portfolio">Mon Portfolio</a>
+                    <a href="ASSOIL_YOUSSEF_CV.pdf" target="_blank" style="margin-left: 20px; color: var(--text-gray); font-size: 0.9rem; text-decoration: none;">Télécharger CV</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar Socials -->
+        <div class="social-sidebar">
+            <a href="https://www.linkedin.com/in/assoilyoussef/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-behance"></i></a>
+            <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Expérience</h2>
+            <div class="timeline">
+                <!-- Proxiel -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-date">Févr. 2026 - Aujourd'hui</span>
+                    <div class="timeline-content">
+                        <h3>Ingénieur Logiciel Full Stack</h3>
+                        <h4>Proxiel (Alternance) - Montpellier</h4>
+                        
+                        <div style="margin-top: 20px;">
+                            <h5 style="color: #fff; margin-bottom: 5px;">1. Système d'Astreinte (Web & Mobile)</h5>
+                            <p style="font-size: 0.95rem; color: var(--text-gray);">Architecture REST API avec CodeIgniter 4 et sécurisation par JWT. Application .NET MAUI avec synchronisation SQLite hors-ligne.</p>
+                        </div>
+
+                        <div style="margin-top: 20px;">
+                            <h5 style="color: #fff; margin-bottom: 5px;">2. Solution SEPA Pro</h5>
+                            <p style="font-size: 0.95rem; color: var(--text-gray);">Automatisation des flux financiers et génération de fichiers XML bancaires conformes ISO 20022.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Assala Iskane -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-date">Juin 2024 - Août 2024</span>
+                    <div class="timeline-content">
+                        <h3>Développeur Full Stack</h3>
+                        <h4>Assala Iskane (Stage) - Maroc (Remote)</h4>
+                        <p><strong>ERP de Pilotage de Chantiers :</strong> Architecture Spring Boot 3 & React 18. Workflow de validation à 6 niveaux et système RBAC complexe.</p>
+                    </div>
+                </div>
+
+                <!-- Medzair -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-date">Juin 2023 - Août 2023</span>
+                    <div class="timeline-content">
+                        <h3>Développeur Full Stack (Web & Mobile)</h3>
+                        <h4>Medzair (Stage) - France (Remote)</h4>
+                        <p><strong>Gestion des Remplacements Médicaux :</strong> Solution Full Stack (Node.js, React, Flutter) avec synchronisation temps réel via Firebase.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -57,11 +116,11 @@
     <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title">Compétences Techniques</h2>
+            <h2 class="section-title">Expertise</h2>
             <div class="skills-grid">
                 <div class="skill-card">
                     <i class="fa-brands fa-java"></i>
-                    <h3>Spring Boot / JAVA</h3>
+                    <h3>Spring Boot / Java</h3>
                 </div>
                 <div class="skill-card">
                     <i class="fa-brands fa-microsoft"></i>
@@ -69,127 +128,11 @@
                 </div>
                 <div class="skill-card">
                     <i class="fa-brands fa-react"></i>
-                    <h3>React / TS / JavaScript</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-brands fa-angular"></i>
-                    <h3>Angular</h3>
+                    <h3>React / TS</h3>
                 </div>
                 <div class="skill-card">
                     <i class="fa-brands fa-docker"></i>
-                    <h3>Docker</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-solid fa-cloud"></i>
-                    <h3>Google Cloud</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-brands fa-python"></i>
-                    <h3>Python / AI</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-brands fa-linux"></i>
-                    <h3>Linux / Ubuntu</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-solid fa-cubes"></i>
-                    <h3>SOLID Principles</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-solid fa-sitemap"></i>
-                    <h3>UML / Design Patterns</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-solid fa-gears"></i>
-                    <h3>Architecture API REST / JWT</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-brands fa-php"></i>
-                    <h3>PHP / Symfony / CI4</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Expérience Professionnelle</h2>
-            <div class="timeline">
-                <!-- Proxiel -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Févr. 2026 - Aujourd'hui</div>
-                    <div class="timeline-content">
-                        <h3>Ingénieur Logiciel Full Stack</h3>
-                        <h4>Proxiel (Alternance/Stage) - Montpellier</h4>
-                        <p><strong>Expertise en Solutions de Gestion Critique & Finance :</strong></p>
-
-                        <div style="margin-top: 15px;">
-                            <h5 style="color: var(--secondary-color); margin-bottom: 5px;">1. Refonte Sécurisée du Système d'Astreinte (Web & Mobile)</h5>
-                            <p style="font-size: 0.9rem; color: #64748b;">Modernisation complète d'une solution pour le secteur public, respectant les normes RGPD et de haute disponibilité.</p>
-                            <ul style="list-style: disc; margin-left: 20px; color: #64748b; font-size: 0.85rem; margin-top: 5px;">
-                                <li>Architecture <strong>REST API</strong> avec CodeIgniter 4 et sécurisation par <strong>JWT</strong>.</li>
-                                <li>Application mobile <strong>.NET MAUI</strong> avec moteur de synchronisation SQLite pour mode hors-ligne.</li>
-                                <li>Suppression des accès directs SQL pour garantir l'intégrité et la protection des données agents.</li>
-                            </ul>
-                        </div>
-
-                        <div style="margin-top: 15px;">
-                            <h5 style="color: var(--secondary-color); margin-bottom: 5px;">2. Pipeline d'Importation & Génération SEPA Pro</h5>
-                            <p style="font-size: 0.9rem; color: #64748b;">Automatisation de la gestion financière et conformité bancaire ISO 20022.</p>
-                            <ul style="list-style: disc; margin-left: 20px; color: #64748b; font-size: 0.85rem; margin-top: 5px;">
-                                <li>Développement d'un service d'auto-création d'entités (Tiers, Mandats) lors de l'import Excel.</li>
-                                <li>Génération de flux <strong>XML SEPA (SCT/SDD)</strong> avec validation et signature numérique des mandats.</li>
-                                <li>Optimisation des processus de paiement pour les grands comptes fournisseurs.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- BioNettoyage -->
-                <!-- Assala Iskane -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Juin 2024 - Août 2024</div>
-                    <div class="timeline-content">
-                        <h3>Développeur Full Stack</h3>
-                        <h4>Assala Iskane (Stage) - Maroc (Remote)</h4>
-                        <p><strong>Plateforme de Pilotage de Chantiers Immobiliers :</strong> Conception et développement d'un ERP métier pour la gestion multi-site et multi-rôle.</p>
-                        <ul style="list-style: disc; margin-left: 20px; color: #64748b; font-size: 0.85rem; margin-top: 10px;">
-                            <li>Architecture robuste : <strong>Spring Boot 3</strong> (Java 17), <strong>React 18</strong>, <strong>MySQL</strong> et <strong>Nginx</strong>.</li>
-                            <li>Workflow complexe : Implémentation d'une chaîne de validation à 6 niveaux (Chef de Chantier → Direction Technique → Comptabilité → Magasin).</li>
-                            <li>Sécurisation par <strong>RBAC</strong> et isolation des services via <strong>Docker Compose</strong>.</li>
-                            <li>Monitoring en temps réel : Tableaux de bord dynamiques pour le suivi des stocks, consommations de matériaux et pointage des effectifs.</li>
-                            <li>Déploiement flexible : Configuration d'un reverse-proxy Nginx permettant l'accès multi-device sur réseau local.</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Medzair -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Juin 2023 - Août 2023</div>
-                    <div class="timeline-content">
-                        <h3>Développeur Full Stack (Web & Mobile)</h3>
-                        <h4>Medzair (Stage) - France (Remote)</h4>
-                        <p><strong>Plateforme de Gestion des Remplacements Médicaux :</strong> Conception et développement d'une solution facilitant la mise en relation entre établissements de santé et praticiens.</p>
-                        <ul style="list-style: disc; margin-left: 20px; color: #64748b; font-size: 0.85rem; margin-top: 10px;">
-                            <li>Développement <strong>Full Stack Web</strong> : Frontend en <strong>React.js</strong> avec Material-UI et Backend en <strong>Node.js / Express.js</strong>.</li>
-                            <li>Développement <strong>Mobile Cross-Platform</strong> : Création d'une application intuitive avec <strong>Flutter / Dart</strong> pour les praticiens.</li>
-                            <li>Gestion des données en temps réel : Intégration de <strong>Firebase</strong> (Realtime Database) pour la synchronisation instantanée des offres.</li>
-                            <li>Modélisation logicielle : Conception complète de l'architecture MVC et diagrammes UML (Cas d'utilisation, Séquence, Classes).</li>
-                            <li>Fonctionnalités clés : Calendrier de disponibilité interactif, système de notifications d'acceptation et tableaux de bord statistiques.</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Gaz Today -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Août 2022</div>
-                    <div class="timeline-content">
-                        <h3>Développeur Web</h3>
-                        <h4>Gaz Today (Stage) - Maroc</h4>
-                        <p>Développement web initial.</p>
-                    </div>
+                    <h3>Docker / DevOps</h3>
                 </div>
             </div>
         </div>
@@ -200,229 +143,25 @@
         <div class="container">
             <h2 class="section-title">Projets Récents</h2>
             <div class="portfolio-grid">
-                <!-- Project 1: Astreinte Web -->
                 <div class="portfolio-card">
-                    <div class="portfolio-info">
-                        <div class="portfolio-tags">
-                            <span class="tag">PHP / CI4</span>
-                            <span class="tag">JWT Security</span>
-                            <span class="tag">REST API</span>
-                        </div>
-                        <h3>Astreinte Web V2</h3>
-                        <p>Architecture backend sécurisée pour la gestion des services d'astreinte. Focus sur la confidentialité des données (RGPD) et la performance des APIs de synchronisation.</p>
-                        <a href="#" class="portfolio-link">Détails du projet <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
+                    <span class="tag">PHP / CI4</span>
+                    <h3>Astreinte Web V2</h3>
+                    <p>Backend sécurisé pour la gestion critique des services d'astreinte publique.</p>
                 </div>
-
-                <!-- Project 2: Astreinte Mobile -->
                 <div class="portfolio-card">
-                    <div class="portfolio-info">
-                        <div class="portfolio-tags">
-                            <span class="tag">.NET MAUI</span>
-                            <span class="tag">SQLite</span>
-                            <span class="tag">C#</span>
-                        </div>
-                        <h3>Astreinte Mobile (Tablette)</h3>
-                        <p>Application de terrain permettant aux agents de consulter les procédures et contacts en mode déconnecté. Synchronisation bidirectionnelle intelligente.</p>
-                        <a href="#" class="portfolio-link">Détails du projet <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
+                    <span class="tag">.NET MAUI</span>
+                    <h3>Astreinte Mobile</h3>
+                    <p>Application de terrain haute performance avec moteur de synchronisation SQLite.</p>
                 </div>
-
-                <!-- Project 3: SEPA Pro -->
                 <div class="portfolio-card">
-                    <div class="portfolio-info">
-                         <div class="portfolio-tags">
-                            <span class="tag">.NET Core</span>
-                            <span class="tag">SQL Server</span>
-                            <span class="tag">SEPA XML</span>
-                        </div>
-                        <h3>SEPA Pro Solution</h3>
-                        <p>Système expert d'automatisation des flux financiers. Importation intelligente de données Excel et génération de lots de virement/prélèvement conformes aux normes bancaires.</p>
-                        <a href="#" class="portfolio-link">Détails du projet <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
+                    <span class="tag">Spring Boot 3</span>
+                    <h3>Assala Iskane ERP</h3>
+                    <p>Système de gestion immobilière multi-site avec tableaux de bord analytiques.</p>
                 </div>
-
-                <!-- Project 4: Assala Iskane ERP -->
                 <div class="portfolio-card">
-                    <div class="portfolio-info">
-                        <div class="portfolio-tags">
-                            <span class="tag">Spring Boot 3</span>
-                            <span class="tag">React 18</span>
-                            <span class="tag">Docker</span>
-                        </div>
-                        <h3>Assala Iskane ERP</h3>
-                        <p>Plateforme de gestion de chantiers immobiliers avec workflow de validation multi-niveaux, RBAC complexe et tableaux de bord analytiques.</p>
-                        <a href="#" class="portfolio-link">Détails du projet <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Project 5: Medzair Platform -->
-                <div class="portfolio-card">
-                    <div class="portfolio-info">
-                        <div class="portfolio-tags">
-                            <span class="tag">React.js</span>
-                            <span class="tag">Flutter</span>
-                            <span class="tag">Firebase</span>
-                            <span class="tag">Node.js</span>
-                        </div>
-                        <h3>Medzair Platform</h3>
-                        <p>Solution complète (Web & Mobile) de gestion des remplacements médicaux, incluant calendrier interactif et synchronisation temps réel.</p>
-                        <a href="#" class="portfolio-link">Détails du projet <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="section">
-        <div class="container">
-            <h2 class="section-title">Formation</h2>
-            <div class="timeline">
-                <!-- EPSI -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2024 - 2026</div>
-                    <div class="timeline-content">
-                        <h3>Master en Ingénierie (Expert SI)</h3>
-                        <h4>EPSI - L'école d'ingénierie informatique</h4>
-
-                    </div>
-                </div>
-                <!-- ESISA M1 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2023 - 2024</div>
-                    <div class="timeline-content">
-                        <h3>Master 1 (M1) - Ingénierie des Systèmes d'Information</h3>
-                        <h4>ESISA</h4>
-                    </div>
-                </div>
-                <!-- ESISA Licence -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2021 - 2023</div>
-                    <div class="timeline-content">
-                        <h3>Licence Computer Engineering</h3>
-                        <h4>ESISA</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <div class="skills-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-                <!-- Docker -->
-                <div class="skill-card" style="padding: 20px;">
-                    <i class="fa-brands fa-docker" style="font-size: 2rem; color: #0db7ed;"></i>
-                    <h4 style="margin: 10px 0;">Docker Foundations</h4>
-                    <span style="font-size: 0.8rem; color: #666;">Docker, Inc (Mai 2025)</span>
-                </div>
-                <!-- JetBrains Java -->
-                <div class="skill-card" style="padding: 20px;">
-                    <i class="fa-brands fa-java" style="font-size: 2rem; color: #f89820;"></i>
-                    <h4 style="margin: 10px 0;">Java Foundations</h4>
-                    <span style="font-size: 0.8rem; color: #666;">JetBrains (Mai 2025)</span>
-                </div>
-                <!-- Mozilla JS -->
-                <div class="skill-card" style="padding: 20px;">
-                    <i class="fa-brands fa-js" style="font-size: 2rem; color: #f7df1e;"></i>
-                    <h4 style="margin: 10px 0;">JavaScript Foundations</h4>
-                    <span style="font-size: 0.8rem; color: #666;">Mozilla (Mai 2025)</span>
-                </div>
-                <!-- Ubuntu -->
-                <div class="skill-card" style="padding: 20px;">
-                    <i class="fa-brands fa-linux" style="font-size: 2rem; color: #333;"></i>
-                    <h4 style="margin: 10px 0;">Ubuntu Linux Professional</h4>
-                    <span style="font-size: 0.8rem; color: #666;">Canonical (Mai 2025)</span>
-                </div>
-                <!-- Google Cloud 1 -->
-                <div class="skill-card" style="padding: 20px;">
-                    <i class="fa-brands fa-google" style="font-size: 2rem; color: #4285F4;"></i>
-                    <h4 style="margin: 10px 0;">Google Cloud Engineering</h4>
-                    <span style="font-size: 0.8rem; color: #666;">Google Cloud (Apr 2025)</span>
-                </div>
-                <!-- Google Cloud 2 (Terraform) -->
-                <div class="skill-card" style="padding: 20px;">
-                    <i class="fa-solid fa-cloud" style="font-size: 2rem; color: #4285F4;"></i>
-                    <h4 style="margin: 10px 0;">Terraform on GCP</h4>
-                    <span style="font-size: 0.8rem; color: #666;">Google Cloud (Apr 2025)</span>
-                </div>
-                 <!-- Google Cloud 3 (App Dev) -->
-                <div class="skill-card" style="padding: 20px;">
-                    <i class="fa-solid fa-code" style="font-size: 2rem; color: #4285F4;"></i>
-                    <h4 style="margin: 10px 0;">App Dev Environment</h4>
-                    <span style="font-size: 0.8rem; color: #666;">Google Cloud (Apr 2025)</span>
-                </div>
-                <!-- Jenkins -->
-                <div class="skill-card" style="padding: 20px;">
-                    <i class="fa-brands fa-jenkins" style="font-size: 2rem; color: #D24939;"></i>
-                    <h4 style="margin: 10px 0;">Learning Jenkins</h4>
-                    <span style="font-size: 0.8rem; color: #666;">LinkedIn (Apr 2025)</span>
-                </div>
-                <!-- React Full Stack -->
-                <div class="skill-card" style="padding: 20px;">
-                    <i class="fa-brands fa-react" style="font-size: 2rem; color: #61DAFB;"></i>
-                    <h4 style="margin: 10px 0;">React Full-Stack</h4>
-                    <span style="font-size: 0.8rem; color: #666;">LinkedIn (Feb 2025)</span>
-                </div>
-                 <!-- Design Patterns -->
-                <div class="skill-card" style="padding: 20px;">
-                    <i class="fa-solid fa-layer-group" style="font-size: 2rem; color: #333;"></i>
-                    <h4 style="margin: 10px 0;">Design Patterns</h4>
-                    <span style="font-size: 0.8rem; color: #666;">LinkedIn (Dec 2024)</span>
-                </div>
-                <!-- Excel Power Query -->
-                <div class="skill-card" style="padding: 20px;">
-                    <i class="fa-regular fa-file-excel" style="font-size: 2rem; color: #217346;"></i>
-                    <h4 style="margin: 10px 0;">Excel Power Query</h4>
-                    <span style="font-size: 0.8rem; color: #666;">Birdify (Dec 2024)</span>
-                </div>
-                 <!-- Coursera Algorithms -->
-                 <div class="skill-card" style="padding: 20px;">
-                    <i class="fa-solid fa-calculator" style="font-size: 2rem; color: #0056D2;"></i>
-                    <h4 style="margin: 10px 0;">Divide and Conquer</h4>
-                    <span style="font-size: 0.8rem; color: #666;">Coursera (May 2020)</span>
-                </div>
-                <!-- Cisco CCNA -->
-                 <div class="skill-card" style="padding: 20px;">
-                    <i class="fa-solid fa-network-wired" style="font-size: 2rem; color: #1BA0D7;"></i>
-                    <h4 style="margin: 10px 0;">CCNAv7: Networks</h4>
-                    <span style="font-size: 0.8rem; color: #666;">Cisco</span>
-                </div>
-                 <!-- Cisco Linux -->
-                 <div class="skill-card" style="padding: 20px;">
-                    <i class="fa-brands fa-linux" style="font-size: 2rem; color: #333;"></i>
-                    <h4 style="margin: 10px 0;">Linux Essentials</h4>
-                    <span style="font-size: 0.8rem; color: #666;">Cisco</span>
-                </div>
-                 <!-- Udemy Python -->
-                 <div class="skill-card" style="padding: 20px;">
-                    <i class="fa-brands fa-python" style="font-size: 2rem; color: #3776AB;"></i>
-                    <h4 style="margin: 10px 0;">Python Mega Course</h4>
-                    <span style="font-size: 0.8rem; color: #666;">Udemy</span>
-                </div>
-                 <!-- Udemy Web -->
-                 <div class="skill-card" style="padding: 20px;">
-                    <i class="fa-solid fa-globe" style="font-size: 2rem; color: #A435F0;"></i>
-                    <h4 style="margin: 10px 0;">Web Dev Bootcamp</h4>
-                    <span style="font-size: 0.8rem; color: #666;">Udemy</span>
-                </div>
-                <!-- Udemy Java -->
-                 <div class="skill-card" style="padding: 20px;">
-                    <i class="fa-brands fa-java" style="font-size: 2rem; color: #f89820;"></i>
-                    <h4 style="margin: 10px 0;">Java Masterclass</h4>
-                    <span style="font-size: 0.8rem; color: #666;">Udemy</span>
-                </div>
-                <!-- C++ -->
-                 <div class="skill-card" style="padding: 20px;">
-                    <i class="fa-solid fa-c" style="font-size: 2rem; color: #00599C;"></i>
-                    <h4 style="margin: 10px 0;">C++ Professional</h4>
-                    <span style="font-size: 0.8rem; color: #666;">C++ Institute</span>
+                    <span class="tag">Flutter / Firebase</span>
+                    <h3>Medzair Platform</h3>
+                    <p>Application médicale de mise en relation hôpitaux/médecins en temps réel.</p>
                 </div>
             </div>
         </div>
@@ -430,49 +169,29 @@
 
     <!-- Contact Section -->
     <section id="contact" class="section">
-        <div class="container contact-container">
-            <div class="contact-info">
-                <h2>Me Contacter</h2>
-                <p>N'hésitez pas à me contacter pour toute opportunité ou projet.</p>
-                <div class="contact-item">
-                    <i class="fa fa-envelope"></i>
-                    <span>assoilyoussef02@gmail.com</span>
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px;">
+                <div>
+                    <p style="color: var(--text-gray); margin-bottom: 40px; font-size: 1.1rem;">Une idée de projet ? Un besoin technique ? N'hésitez pas à me contacter.</p>
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <span><i class="fa fa-envelope" style="margin-right: 15px; color: #fff;"></i> assoilyoussef02@gmail.com</span>
+                        <span><i class="fa-brands fa-linkedin" style="margin-right: 15px; color: #fff;"></i> linkedin.com/in/assoilyoussef</span>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <i class="fa-brands fa-linkedin"></i>
-                    <span><a href="https://www.linkedin.com/in/assoilyoussef/" target="_blank">linkedin.com/in/assoilyoussef</a></span>
-                </div>
-                <div class="contact-item">
-                    <i class="fa fa-location-dot"></i>
-                    <span>Montpellier, France</span>
-                </div>
+                <form>
+                    <input type="text" placeholder="Nom" style="width: 100%; padding: 20px; margin-bottom: 25px; background: #111; border: 1px solid #1a1a1a; color: white; border-radius: 10px;">
+                    <input type="email" placeholder="Email" style="width: 100%; padding: 20px; margin-bottom: 25px; background: #111; border: 1px solid #1a1a1a; color: white; border-radius: 10px;">
+                    <textarea placeholder="Message" rows="5" style="width: 100%; padding: 20px; margin-bottom: 25px; background: #111; border: 1px solid #1a1a1a; color: white; border-radius: 10px;"></textarea>
+                    <button type="submit" class="btn-talk" style="width: 100%; padding: 20px; cursor: pointer;">Envoyer</button>
+                </form>
             </div>
-            <form class="contact-form">
-                <div class="form-group">
-                    <input type="text" placeholder="Nom" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Envoyer</button>
-            </form>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Youssef ASSOIL. Tous droits réservés.</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/assoilyoussef/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i class="fa-brands fa-github"></i></a>
-            </div>
-        </div>
+    <footer style="padding: 80px 0; border-top: 1px solid #111; text-align: center; color: var(--text-gray);">
+        <p>&copy; 2026 Youssef ASSOIL. Built with Passion.</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
