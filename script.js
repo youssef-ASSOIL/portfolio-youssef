@@ -1,3 +1,9 @@
+// Always open the page at the top (mobile browsers otherwise restore the last scroll position)
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 // Mobile Menu Toggle
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-links");
