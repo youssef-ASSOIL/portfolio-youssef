@@ -4,6 +4,31 @@ if ('scrollRestoration' in history) {
 }
 window.scrollTo(0, 0);
 
+// Dark / Light theme toggle
+const themeToggle = document.querySelector(".theme-toggle");
+const themeIcon = themeToggle ? themeToggle.querySelector("i") : null;
+
+function syncThemeIcon() {
+    if (!themeIcon) return;
+    const isLight = document.documentElement.getAttribute("data-theme") === "light";
+    themeIcon.className = isLight ? "fa-solid fa-sun" : "fa-solid fa-moon";
+}
+syncThemeIcon();
+
+if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+        const isLight = document.documentElement.getAttribute("data-theme") === "light";
+        if (isLight) {
+            document.documentElement.removeAttribute("data-theme");
+            localStorage.setItem("theme", "dark");
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+            localStorage.setItem("theme", "light");
+        }
+        syncThemeIcon();
+    });
+}
+
 // Mobile Menu Toggle
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-links");
