@@ -76,7 +76,7 @@ if (terminalOutput) {
         { type: 'ok', text: '✔ tests passed' },
         { type: 'ok', text: '✔ deployed to production' },
         { type: 'cmd', text: 'echo $DISPONIBILITE' },
-        { type: 'out', text: 'Disponible pour une alternance — Full Stack & DevOps' }
+        { type: 'out', text: 'Disponible pour un CDI — Full Stack & DevOps' }
     ];
 
     const PROMPT = '<span class="prompt">➜</span> <span class="path">~</span> ';
