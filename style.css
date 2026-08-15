@@ -684,7 +684,7 @@ a { color: inherit; }
 }
 
 /* Responsive */
-@media (max-width: 1100px) {
+@media (max-width: 1150px) {
     .vertical-text, .social-sidebar { display: none; }
     .hero-main-content { padding-left: 0; grid-template-columns: 1fr; text-align: center; }
     .hero-right h1 { font-size: 4rem; }
@@ -694,7 +694,7 @@ a { color: inherit; }
     .timeline { margin-left: 0; }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1150px) {
     .nav-links {
         position: fixed;
         top: 0;
