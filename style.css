@@ -730,6 +730,13 @@ a { color: inherit; }
     background: transparent;
 }
 
+.form-hint {
+    margin-top: 14px;
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    text-align: center;
+}
+
 /* Responsive */
 @media (max-width: 1150px) {
     .vertical-text, .social-sidebar { display: none; }

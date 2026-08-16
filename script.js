@@ -63,13 +63,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Simple Form Alert (Since we don't have a backend here)
+// Contact Form (opens the visitor's email client with the message pre-filled)
 const form = document.querySelector('.contact-form');
 if (form) {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        alert('Merci pour votre message ! (Ceci est une démo)');
-        form.reset();
+
+        const name = form.querySelector('input[type="text"]').value.trim();
+        const email = form.querySelector('input[type="email"]').value.trim();
+        const message = form.querySelector('textarea').value.trim();
+
+        const subject = `Nouveau message de ${name} — Portfolio`;
+        const body = `Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+
+        window.location.href = `mailto:assoilyoussef02@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
 }
 
