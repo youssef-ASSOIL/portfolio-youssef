@@ -276,7 +276,7 @@
         <div class="container">
             <span class="eyebrow">06 — Sous le capot</span>
             <h2 class="section-title">Architecture Système</h2>
-            <p class="architecture-intro">Vue d'ensemble de <strong>SEPA Pro</strong>, la plateforme bancaire que j'ai conçue — architecture en couches (.NET 9 / Blazor Server) avec génération de fichiers SEPA conformes ISO 20022.</p>
+            <p class="architecture-intro">Vue d'ensemble de <strong>SEPA Pro</strong>, la plateforme bancaire complète que j'ai conçue — gestion des tiers, mandats, virements/prélèvements SEPA, rapprochement bancaire et multi-société, sur une architecture .NET 9 / Blazor Server avec fichiers conformes ISO 20022.</p>
 
             <div class="terminal-window arch-window">
                 <div class="terminal-header">
@@ -286,7 +286,7 @@
                     <span class="terminal-title">architecture@sepa-pro: ~</span>
                 </div>
                 <div class="arch-body">
-                    <svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagramme d'architecture en couches de SEPA Pro : navigateur, Blazor Server, couche métier, import Excel, base SQL Server et génération XML, avec pipeline CI/CD GitHub Actions.">
+                    <svg viewBox="0 0 960 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagramme d'architecture de SEPA Pro : navigateur, Blazor Server, huit modules métier (tiers, mandats, paiements, lots SEPA, import/export, rapprochement, multi-société, audit), base SQL Server, sortie XML ISO 20022, et pipeline CI/CD GitHub Actions.">
                         <defs>
                             <marker id="archArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                                 <path d="M0,0 L10,5 L0,10 z" fill="#5b8cff"/>
@@ -299,54 +299,83 @@
                             </marker>
                         </defs>
 
-                        <line x1="450" y1="72" x2="450" y2="108" class="arch-edge" marker-end="url(#archArrowGrey)"/>
-                        <line x1="450" y1="176" x2="450" y2="212" class="arch-edge arch-edge-main" marker-end="url(#archArrow)"/>
-                        <line x1="230" y1="247" x2="266" y2="247" class="arch-edge" marker-end="url(#archArrowGrey)"/>
-                        <line x1="380" y1="280" x2="272" y2="348" class="arch-edge arch-edge-main" marker-end="url(#archArrow)"/>
-                        <line x1="520" y1="280" x2="608" y2="348" class="arch-edge arch-edge-alt" marker-end="url(#archArrowViolet)"/>
-                        <line x1="270" y1="509" x2="331" y2="509" class="arch-edge" marker-end="url(#archArrowGrey)"/>
-                        <line x1="565" y1="509" x2="626" y2="509" class="arch-edge" marker-end="url(#archArrowGrey)"/>
+                        <line x1="480" y1="70" x2="480" y2="94" class="arch-edge" marker-end="url(#archArrowGrey)"/>
+                        <line x1="480" y1="160" x2="480" y2="180" class="arch-edge arch-edge-main" marker-end="url(#archArrow)"/>
+                        <line x1="290" y1="410" x2="290" y2="432" class="arch-edge arch-edge-main" marker-end="url(#archArrow)"/>
+                        <line x1="670" y1="410" x2="670" y2="432" class="arch-edge arch-edge-alt" marker-end="url(#archArrowViolet)"/>
+                        <line x1="320" y1="583" x2="341" y2="583" class="arch-edge" marker-end="url(#archArrowGrey)"/>
+                        <line x1="615" y1="583" x2="636" y2="583" class="arch-edge" marker-end="url(#archArrowGrey)"/>
 
-                        <rect class="arch-box arch-box-ext" x="340" y="20" width="220" height="52" rx="8"/>
-                        <text class="arch-tag" x="450" y="36" text-anchor="middle">01</text>
-                        <text class="arch-lbl" x="450" y="55" text-anchor="middle">CLIENT / NAVIGATEUR</text>
+                        <!-- Client -->
+                        <rect class="arch-box arch-box-ext" x="380" y="20" width="200" height="50" rx="8"/>
+                        <text class="arch-tag" x="480" y="36" text-anchor="middle">01</text>
+                        <text class="arch-lbl" x="480" y="55" text-anchor="middle">CLIENT / NAVIGATEUR</text>
 
-                        <rect class="arch-box arch-box-main" x="270" y="110" width="360" height="66" rx="8"/>
-                        <text class="arch-tag" x="450" y="128" text-anchor="middle">02 — PRÉSENTATION</text>
-                        <text class="arch-lbl" x="450" y="149" text-anchor="middle">BLAZOR SERVER · .NET 9</text>
-                        <text class="arch-sub" x="450" y="165" text-anchor="middle">Pages · Components · SignalR · Auth</text>
+                        <!-- Présentation -->
+                        <rect class="arch-box arch-box-main" x="280" y="96" width="400" height="64" rx="8"/>
+                        <text class="arch-tag" x="480" y="114" text-anchor="middle">02 — PRÉSENTATION</text>
+                        <text class="arch-lbl" x="480" y="134" text-anchor="middle">BLAZOR SERVER · .NET 9</text>
+                        <text class="arch-sub" x="480" y="150" text-anchor="middle">22 pages Razor · Auth · Multi-société</text>
 
-                        <rect class="arch-box arch-box-main" x="270" y="214" width="360" height="66" rx="8"/>
-                        <text class="arch-tag" x="450" y="232" text-anchor="middle">03 — LOGIQUE MÉTIER</text>
-                        <text class="arch-lbl" x="450" y="253" text-anchor="middle">SEPA BUSINESS LAYER</text>
-                        <text class="arch-sub" x="450" y="269" text-anchor="middle">PaymentImportService · Validation XSD</text>
+                        <!-- Business layer group -->
+                        <rect class="arch-group" x="40" y="182" width="880" height="228" rx="10"/>
+                        <text class="arch-tag" x="480" y="204" text-anchor="middle">03 — LOGIQUE MÉTIER · SEPA BUSINESS LAYER</text>
 
-                        <rect class="arch-box arch-box-ext" x="30" y="216" width="200" height="62" rx="8"/>
-                        <text class="arch-tag" x="130" y="234" text-anchor="middle">SOURCE</text>
-                        <text class="arch-lbl arch-lbl-sm" x="130" y="253" text-anchor="middle">IMPORT EXCEL / CSV</text>
-                        <text class="arch-sub" x="130" y="268" text-anchor="middle">Grand Livre Fournisseurs</text>
+                        <rect class="arch-chip" x="64" y="220" width="192" height="70" rx="7"/>
+                        <text class="arch-chip-lbl" x="160" y="248" text-anchor="middle">TIERS &amp; COMPTES</text>
+                        <text class="arch-chip-sub" x="160" y="264" text-anchor="middle">Personnes · IBAN</text>
 
-                        <rect class="arch-box arch-box-main" x="122" y="350" width="270" height="66" rx="8"/>
-                        <text class="arch-tag" x="257" y="368" text-anchor="middle">04 — PERSISTANCE</text>
-                        <text class="arch-lbl" x="257" y="389" text-anchor="middle">SQL SERVER 2019+</text>
-                        <text class="arch-sub" x="257" y="405" text-anchor="middle">EF Core · Migrations · French_CI_AS</text>
+                        <rect class="arch-chip" x="272" y="220" width="192" height="70" rx="7"/>
+                        <text class="arch-chip-lbl" x="368" y="248" text-anchor="middle">MANDATS</text>
+                        <text class="arch-chip-sub" x="368" y="264" text-anchor="middle">Signature · PDF</text>
 
-                        <rect class="arch-box arch-box-alt" x="470" y="350" width="270" height="66" rx="8"/>
-                        <text class="arch-tag arch-tag-alt" x="605" y="368" text-anchor="middle">04 — SORTIE</text>
-                        <text class="arch-lbl" x="605" y="389" text-anchor="middle">FICHIERS XML SCT / SDD</text>
-                        <text class="arch-sub" x="605" y="405" text-anchor="middle">Conforme ISO 20022</text>
+                        <rect class="arch-chip" x="480" y="220" width="192" height="70" rx="7"/>
+                        <text class="arch-chip-lbl" x="576" y="248" text-anchor="middle">PAIEMENTS</text>
+                        <text class="arch-chip-sub" x="576" y="264" text-anchor="middle">SCT (virements) · SDD</text>
 
-                        <line x1="30" y1="450" x2="870" y2="450" class="arch-divider"/>
-                        <text class="arch-tag" x="450" y="472" text-anchor="middle">CI/CD — GITHUB ACTIONS</text>
+                        <rect class="arch-chip arch-chip-alt" x="688" y="220" width="192" height="70" rx="7"/>
+                        <text class="arch-chip-lbl" x="784" y="248" text-anchor="middle">LOTS SEPA</text>
+                        <text class="arch-chip-sub" x="784" y="264" text-anchor="middle">XML ISO 20022 · XSD</text>
 
-                        <rect class="arch-box arch-box-ext" x="40" y="486" width="230" height="46" rx="8"/>
-                        <text class="arch-lbl arch-lbl-sm" x="155" y="514" text-anchor="middle">PUSH → BUILD</text>
+                        <rect class="arch-chip" x="64" y="306" width="192" height="70" rx="7"/>
+                        <text class="arch-chip-lbl" x="160" y="334" text-anchor="middle">IMPORT / EXPORT</text>
+                        <text class="arch-chip-sub" x="160" y="350" text-anchor="middle">Excel · Grand Livre</text>
 
-                        <rect class="arch-box arch-box-ext" x="335" y="486" width="230" height="46" rx="8"/>
-                        <text class="arch-lbl arch-lbl-sm" x="450" y="514" text-anchor="middle">TESTS AUTOMATISÉS</text>
+                        <rect class="arch-chip" x="272" y="306" width="192" height="70" rx="7"/>
+                        <text class="arch-chip-lbl" x="368" y="334" text-anchor="middle">RAPPROCHEMENT</text>
+                        <text class="arch-chip-sub" x="368" y="350" text-anchor="middle">Bancaire</text>
 
-                        <rect class="arch-box arch-box-ext" x="630" y="486" width="230" height="46" rx="8"/>
-                        <text class="arch-lbl arch-lbl-sm" x="745" y="514" text-anchor="middle">DEPLOY → IIS / AZURE</text>
+                        <rect class="arch-chip" x="480" y="306" width="192" height="70" rx="7"/>
+                        <text class="arch-chip-lbl" x="576" y="334" text-anchor="middle">MULTI-SOCIÉTÉ · RBAC</text>
+                        <text class="arch-chip-sub" x="576" y="350" text-anchor="middle">Rôles &amp; utilisateurs</text>
+
+                        <rect class="arch-chip" x="688" y="306" width="192" height="70" rx="7"/>
+                        <text class="arch-chip-lbl" x="784" y="334" text-anchor="middle">AUDIT &amp; NOTIFS</text>
+                        <text class="arch-chip-sub" x="784" y="350" text-anchor="middle">Traçabilité · Alertes</text>
+
+                        <!-- Persistance / Sortie -->
+                        <rect class="arch-box arch-box-main" x="150" y="434" width="280" height="66" rx="8"/>
+                        <text class="arch-tag" x="290" y="452" text-anchor="middle">04 — PERSISTANCE</text>
+                        <text class="arch-lbl" x="290" y="473" text-anchor="middle">SQL SERVER 2019+</text>
+                        <text class="arch-sub" x="290" y="489" text-anchor="middle">EF Core · Migrations · French_CI_AS</text>
+
+                        <rect class="arch-box arch-box-alt" x="530" y="434" width="280" height="66" rx="8"/>
+                        <text class="arch-tag arch-tag-alt" x="670" y="452" text-anchor="middle">04 — SORTIE</text>
+                        <text class="arch-lbl" x="670" y="473" text-anchor="middle">FICHIERS XML SCT / SDD</text>
+                        <text class="arch-sub" x="670" y="489" text-anchor="middle">Conforme ISO 20022</text>
+
+                        <!-- CI/CD -->
+                        <line x1="30" y1="524" x2="930" y2="524" class="arch-divider"/>
+                        <text class="arch-tag" x="480" y="546" text-anchor="middle">CI/CD — GITHUB ACTIONS</text>
+
+                        <rect class="arch-box arch-box-ext" x="50" y="560" width="270" height="46" rx="8"/>
+                        <text class="arch-lbl arch-lbl-sm" x="185" y="588" text-anchor="middle">PUSH → BUILD</text>
+
+                        <rect class="arch-box arch-box-ext" x="345" y="560" width="270" height="46" rx="8"/>
+                        <text class="arch-lbl arch-lbl-sm" x="480" y="588" text-anchor="middle">TESTS AUTOMATISÉS</text>
+
+                        <rect class="arch-box arch-box-ext" x="640" y="560" width="270" height="46" rx="8"/>
+                        <text class="arch-lbl arch-lbl-sm" x="775" y="588" text-anchor="middle">DEPLOY → IIS / AZURE</text>
                     </svg>
                 </div>
             </div>

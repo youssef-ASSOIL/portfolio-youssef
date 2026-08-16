@@ -689,6 +689,24 @@ a { color: inherit; }
 .arch-box-alt { stroke: #8b5cf6; }
 .arch-box-ext { stroke: #33363f; }
 
+.arch-group { fill: rgba(91, 140, 255, 0.03); stroke: #262932; stroke-width: 1.4; stroke-dasharray: 3 4; }
+
+.arch-chip { fill: #191c24; stroke: #2c2f3a; stroke-width: 1.2; }
+.arch-chip-alt { stroke: #453a63; }
+
+.arch-chip-lbl {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 11px;
+    font-weight: 700;
+    fill: #e4e4e7;
+}
+
+.arch-chip-sub {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 9.5px;
+    fill: #8a8d99;
+}
+
 .arch-lbl {
     font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
     font-size: 13px;
