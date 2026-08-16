@@ -263,6 +263,7 @@ a { color: inherit; }
     width: 100%;
     max-width: 480px;
     aspect-ratio: 0.85;
+    margin: 0 auto;
 }
 
 .hero-img-box img {
