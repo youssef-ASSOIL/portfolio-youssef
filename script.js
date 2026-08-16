@@ -82,7 +82,7 @@ if (form) {
 
 // Scroll reveal animations
 const revealTargets = document.querySelectorAll(
-    '.skill-card, .portfolio-card, .timeline-item, .section-title, .eyebrow, .contact-info, .contact-form'
+    '.skill-card, .portfolio-card, .timeline-item, .section-title, .eyebrow, .contact-info, .contact-form, .architecture-intro, .arch-window'
 );
 revealTargets.forEach(el => el.classList.add('reveal'));
 

@@ -661,6 +661,67 @@ a { color: inherit; }
     #terminal-output { font-size: 0.8rem; }
 }
 
+/* Architecture Diagram (styled like the terminal widget, always dark) */
+.architecture-intro {
+    color: var(--text-gray);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-bottom: 50px;
+}
+
+.arch-window { max-width: 900px; margin: 0 auto; }
+
+.arch-body {
+    padding: 24px;
+    overflow-x: auto;
+}
+
+.arch-body svg {
+    display: block;
+    width: 100%;
+    min-width: 640px;
+    height: auto;
+}
+
+.arch-box { fill: #14161c; stroke-width: 1.4; }
+.arch-box-main { stroke: #5b8cff; }
+.arch-box-alt { stroke: #8b5cf6; }
+.arch-box-ext { stroke: #33363f; }
+
+.arch-lbl {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 13px;
+    font-weight: 700;
+    fill: #e4e4e7;
+}
+
+.arch-lbl-sm { font-size: 11.5px; }
+
+.arch-sub {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 10.5px;
+    fill: #8a8d99;
+}
+
+.arch-tag {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    fill: #5b8cff;
+}
+
+.arch-tag-alt { fill: #8b5cf6; }
+
+.arch-edge { stroke: #5c5f6b; stroke-width: 1.4; fill: none; }
+.arch-edge-main { stroke: #5b8cff; }
+.arch-edge-alt { stroke: #8b5cf6; }
+.arch-divider { stroke: #22242c; stroke-width: 1; stroke-dasharray: 4 4; }
+
+@media (max-width: 640px) {
+    .arch-body { padding: 18px; }
+}
+
 /* Contact Section */
 
 .contact-grid {
