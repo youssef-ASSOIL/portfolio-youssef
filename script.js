@@ -35,13 +35,19 @@ const navMenu = document.querySelector(".nav-links");
 
 if (hamburger) {
     hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
+        const isOpen = hamburger.classList.toggle("active");
         navMenu.classList.toggle("active");
+        hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        hamburger.setAttribute("aria-label", isOpen ? "Fermer le menu" : "Ouvrir le menu");
     });
 }
 
 document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
-    if (hamburger) hamburger.classList.remove("active");
+    if (hamburger) {
+        hamburger.classList.remove("active");
+        hamburger.setAttribute("aria-expanded", "false");
+        hamburger.setAttribute("aria-label", "Ouvrir le menu");
+    }
     if (navMenu) navMenu.classList.remove("active");
 }));
 
