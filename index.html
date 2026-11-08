@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youssef ASSOIL | Portfolio</title>
-    <meta name="description" content="Portfolio de Youssef ASSOIL, Ingénieur Logiciel Full Stack & DevOps — Java/Spring, .NET, React, Angular, Docker, Cloud. Disponible pour un CDI.">
+    <title>Youssef ASSOIL | Ingénieur Logiciel C#/.NET &amp; Full-Stack</title>
+    <meta name="description" content="Portfolio de Youssef ASSOIL, Ingénieur logiciel spécialisé en développement C#/.NET et Full-Stack — Blazor, Spring Boot, React, Angular, Docker. Disponible pour un CDI.">
     <meta name="theme-color" content="#090D18">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://youssef-assoil.github.io/portfolio-youssef/">
-    <meta property="og:title" content="Youssef ASSOIL | Ingénieur Logiciel Full Stack & DevOps">
-    <meta property="og:description" content="Portfolio de Youssef ASSOIL, Ingénieur Logiciel Full Stack & DevOps — Java/Spring, .NET, React, Angular, Docker, Cloud. Disponible pour un CDI.">
+    <meta property="og:title" content="Youssef ASSOIL | Ingénieur Logiciel C#/.NET &amp; Full-Stack">
+    <meta property="og:description" content="Ingénieur logiciel spécialisé en développement C#/.NET et Full-Stack. Conception d'applications métier bancaires, web et mobiles. Disponible pour un CDI.">
     <meta property="og:image" content="https://youssef-assoil.github.io/portfolio-youssef/profile.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Youssef ASSOIL | Ingénieur Logiciel Full Stack & DevOps">
-    <meta name="twitter:description" content="Portfolio de Youssef ASSOIL, Ingénieur Logiciel Full Stack & DevOps — Java/Spring, .NET, React, Angular, Docker, Cloud. Disponible pour un CDI.">
+    <meta name="twitter:title" content="Youssef ASSOIL | Ingénieur Logiciel C#/.NET &amp; Full-Stack">
+    <meta name="twitter:description" content="Ingénieur logiciel spécialisé en développement C#/.NET et Full-Stack. Conception d'applications métier bancaires, web et mobiles. Disponible pour un CDI.">
     <meta name="twitter:image" content="https://youssef-assoil.github.io/portfolio-youssef/profile.jpg">
 
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -38,17 +38,27 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">Youssef<span class="dot">.</span></a>
+            <a href="#home" class="logo">Youssef<span class="dot">.</span></a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#experience">Expérience</a></li>
-                <li><a href="#certifications">Certs</a></li>
-                <li><a href="#portfolio">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="#portfolio" data-i18n="nav_projects">Projets</a></li>
+                <li><a href="#experience" data-i18n="nav_experience">Expérience</a></li>
+                <li><a href="#skills" data-i18n="nav_skills">Compétences</a></li>
+                <li><a href="#architecture" data-i18n="nav_arch">Architecture</a></li>
+                <li><a href="#education" data-i18n="nav_education">Formation</a></li>
+                <li><a href="#certifications" data-i18n="nav_certs">Certifications</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
             </ul>
             <div class="navbar-actions">
-                <a href="#contact" class="btn-talk">Contact</a>
+                <div class="lang-selector-group" role="group" aria-label="Langues / Languages">
+                    <button type="button" class="lang-opt active" data-lang="fr" title="Français">FR</button>
+                    <span class="lang-sep">|</span>
+                    <button type="button" class="lang-opt" data-lang="en" title="English">EN</button>
+                    <span class="lang-sep">|</span>
+                    <button type="button" class="lang-opt" data-lang="de" title="Deutsch">DE</button>
+                    <span class="lang-sep">|</span>
+                    <button type="button" class="lang-opt" data-lang="ar" title="العربية">AR</button>
+                </div>
                 <button type="button" class="theme-toggle" aria-label="Changer de thème">
                     <i class="fa-solid fa-moon"></i>
                 </button>
@@ -61,51 +71,66 @@
         </div>
     </nav>
 
-    <!-- Hero Section with 3D Network Sphere & Typing Effect -->
+    <!-- 1. Hero Section -->
     <section id="home" class="hero">
         <canvas id="heroSphereCanvas" class="hero-sphere-canvas" aria-hidden="true"></canvas>
 
-        <div class="vertical-text">
+        <div class="vertical-text" aria-hidden="true">
+            <span class="v-label">C# / .NET · FULL-STACK</span>
             <div class="v-line"></div>
-            <div class="v-label">Full Stack</div>
-            <div class="v-main">SOFTWARE ENGINEER</div>
+            <span class="v-main">SOFTWARE ENGINEER</span>
         </div>
 
         <div class="container hero-main-content">
             <div class="hero-img-box">
-                <img src="profile.jpg" alt="Youssef ASSOIL">
+                <img src="profile.jpg" alt="Youssef ASSOIL — Ingénieur Logiciel Full-Stack">
                 <div class="testimonial-overlay">
                     <span class="status-dot"></span>
-                    <p>Disponible pour un CDI<br><span class="status-sub">Full Stack &amp; DevOps</span></p>
+                    <p>
+                        <span data-i18n="hero_avail_title">Disponible pour un CDI</span><br>
+                        <span class="status-sub" data-i18n="hero_avail_sub">Mobile en France et à l'international</span>
+                    </p>
                 </div>
             </div>
 
             <div class="hero-right">
-                <div class="hero-role-pill">Software Engineer &nbsp;|&nbsp; Full Stack &nbsp;|&nbsp; Cloud &amp; DevOps</div>
+                <div class="hero-role-pill" data-i18n="hero_badge">SOFTWARE ENGINEER &nbsp;|&nbsp; C#/.NET &nbsp;|&nbsp; FULL-STACK &amp; DEVOPS</div>
                 <h1>ASSOIL <span>Youssef</span></h1>
                 <div class="hero-typing-line" aria-live="polite">
                     <span class="typing-prefix">&gt;</span>
-                    <span id="heroTypingText">Building intelligent software.</span><span class="typing-caret"></span>
+                    <span id="heroTypingText">Conception d'applications métier C#/.NET &amp; Full-Stack.</span><span class="typing-caret"></span>
                 </div>
-                <p>Ingénieur Logiciel &amp; DevOps, 24 ans. Expert en développement Full Stack (.NET 9, Java/Spring, React, Angular) et architectures Cloud. Passionné par la qualité logicielle (SOLID, Design Patterns) et l'innovation technique.</p>
+                <p data-i18n="hero_bio_1">Ingénieur logiciel spécialisé en développement <strong>C#/.NET</strong> et <strong>Full-Stack</strong>, avec une expérience dans la conception d'applications métier bancaires, web et mobiles.</p>
+                <p class="hero-bio-secondary" data-i18n="hero_bio_2">Passionné par l'architecture logicielle, la qualité du code et l'automatisation des processus, je conçois des solutions fiables, maintenables et adaptées aux besoins métier.</p>
 
                 <div class="hero-stats">
-                    <div class="stat"><h4>3+</h4><span>Stages Réalisés</span></div>
-                    <div class="stat"><h4>12+</h4><span>Technologies</span></div>
-                    <div class="stat"><h4>9</h4><span>Certifications</span></div>
+                    <div class="stat">
+                        <h4>3</h4>
+                        <span data-i18n="stat_internships">Stages en entreprise</span>
+                    </div>
+                    <div class="stat">
+                        <h4>4</h4>
+                        <span data-i18n="stat_projects">Projets métier livrés</span>
+                    </div>
+                    <div class="stat">
+                        <h4>Bac+5</h4>
+                        <span data-i18n="stat_degree">Titre RNCP niveau 7</span>
+                    </div>
                 </div>
 
                 <div class="cta-group">
-                    <a href="#portfolio" class="btn-portfolio">Explore My Work</a>
-                    <a href="ASSOIL_YOUSSEF_CV.pdf" target="_blank" class="btn-cv"><i class="fa-solid fa-download"></i> Télécharger CV</a>
+                    <a href="#portfolio" class="btn-portfolio" data-i18n="hero_cta_work">Voir mes projets</a>
+                    <a href="ASSOIL_YOUSSEF_CV.pdf" target="_blank" rel="noopener" class="btn-cv">
+                        <i class="fa-solid fa-download"></i> <span data-i18n="hero_cta_cv">Télécharger mon CV</span>
+                    </a>
                 </div>
             </div>
         </div>
 
         <div class="social-sidebar">
-            <a href="https://www.linkedin.com/in/assoilyoussef/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://github.com/youssef-ASSOIL" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.instagram.com/youssef_assoil/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/assoilyoussef/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/youssef-ASSOIL" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="mailto:assoilyoussef02@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
     </section>
 
@@ -127,7 +152,7 @@
                     </div>
                 </div>
                 <div class="terminal-hints">
-                    <span>Commandes :</span>
+                    <span data-i18n="term_cmds_label">Commandes :</span>
                     <button type="button" class="term-cmd-btn" data-cmd="whoami">whoami</button>
                     <button type="button" class="term-cmd-btn" data-cmd="projects">projects</button>
                     <button type="button" class="term-cmd-btn" data-cmd="skills">skills</button>
@@ -139,122 +164,101 @@
         </div>
     </section>
 
-    <!-- Skills Section — Interactive Technology Universe -->
-    <section id="skills" class="section">
+    <!-- 2. Featured Projects Section (Problème -> Rôle -> Solution -> Technologies -> Résultat) -->
+    <section id="portfolio" class="section">
         <div class="container">
-            <span class="eyebrow">01 — Ce que je maîtrise</span>
-            <h2 class="section-title">Compétences Techniques</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <span class="skill-cat">Backend</span>
-                    <i class="fa-brands fa-microsoft"></i>
-                    <h3>.NET 9 / Blazor</h3>
-                    <p class="skill-proof">Utilisé sur <strong>SEPA Pro</strong> : 22 pages Razor, EF Core &amp; génération XML ISO 20022.</p>
-                </div>
-                <div class="skill-card">
-                    <span class="skill-cat">Backend</span>
-                    <i class="fa-brands fa-java"></i>
-                    <h3>Spring Boot / JAVA</h3>
-                    <p class="skill-proof">Utilisé sur <strong>Assala Iskane ERP</strong> : API REST Java 17, RBAC 6 rôles &amp; workflow métier.</p>
-                </div>
-                <div class="skill-card">
-                    <span class="skill-cat">Frontend</span>
-                    <i class="fa-brands fa-react"></i>
-                    <h3>React 18 / TS</h3>
-                    <p class="skill-proof">Utilisé sur <strong>Assala Iskane ERP</strong> : tableaux de bord temps réel &amp; validation multi-niveau.</p>
-                </div>
-                <div class="skill-card">
-                    <span class="skill-cat">Frontend</span>
-                    <i class="fa-brands fa-angular"></i>
-                    <h3>Angular</h3>
-                    <p class="skill-proof">Applications SPA modulaires, RxJS, TypeScript strict &amp; architectures orientées composants.</p>
-                </div>
-                <div class="skill-card">
-                    <span class="skill-cat">DevOps</span>
-                    <i class="fa-brands fa-docker"></i>
-                    <h3>Docker / CI-CD</h3>
-                    <p class="skill-proof">Pipelines <strong>GitHub Actions</strong> (build, test, deploy) &amp; conteneurisation multi-services Nginx.</p>
-                </div>
-                <div class="skill-card">
-                    <span class="skill-cat">Cloud &amp; Data</span>
-                    <i class="fa-solid fa-cloud"></i>
-                    <h3>Google Cloud / SQL</h3>
-                    <p class="skill-proof">SQL Server 2019+, MySQL, SQLite &amp; infrastructure Cloud provisionnée avec <strong>Terraform</strong>.</p>
-                </div>
-                <div class="skill-card">
-                    <span class="skill-cat">Architecture</span>
-                    <i class="fa-solid fa-cubes"></i>
-                    <h3>SOLID / DDD</h3>
-                    <p class="skill-proof">Clean Architecture, séparation stricte du domaine métier &amp; maintenabilité long terme.</p>
-                </div>
-                <div class="skill-card">
-                    <span class="skill-cat">Architecture</span>
-                    <i class="fa-solid fa-sitemap"></i>
-                    <h3>UML / Design Patterns</h3>
-                    <p class="skill-proof">Modélisation de systèmes complexes, patterns GoF, Repository, Strategy &amp; Factory.</p>
-                </div>
-                <div class="skill-card">
-                    <span class="skill-cat">Sécurité &amp; API</span>
-                    <i class="fa-solid fa-gears"></i>
-                    <h3>REST API / JWT</h3>
-                    <p class="skill-proof">Utilisé sur <strong>Astreinte V2</strong> : authentification stateless par Token/JWT &amp; conformité RGPD.</p>
-                </div>
-                <div class="skill-card">
-                    <span class="skill-cat">Backend</span>
-                    <i class="fa-brands fa-php"></i>
-                    <h3>Symfony / CI4</h3>
-                    <p class="skill-proof">Refonte complète du backend <strong>Astreinte Web V2</strong> sous CodeIgniter 4 &amp; Symfony.</p>
-                </div>
-                <div class="skill-card">
-                    <span class="skill-cat">AI &amp; Scripting</span>
-                    <i class="fa-brands fa-python"></i>
-                    <h3>Python / AI</h3>
-                    <p class="skill-proof">Automatisation de traitement de données, scripts système &amp; intégration de modèles IA.</p>
-                </div>
-                <div class="skill-card">
-                    <span class="skill-cat">Système</span>
-                    <i class="fa-brands fa-linux"></i>
-                    <h3>Linux / Shell</h3>
-                    <p class="skill-proof">Certifié Cisco Linux Essentials : administration serveur, Bash scripting &amp; déploiement.</p>
-                </div>
+            <span class="eyebrow" data-i18n="proj_eyebrow">01 — Réalisations concrètes</span>
+            <h2 class="section-title" data-i18n="proj_title">Projets Phares</h2>
+            <div class="portfolio-grid">
+                <button type="button" class="portfolio-card" data-project="sepa">
+                    <div class="portfolio-card-top">
+                        <span class="tag">C# / .NET 9 · Blazor · SQL Server</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square portfolio-icon"></i>
+                    </div>
+                    <h3 data-i18n="proj_sepa_title">SEPA Pro — Automatisation Bancaire</h3>
+                    <p data-i18n="proj_sepa_desc">Conception et développement d'une application métier de gestion des virements (SCT) et prélèvements (SDD) conforme à la norme ISO 20022.</p>
+                    <div class="proj-meta-list">
+                        <div><strong data-i18n="lbl_role">Mon rôle :</strong> <span data-i18n="proj_sepa_role">Développement Full-Stack C#/.NET 9 (Stage PROXIEL)</span></div>
+                        <div><strong data-i18n="lbl_result">Résultat :</strong> <span data-i18n="proj_sepa_res">Import automatisé Excel &amp; génération XML validée par XSD</span></div>
+                    </div>
+                    <span class="case-study-cta" data-i18n="proj_cta">Voir l'étude de cas détaillée →</span>
+                </button>
+
+                <button type="button" class="portfolio-card" data-project="astreinte-web">
+                    <div class="portfolio-card-top">
+                        <span class="tag">PHP / CodeIgniter 4 · REST / JWT</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square portfolio-icon"></i>
+                    </div>
+                    <h3 data-i18n="proj_astw_title">Astreinte Web V2 — Back-Office &amp; API</h3>
+                    <p data-i18n="proj_astw_desc">Modernisation d'un système de gestion des astreintes publiques assurant la disponibilité des procédures et annuaires pour les agents.</p>
+                    <div class="proj-meta-list">
+                        <div><strong data-i18n="lbl_role">Mon rôle :</strong> <span data-i18n="proj_astw_role">Conception API REST/JWT &amp; refonte du Back-Office</span></div>
+                        <div><strong data-i18n="lbl_result">Résultat :</strong> <span data-i18n="proj_astw_res">Synchronisation fiable Web/Mobile &amp; conformité RGPD</span></div>
+                    </div>
+                    <span class="case-study-cta" data-i18n="proj_cta">Voir l'étude de cas détaillée →</span>
+                </button>
+
+                <button type="button" class="portfolio-card" data-project="astreinte-mobile">
+                    <div class="portfolio-card-top">
+                        <span class="tag">.NET MAUI · C# · SQLite</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square portfolio-icon"></i>
+                    </div>
+                    <h3 data-i18n="proj_astm_title">Astreinte Mobile — Tablette Terrain</h3>
+                    <p data-i18n="proj_astm_desc">Application mobile pour tablettes supportant un mode hors-ligne complet pour la consultation des procédures et annuaires en intervention.</p>
+                    <div class="proj-meta-list">
+                        <div><strong data-i18n="lbl_role">Mon rôle :</strong> <span data-i18n="proj_astm_role">Développement .NET MAUI &amp; persistance locale SQLite</span></div>
+                        <div><strong data-i18n="lbl_result">Résultat :</strong> <span data-i18n="proj_astm_res">Accès 100 % autonome hors connexion réseau</span></div>
+                    </div>
+                    <span class="case-study-cta" data-i18n="proj_cta">Voir l'étude de cas détaillée →</span>
+                </button>
+
+                <button type="button" class="portfolio-card" data-project="assala-erp">
+                    <div class="portfolio-card-top">
+                        <span class="tag">Spring Boot 3 · React 18 · Docker</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square portfolio-icon"></i>
+                    </div>
+                    <h3 data-i18n="proj_erp_title">Assala Iskane ERP — Gestion de Chantiers</h3>
+                    <p data-i18n="proj_erp_desc">Solution métier multi-site pour le pilotage des chantiers immobiliers, la gestion des accès par rôle et le suivi des approvisionnements.</p>
+                    <div class="proj-meta-list">
+                        <div><strong data-i18n="lbl_role">Mon rôle :</strong> <span data-i18n="proj_erp_role">Développement Full-Stack Java/Spring &amp; React</span></div>
+                        <div><strong data-i18n="lbl_result">Résultat :</strong> <span data-i18n="proj_erp_res">Workflow de validation à 6 niveaux conteneurisé sous Docker</span></div>
+                    </div>
+                    <span class="case-study-cta" data-i18n="proj_cta">Voir l'étude de cas détaillée →</span>
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- 3. Experience Section (100% Coherent with Official EPSI/PROXIEL Documents & LinkedIn) -->
     <section id="experience" class="section">
         <div class="container">
-            <span class="eyebrow">02 — Mon parcours</span>
-            <h2 class="section-title">Expérience Professionnelle</h2>
+            <span class="eyebrow" data-i18n="exp_eyebrow">02 — Mon parcours en entreprise</span>
+            <h2 class="section-title" data-i18n="exp_title">Expérience Professionnelle</h2>
             <div class="timeline">
-                <!-- Proxiel -->
+                <!-- PROXIEL -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <span class="timeline-date">Févr. 2026 - Aujourd'hui</span>
+                    <span class="timeline-date" data-i18n="exp_prox_date">Février – Août 2026 | Montpellier, France</span>
                     <div class="timeline-content">
-                        <h3>Ingénieur Logiciel Full Stack</h3>
-                        <h4>Proxiel (Alternance/Stage) - Montpellier</h4>
-                        <p><strong>Conception de Solutions Critiques &amp; Automatisation Financière :</strong></p>
-                        
-                        <div style="margin-top: 20px;">
-                            <h5 style="color: var(--text-white); font-size: 1.05rem; margin-bottom: 10px;">1. Écosystème d'Astreinte V2 (Web &amp; Mobile)</h5>
-                            <p style="font-size: 0.95rem; color: var(--text-gray); margin-bottom: 10px;">Modernisation d'un système de gestion pour le secteur public assurant la haute disponibilité des données agents.</p>
-                            <ul style="list-style: disc; margin-left: 20px; color: var(--text-gray); font-size: 0.85rem;">
-                                <li><strong>Backend &amp; API</strong> : Développement sous <strong>CodeIgniter 4</strong> avec architecture REST sécurisée via Token/JWT.</li>
-                                <li><strong>Application Mobile</strong> : Création d'une app <strong>.NET MAUI</strong> pour tablettes, supportant un mode hors-ligne complet (procedures/annuaires).</li>
-                                <li><strong>Synchronisation Intelligente</strong> : Implémentation d'une stratégie "REPLACE" garantissant l'intégrité des données entre Web et terminaux mobiles.</li>
-                                <li><strong>UX/UI Premium</strong> : Design moderne intégrant le Glassmorphism pour l'interface de back-office.</li>
+                        <h3 data-i18n="exp_prox_role">PROXIEL — Ingénieur logiciel Full-Stack (Stage)</h3>
+                        <h4 data-i18n="exp_prox_sub">Stage de fin d'études — Conception d'applications métier &amp; automatisation financière</h4>
+
+                        <div class="exp-project-block">
+                            <h5 data-i18n="exp_prox_p1_title">1. SEPA Pro — Solution d'automatisation bancaire</h5>
+                            <ul>
+                                <li data-i18n="exp_prox_p1_b1"><strong>Stack C#/.NET :</strong> Développement sous <strong>C# / .NET 9</strong>, <strong>Blazor</strong>, <strong>Entity Framework Core</strong> et <strong>SQL Server</strong>.</li>
+                                <li data-i18n="exp_prox_p1_b2"><strong>Traitements SEPA :</strong> Automatisation de l'import de données comptables Excel (Tiers, Comptes, Mandats) et gestion des virements (SCT) et prélèvements (SDD).</li>
+                                <li data-i18n="exp_prox_p1_b3"><strong>Conformité ISO 20022 :</strong> Génération de fichiers XML SEPA avec validation par schéma <strong>XSD</strong> et contrôle avant export.</li>
+                                <li data-i18n="exp_prox_p1_b4"><strong>Qualité &amp; CI/CD :</strong> Automatisation des builds et de l'exécution des tests via <strong>GitHub Actions</strong>.</li>
                             </ul>
                         </div>
 
-                        <div style="margin-top: 20px;">
-                            <h5 style="color: var(--text-white); font-size: 1.05rem; margin-bottom: 10px;">2. Plateforme Bancaire SEPA Pro</h5>
-                            <p style="font-size: 0.95rem; color: var(--text-gray); margin-bottom: 10px;">Solution d'automatisation des flux financiers conforme aux normes <strong>ISO 20022</strong>.</p>
-                            <ul style="list-style: disc; margin-left: 20px; color: var(--text-gray); font-size: 0.85rem;">
-                                <li><strong>Stack Moderne</strong> : Migration vers <strong>.NET 9 (Blazor Server)</strong> et <strong>SQL Server 2019+</strong>.</li>
-                                <li><strong>Automatisation Intelligente</strong> : Pipeline d'auto-création d'entités (Tiers, Comptes, Mandats) lors de l'import de Grands Livres Excel.</li>
-                                <li><strong>Conformité Bancaire</strong> : Génération de lots XML (SCT/SDD) avec validation <strong>XSD</strong> et prévisualisation sécurisée.</li>
-                                <li><strong>DevOps</strong> : Mise en place d'un pipeline <strong>CI/CD via GitHub Actions</strong> pour l'automatisation des builds et tests.</li>
+                        <div class="exp-project-block">
+                            <h5 data-i18n="exp_prox_p2_title">2. Astreinte Web &amp; Mobile — Gestion d'astreinte publique</h5>
+                            <ul>
+                                <li data-i18n="exp_prox_p2_b1"><strong>Backend &amp; API :</strong> Développement sous <strong>CodeIgniter 4</strong> d'une architecture REST sécurisée par <strong>Token/JWT</strong>.</li>
+                                <li data-i18n="exp_prox_p2_b2"><strong>Application Mobile :</strong> Développement d'une application <strong>.NET MAUI</strong> pour tablettes avec base locale <strong>SQLite</strong> supportant le mode hors ligne.</li>
+                                <li data-i18n="exp_prox_p2_b3"><strong>Synchronisation :</strong> Mise en œuvre d'un mécanisme de synchronisation fiable garantissant l'intégrité des procédures et annuaires hors connexion.</li>
                             </ul>
                         </div>
                     </div>
@@ -263,16 +267,15 @@
                 <!-- Assala Iskane -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <span class="timeline-date">Juin 2024 - Août 2024</span>
+                    <span class="timeline-date" data-i18n="exp_assala_date">Juin – Août 2024 | Fès, Maroc</span>
                     <div class="timeline-content">
-                        <h3>Software Engineer Full Stack</h3>
-                        <h4>Assala Iskane (Stage) - Maroc (Remote)</h4>
-                        <p><strong>ERP de Pilotage de Chantiers Immobiliers :</strong> Conception et développement d'une solution métier critique pour la gestion multi-site.</p>
-                        <ul style="list-style: disc; margin-left: 20px; color: var(--text-gray); font-size: 0.85rem; margin-top: 10px;">
-                            <li><strong>Stack Technique</strong> : Backend <strong>Spring Boot 3</strong> (Java 17), Frontend <strong>React 18</strong>, Persistance <strong>MySQL</strong>.</li>
-                            <li><strong>Workflow Complexe</strong> : Implémentation d'une chaîne de validation à 6 niveaux (Chef de Chantier → Responsable Projet → Tech Manager → Comptabilité → Service Tech → Magasin).</li>
-                            <li><strong>Sécurité &amp; RBAC</strong> : Gestion granulaire des accès pour 6 rôles distincts avec isolation des données par chantier.</li>
-                            <li><strong>Monitoring &amp; DevOps</strong> : Déploiement conteneurisé via <strong>Docker Compose</strong> avec reverse-proxy <strong>Nginx</strong> pour un accès multi-device sécurisé.</li>
+                        <h3 data-i18n="exp_assala_role">Assala Iskane — Ingénieur logiciel Full-Stack (Stage)</h3>
+                        <h4 data-i18n="exp_assala_sub">Conception et développement d'un ERP de pilotage de chantiers immobiliers</h4>
+                        <ul class="exp-list">
+                            <li data-i18n="exp_assala_b1"><strong>Stack Technique :</strong> Backend <strong>Spring Boot 3 (Java 17)</strong>, Frontend <strong>React 18</strong> et base de données <strong>MySQL</strong>.</li>
+                            <li data-i18n="exp_assala_b2"><strong>Workflow Métier :</strong> Implémentation d'une chaîne de validation hiérarchique à 6 niveaux (Chef de Chantier → Responsable Projet → Tech Manager → Comptabilité → Service Technique → Magasin).</li>
+                            <li data-i18n="exp_assala_b3"><strong>Sécurité &amp; RBAC :</strong> Gestion granulaire des droits d'accès pour 6 rôles distincts avec isolation des données par chantier.</li>
+                            <li data-i18n="exp_assala_b4"><strong>Conteneurisation :</strong> Déploiement multi-conteneurs via <strong>Docker Compose</strong> et reverse-proxy <strong>Nginx</strong>.</li>
                         </ul>
                     </div>
                 </div>
@@ -280,15 +283,14 @@
                 <!-- Medzair -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <span class="timeline-date">Juin 2023 - Août 2023</span>
+                    <span class="timeline-date" data-i18n="exp_med_date">Juin – Août 2023 | France (À distance)</span>
                     <div class="timeline-content">
-                        <h3>Software Engineer Full Stack (Web &amp; Mobile)</h3>
-                        <h4>Medzair (Stage) - France (Remote)</h4>
-                        <p><strong>Plateforme de Gestion des Remplacements Médicaux :</strong> Solution de mise en relation établissements de santé / praticiens.</p>
-                        <ul style="list-style: disc; margin-left: 20px; color: var(--text-gray); font-size: 0.85rem; margin-top: 10px;">
-                            <li><strong>Backend &amp; Mobile</strong> : Développement sous <strong>Node.js</strong> et <strong>Flutter / Dart</strong> pour une expérience cross-platform fluide.</li>
-                            <li><strong>Temps Réel</strong> : Intégration de <strong>Firebase Realtime Database</strong> pour la synchronisation instantanée des offres de remplacement.</li>
-                            <li><strong>Fonctionnalités</strong> : Calendrier de disponibilité interactif et système automatisé de notifications d'acceptation.</li>
+                        <h3 data-i18n="exp_med_role">Medzair — Développeur Full-Stack Web &amp; Mobile (Stage)</h3>
+                        <h4 data-i18n="exp_med_sub">Plateforme de gestion des remplacements médicaux entre établissements et praticiens</h4>
+                        <ul class="exp-list">
+                            <li data-i18n="exp_med_b1"><strong>Backend &amp; Mobile :</strong> Développement avec <strong>Node.js</strong> et <strong>Flutter / Dart</strong> pour une application cross-platform.</li>
+                            <li data-i18n="exp_med_b2"><strong>Temps Réel :</strong> Intégration de <strong>Firebase Realtime Database</strong> pour la synchronisation instantanée des offres de remplacement.</li>
+                            <li data-i18n="exp_med_b3"><strong>Fonctionnalités :</strong> Calendrier interactif des disponibilités et notifications automatisées.</li>
                         </ul>
                     </div>
                 </div>
@@ -296,200 +298,125 @@
         </div>
     </section>
 
-    <!-- Education Section — Clean Curved Glowing Line (Exact Screenshot Design) -->
-    <section id="education" class="section">
+    <!-- 4. Skills Section -->
+    <section id="skills" class="section">
         <div class="container">
-            <span class="eyebrow">03 — Bagage académique</span>
-            <h2 class="section-title">Formation</h2>
-
-            <div class="curve-roadmap">
-                <svg class="curve-svg" viewBox="0 0 1200 680" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <defs>
-                        <filter id="whiteBeamGlow" x="-20%" y="-20%" width="140%" height="140%">
-                            <feGaussianBlur stdDeviation="6" result="b1"/>
-                            <feGaussianBlur stdDeviation="16" result="b2"/>
-                            <feMerge>
-                                <feMergeNode in="b2"/>
-                                <feMergeNode in="b1"/>
-                                <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
-                        </filter>
-                        <filter id="dotGlow" x="-200%" y="-200%" width="500%" height="500%">
-                            <feGaussianBlur stdDeviation="6" result="b"/>
-                            <feMerge>
-                                <feMergeNode in="b"/>
-                                <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
-                        </filter>
-                    </defs>
-
-                    <!-- Soft outer glow of the curve -->
-                    <path d="M 85 180 C 310 185, 510 195, 710 212 C 1190 252, 1220 445, 1005 505 C 835 552, 665 595, 530 626 L 395 656"
-                          stroke="rgba(255, 255, 255, 0.35)" stroke-width="5" stroke-linecap="round" filter="url(#whiteBeamGlow)"/>
-
-                    <!-- Crisp bright core line -->
-                    <path d="M 85 180 C 310 185, 510 195, 710 212 C 1190 252, 1220 445, 1005 505 C 835 552, 665 595, 530 626 L 395 656"
-                          stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
-
-                    <!-- Node 1 (2021 - 2023) at (85, 180) -->
-                    <line x1="85" y1="180" x2="85" y2="118" stroke="rgba(255,255,255,0.55)" stroke-width="1.3"/>
-                    <circle cx="85" cy="180" r="6" fill="#ffffff" filter="url(#dotGlow)"/>
-
-                    <!-- Node 2 (2023 - 2024) at (710, 212) -->
-                    <line x1="710" y1="212" x2="710" y2="150" stroke="rgba(255,255,255,0.55)" stroke-width="1.3"/>
-                    <circle cx="710" cy="212" r="6" fill="#ffffff" filter="url(#dotGlow)"/>
-
-                    <!-- Node 3 (2024 - 2026) at (1005, 505) -->
-                    <line x1="1005" y1="505" x2="1005" y2="443" stroke="rgba(255,255,255,0.55)" stroke-width="1.3"/>
-                    <circle cx="1005" cy="505" r="6" fill="#ffffff" filter="url(#dotGlow)"/>
-
-                    <!-- Node 4 (2026 — CDI) at (530, 626) -->
-                    <line x1="530" y1="626" x2="530" y2="564" stroke="rgba(255,255,255,0.55)" stroke-width="1.3"/>
-                    <circle cx="530" cy="626" r="6" fill="#ffffff" filter="url(#dotGlow)"/>
-                </svg>
-
-                <!-- Mobile Glowing Curved SVG Path (Full S-Curve with Stems & Glowing Dots for Mobile) -->
-                <svg class="curve-svg-mobile" viewBox="0 0 360 920" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <defs>
-                        <filter id="mobBeamGlow" x="-30%" y="-10%" width="160%" height="120%">
-                            <feGaussianBlur stdDeviation="5" result="b1"/>
-                            <feGaussianBlur stdDeviation="13" result="b2"/>
-                            <feMerge>
-                                <feMergeNode in="b2"/>
-                                <feMergeNode in="b1"/>
-                                <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
-                        </filter>
-                        <filter id="mobDotGlow" x="-200%" y="-200%" width="500%" height="500%">
-                            <feGaussianBlur stdDeviation="5" result="b"/>
-                            <feMerge>
-                                <feMergeNode in="b"/>
-                                <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
-                        </filter>
-                    </defs>
-
-                    <!-- Outer Glow S-Curve -->
-                    <path d="M 36 175 C 160 180, 342 200, 342 300 C 342 395, 250 412, 180 420 C 70 432, 18 465, 18 565 C 18 650, 120 668, 220 680 C 330 694, 342 745, 300 845 C 265 885, 180 895, 110 905"
-                          stroke="rgba(255, 255, 255, 0.36)" stroke-width="4.5" stroke-linecap="round" filter="url(#mobBeamGlow)"/>
-
-                    <!-- Main White Core S-Curve -->
-                    <path d="M 36 175 C 160 180, 342 200, 342 300 C 342 395, 250 412, 180 420 C 70 432, 18 465, 18 565 C 18 650, 120 668, 220 680 C 330 694, 342 745, 300 845 C 265 885, 180 895, 110 905"
-                          stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
-
-                    <!-- Mobile Node 1 (2021 - 2023) at (36, 175) -->
-                    <line x1="36" y1="175" x2="36" y2="132" stroke="rgba(255,255,255,0.6)" stroke-width="1.3"/>
-                    <circle cx="36" cy="175" r="5.5" fill="#ffffff" filter="url(#mobDotGlow)"/>
-
-                    <!-- Mobile Node 2 (2023 - 2024) at (180, 420) -->
-                    <line x1="180" y1="420" x2="180" y2="377" stroke="rgba(255,255,255,0.6)" stroke-width="1.3"/>
-                    <circle cx="180" cy="420" r="5.5" fill="#ffffff" filter="url(#mobDotGlow)"/>
-
-                    <!-- Mobile Node 3 (2024 - 2026) at (220, 680) -->
-                    <line x1="220" y1="680" x2="220" y2="637" stroke="rgba(255,255,255,0.6)" stroke-width="1.3"/>
-                    <circle cx="220" cy="680" r="5.5" fill="#ffffff" filter="url(#mobDotGlow)"/>
-
-                    <!-- Mobile Node 4 (2026 — CDI) at (180, 895) -->
-                    <line x1="180" y1="895" x2="180" y2="852" stroke="rgba(255,255,255,0.6)" stroke-width="1.3"/>
-                    <circle cx="180" cy="895" r="5.5" fill="#ffffff" filter="url(#mobDotGlow)"/>
-                </svg>
-
-                <!-- Stop 1 -->
-                <div class="curve-node curve-node-1">
-                    <h4>2021 - 2023</h4>
-                    <p><strong>Licence Computer Engineering — ESISA.</strong> Fondations solides en algorithmique, structures de données, architecture Linux, réseaux Cisco et programmation orientée objet.</p>
+            <span class="eyebrow" data-i18n="skills_eyebrow">03 — Ce que je maîtrise</span>
+            <h2 class="section-title" data-i18n="skills_title">Compétences Techniques</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <span class="skill-cat">C# / .NET</span>
+                    <i class="fa-brands fa-microsoft"></i>
+                    <h3>.NET 9 / Blazor / MAUI</h3>
+                    <p class="skill-proof" data-i18n="sk_dotnet">C#, Blazor, .NET MAUI, Entity Framework Core — appliqué sur SEPA Pro et Astreinte Mobile.</p>
                 </div>
-
-                <!-- Stop 2 -->
-                <div class="curve-node curve-node-2">
-                    <h4>2023 - 2024</h4>
-                    <p><strong>Master 1 Ingénierie des SI — ESISA.</strong> Conception logicielle avancée (SOLID, Design Patterns, UML), bases de données SQL et développement Full Stack &amp; Mobile.</p>
+                <div class="skill-card">
+                    <span class="skill-cat">Java</span>
+                    <i class="fa-brands fa-java"></i>
+                    <h3>Java 17 / Spring Boot 3</h3>
+                    <p class="skill-proof" data-i18n="sk_java">Spring Security, Spring Data JPA, API REST &amp; RBAC — appliqué sur Assala Iskane ERP.</p>
                 </div>
-
-                <!-- Stop 3 -->
-                <div class="curve-node curve-node-3">
-                    <h4>2024 - 2026</h4>
-                    <p><strong>Master en Ingénierie (Expert SI) — EPSI Montpellier.</strong> Spécialisation en architectures critiques (.NET 9, Spring Boot 3, React/Angular), DevOps (Docker, CI/CD) et Cloud GCP.</p>
+                <div class="skill-card">
+                    <span class="skill-cat">Frontend</span>
+                    <i class="fa-brands fa-react"></i>
+                    <h3>React 18 / TypeScript</h3>
+                    <p class="skill-proof" data-i18n="sk_react">Interfaces métier réactives, tableaux de bord et gestion d'état — appliqué sur Assala Iskane ERP.</p>
                 </div>
-
-                <!-- Stop 4 -->
-                <div class="curve-node curve-node-4">
-                    <h4>2026 — CDI</h4>
-                    <p><strong>Ingénieur Logiciel Full Stack &amp; DevOps.</strong> Prêt à concevoir des systèmes scalables, automatiser les flux critiques (ISO 20022) et piloter des pipelines de production.</p>
+                <div class="skill-card">
+                    <span class="skill-cat">Frontend</span>
+                    <i class="fa-brands fa-angular"></i>
+                    <h3>Angular</h3>
+                    <p class="skill-proof" data-i18n="sk_angular">Applications SPA modulaires en TypeScript, composants réutilisables et consommation d'APIs REST.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-cat">Données</span>
+                    <i class="fa-solid fa-database"></i>
+                    <h3>SQL Server / MySQL / SQLite</h3>
+                    <p class="skill-proof" data-i18n="sk_sql">Modélisation relationnelle, migrations EF Core, requêtes complexes et persistance mobile hors ligne.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-cat">DevOps</span>
+                    <i class="fa-brands fa-docker"></i>
+                    <h3>Docker &amp; CI/CD</h3>
+                    <p class="skill-proof" data-i18n="sk_docker">Conteneurisation Docker Compose, reverse-proxy Nginx et pipelines d'intégration GitHub Actions.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-cat">Architecture</span>
+                    <i class="fa-solid fa-cubes"></i>
+                    <h3>SOLID / Clean Code</h3>
+                    <p class="skill-proof" data-i18n="sk_solid">Séparation des responsabilités, architecture en couches, maintenabilité et tests automatisés.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-cat">Conception</span>
+                    <i class="fa-solid fa-sitemap"></i>
+                    <h3>UML / Design Patterns</h3>
+                    <p class="skill-proof" data-i18n="sk_uml">Modélisation métier, patterns Repository, Factory, Strategy et validation de flux XML/XSD.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-cat">API &amp; Sécurité</span>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>REST API / JWT</h3>
+                    <p class="skill-proof" data-i18n="sk_api">Conception d'APIs sécurisées par Token/JWT, synchronisation Web/Mobile et bonnes pratiques RGPD.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-cat">Backend PHP</span>
+                    <i class="fa-brands fa-php"></i>
+                    <h3>Symfony / CodeIgniter 4</h3>
+                    <p class="skill-proof" data-i18n="sk_php">Développement d'applications et d'APIs métier structurées en architecture MVC.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-cat">Cloud</span>
+                    <i class="fa-solid fa-cloud"></i>
+                    <h3>Google Cloud &amp; Terraform</h3>
+                    <p class="skill-proof" data-i18n="sk_cloud">Environnements applicatifs Cloud et bases de l'Infrastructure as Code sur Google Cloud.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-cat">Système</span>
+                    <i class="fa-brands fa-linux"></i>
+                    <h3>Linux / Git / Shell</h3>
+                    <p class="skill-proof" data-i18n="sk_linux">Administration Ubuntu/Linux, automatisation Bash et gestion de versions Git en équipe.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="section">
-        <div class="container">
-            <span class="eyebrow">04 — Formation continue</span>
-            <h2 class="section-title">Certifications</h2>
-            <div class="skills-grid certs-grid">
-                <div class="skill-card"><i class="fa-brands fa-google"></i><h4>GCP Engineering</h4><span>Google</span></div>
-                <div class="skill-card"><i class="fa-solid fa-cloud"></i><h4>Terraform on GCP</h4><span>Google</span></div>
-                <div class="skill-card"><i class="fa-solid fa-code"></i><h4>App Dev Environment</h4><span>Google</span></div>
-                <a class="skill-card" href="https://coursera.org/verify/SUWPR7Z4JAE7" target="_blank" rel="noopener"><i class="fa-solid fa-calculator"></i><h4>Algorithms</h4><span>Coursera</span></a>
-                <div class="skill-card"><i class="fa-solid fa-network-wired"></i><h4>CCNAv7: Networks</h4><span>Cisco</span></div>
-                <div class="skill-card"><i class="fa-brands fa-linux"></i><h4>Linux Essentials</h4><span>Cisco</span></div>
-                <a class="skill-card" href="https://ude.my/UC-01ac69ec-1e86-40a1-8e79-cd0bdc17b7d9" target="_blank" rel="noopener"><i class="fa-brands fa-python"></i><h4>Python Mega Course</h4><span>Udemy</span></a>
-                <a class="skill-card" href="https://ude.my/UC-551655f1-cc07-41ca-bf3d-f99375486607" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i><h4>Web Dev Bootcamp</h4><span>Udemy</span></a>
-                <a class="skill-card" href="https://ude.my/UC-d59702cb-0193-4a40-867e-57d54fe06879" target="_blank" rel="noopener"><i class="fa-brands fa-java"></i><h4>Java Masterclass</h4><span>Udemy</span></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section — Interactive Case Studies -->
-    <section id="portfolio" class="section">
-        <div class="container">
-            <span class="eyebrow">05 — Réalisations concrètes</span>
-            <h2 class="section-title">Projets Récents</h2>
-            <div class="portfolio-grid">
-                <button type="button" class="portfolio-card" data-project="sepa">
-                    <div class="portfolio-card-top"><span class="tag">Blazor / .NET 9</span><i class="fa-solid fa-arrow-up-right-from-square portfolio-icon"></i></div>
-                    <h3>SEPA Pro Solution</h3>
-                    <p>Automatisation bancaire intelligente avec auto-création d'entités et conformité ISO 20022.</p>
-                    <span class="case-study-cta">Voir l'étude de cas &amp; architecture →</span>
-                </button>
-                <button type="button" class="portfolio-card" data-project="astreinte-web">
-                    <div class="portfolio-card-top"><span class="tag">PHP / CI4</span><i class="fa-solid fa-arrow-up-right-from-square portfolio-icon"></i></div>
-                    <h3>Astreinte Web V2</h3>
-                    <p>Architecture backend sécurisée pour la gestion critique des services d'astreinte publique (RGPD/JWT).</p>
-                    <span class="case-study-cta">Voir l'étude de cas →</span>
-                </button>
-                <button type="button" class="portfolio-card" data-project="astreinte-mobile">
-                    <div class="portfolio-card-top"><span class="tag">.NET MAUI</span><i class="fa-solid fa-arrow-up-right-from-square portfolio-icon"></i></div>
-                    <h3>Astreinte Mobile</h3>
-                    <p>Application de terrain haute performance supportant le mode hors-ligne intégral (SQLite).</p>
-                    <span class="case-study-cta">Voir l'étude de cas →</span>
-                </button>
-                <button type="button" class="portfolio-card" data-project="assala-erp">
-                    <div class="portfolio-card-top"><span class="tag">Spring Boot 3</span><i class="fa-solid fa-arrow-up-right-from-square portfolio-icon"></i></div>
-                    <h3>Assala Iskane ERP</h3>
-                    <p>ERP de gestion immobilière avec workflow complexe à 6 niveaux et monitoring Docker.</p>
-                    <span class="case-study-cta">Voir l'étude de cas →</span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Architecture Section -->
+    <!-- 5. Architecture / Engineering Lab (Anonymized & Pedagogical — Respecting Confidentiality) -->
     <section id="architecture" class="section">
         <div class="container">
-            <span class="eyebrow">06 — Sous le capot</span>
-            <h2 class="section-title">Architecture Système</h2>
-            <p class="architecture-intro">Vue d'ensemble de <strong>SEPA Pro</strong>, la plateforme bancaire complète que j'ai conçue — gestion des tiers, mandats, virements/prélèvements SEPA, rapprochement bancaire et multi-société, sur une architecture .NET 9 / Blazor Server avec fichiers conformes ISO 20022.</p>
+            <span class="eyebrow" data-i18n="arch_eyebrow">04 — Ingénierie &amp; Conception</span>
+            <h2 class="section-title" data-i18n="arch_title">Architecture Logicielle</h2>
+            <p class="architecture-intro" data-i18n="arch_intro">Vue pédagogique et anonymisée d'une architecture <strong>.NET / ISO 20022</strong> en couches. Cliquez sur chaque couche ci-dessous pour explorer les choix techniques de conception.</p>
+
+            <!-- Interactive Layer Selector -->
+            <div class="arch-layer-tabs" role="tablist" aria-label="Couches d'architecture">
+                <button type="button" class="arch-tab active" data-layer="presentation">
+                    <span>01</span> <strong data-i18n="arch_tab_1">Presentation Layer</strong>
+                </button>
+                <button type="button" class="arch-tab" data-layer="business">
+                    <span>02</span> <strong data-i18n="arch_tab_2">Business Logic Layer</strong>
+                </button>
+                <button type="button" class="arch-tab" data-layer="data">
+                    <span>03</span> <strong data-i18n="arch_tab_3">Data Access Layer</strong>
+                </button>
+                <button type="button" class="arch-tab" data-layer="integration">
+                    <span>04</span> <strong data-i18n="arch_tab_4">Integrations &amp; CI/CD</strong>
+                </button>
+            </div>
+
+            <div class="arch-explainer-card" id="archExplainerCard" aria-live="polite">
+                <h3 id="archLayerTitle">01 — Presentation Layer (UI &amp; Contrôle d'accès)</h3>
+                <p id="archLayerDesc">Interface web interactive basée sur des composants serveur (.NET / Blazor), offrant une validation des formulaires en temps réel, un contrôle d'accès par rôle (RBAC) et une prévisualisation sécurisée des opérations avant validation.</p>
+            </div>
 
             <div class="terminal-window arch-window">
                 <div class="terminal-header">
                     <span class="term-dot red"></span>
                     <span class="term-dot yellow"></span>
                     <span class="term-dot green"></span>
-                    <span class="terminal-title">architecture@sepa-pro: ~</span>
+                    <span class="terminal-title">architecture-blueprint@dotnet-sepa: ~</span>
                 </div>
                 <div class="arch-body">
-                    <svg viewBox="0 0 960 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagramme d'architecture de SEPA Pro : navigateur, Blazor Server, huit modules métier (tiers, mandats, paiements, lots SEPA, import/export, rapprochement, multi-société, audit), base SQL Server, sortie XML ISO 20022, et pipeline CI/CD GitHub Actions.">
+                    <svg viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schéma pédagogique d'architecture en couches : Présentation, Logique Métier, Accès aux Données et Intégrations.">
                         <defs>
                             <marker id="archArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                                 <path d="M0,0 L10,5 L0,10 z" fill="#39D5FF"/>
@@ -502,122 +429,270 @@
                             </marker>
                         </defs>
 
-                        <line x1="480" y1="70" x2="480" y2="94" class="arch-edge" marker-end="url(#archArrowGrey)"/>
-                        <line x1="480" y1="160" x2="480" y2="180" class="arch-edge arch-edge-main" marker-end="url(#archArrow)"/>
-                        <line x1="290" y1="410" x2="290" y2="432" class="arch-edge arch-edge-main" marker-end="url(#archArrow)"/>
-                        <line x1="670" y1="410" x2="670" y2="432" class="arch-edge arch-edge-alt" marker-end="url(#archArrowViolet)"/>
-                        <line x1="320" y1="583" x2="341" y2="583" class="arch-edge" marker-end="url(#archArrowGrey)"/>
-                        <line x1="615" y1="583" x2="636" y2="583" class="arch-edge" marker-end="url(#archArrowGrey)"/>
+                        <line x1="480" y1="68" x2="480" y2="92" class="arch-edge" marker-end="url(#archArrowGrey)"/>
+                        <line x1="480" y1="158" x2="480" y2="180" class="arch-edge arch-edge-main" marker-end="url(#archArrow)"/>
+                        <line x1="290" y1="396" x2="290" y2="420" class="arch-edge arch-edge-main" marker-end="url(#archArrow)"/>
+                        <line x1="670" y1="396" x2="670" y2="420" class="arch-edge arch-edge-alt" marker-end="url(#archArrowViolet)"/>
+                        <line x1="320" y1="555" x2="341" y2="555" class="arch-edge" marker-end="url(#archArrowGrey)"/>
+                        <line x1="615" y1="555" x2="636" y2="555" class="arch-edge" marker-end="url(#archArrowGrey)"/>
 
                         <!-- Client -->
-                        <rect class="arch-box arch-box-ext" x="380" y="20" width="200" height="50" rx="8"/>
-                        <text class="arch-tag" x="480" y="36" text-anchor="middle">01</text>
-                        <text class="arch-lbl" x="480" y="55" text-anchor="middle">CLIENT / NAVIGATEUR</text>
+                        <rect class="arch-box arch-box-ext" x="370" y="18" width="220" height="50" rx="8"/>
+                        <text class="arch-tag" x="480" y="35" text-anchor="middle">CLIENT</text>
+                        <text class="arch-lbl" x="480" y="54" text-anchor="middle">NAVIGATEUR HTTPS</text>
 
-                        <!-- Présentation -->
-                        <rect class="arch-box arch-box-main" x="280" y="96" width="400" height="64" rx="8"/>
-                        <text class="arch-tag" x="480" y="114" text-anchor="middle">02 — PRÉSENTATION</text>
-                        <text class="arch-lbl" x="480" y="134" text-anchor="middle">BLAZOR SERVER · .NET 9</text>
-                        <text class="arch-sub" x="480" y="150" text-anchor="middle">22 pages Razor · Auth · Multi-société</text>
+                        <!-- 01 Presentation Layer -->
+                        <rect class="arch-box arch-box-main" x="260" y="94" width="440" height="64" rx="8"/>
+                        <text class="arch-tag" x="480" y="113" text-anchor="middle">01 — PRESENTATION LAYER</text>
+                        <text class="arch-lbl" x="480" y="133" text-anchor="middle">INTERFACE COMPOSANTS · .NET / BLAZOR</text>
+                        <text class="arch-sub" x="480" y="149" text-anchor="middle">Authentification · RBAC · Validation temps réel</text>
 
-                        <!-- Business layer group -->
-                        <rect class="arch-group" x="40" y="182" width="880" height="228" rx="10"/>
-                        <text class="arch-tag" x="480" y="204" text-anchor="middle">03 — LOGIQUE MÉTIER · SEPA BUSINESS LAYER</text>
+                        <!-- 02 Business Logic Layer -->
+                        <rect class="arch-group" x="40" y="182" width="880" height="214" rx="10"/>
+                        <text class="arch-tag" x="480" y="204" text-anchor="middle">02 — BUSINESS LOGIC LAYER · DOMAIN SERVICES</text>
 
-                        <rect class="arch-chip" x="64" y="220" width="192" height="70" rx="7"/>
-                        <text class="arch-chip-lbl" x="160" y="248" text-anchor="middle">TIERS &amp; COMPTES</text>
-                        <text class="arch-chip-sub" x="160" y="264" text-anchor="middle">Personnes · IBAN</text>
+                        <rect class="arch-chip" x="64" y="218" width="192" height="68" rx="7"/>
+                        <text class="arch-chip-lbl" x="160" y="245" text-anchor="middle">GESTION DES TIERS</text>
+                        <text class="arch-chip-sub" x="160" y="262" text-anchor="middle">Validation IBAN / BIC</text>
 
-                        <rect class="arch-chip" x="272" y="220" width="192" height="70" rx="7"/>
-                        <text class="arch-chip-lbl" x="368" y="248" text-anchor="middle">MANDATS</text>
-                        <text class="arch-chip-sub" x="368" y="264" text-anchor="middle">Signature · PDF</text>
+                        <rect class="arch-chip" x="272" y="218" width="192" height="68" rx="7"/>
+                        <text class="arch-chip-lbl" x="368" y="245" text-anchor="middle">MANDATS SEPA</text>
+                        <text class="arch-chip-sub" x="368" y="262" text-anchor="middle">Cycle de vie &amp; Références</text>
 
-                        <rect class="arch-chip" x="480" y="220" width="192" height="70" rx="7"/>
-                        <text class="arch-chip-lbl" x="576" y="248" text-anchor="middle">PAIEMENTS</text>
-                        <text class="arch-chip-sub" x="576" y="264" text-anchor="middle">SCT (virements) · SDD</text>
+                        <rect class="arch-chip" x="480" y="218" width="192" height="68" rx="7"/>
+                        <text class="arch-chip-lbl" x="576" y="245" text-anchor="middle">ORDRES DE PAIEMENT</text>
+                        <text class="arch-chip-sub" x="576" y="262" text-anchor="middle">Virements SCT · Prélèvements SDD</text>
 
-                        <rect class="arch-chip arch-chip-alt" x="688" y="220" width="192" height="70" rx="7"/>
-                        <text class="arch-chip-lbl" x="784" y="248" text-anchor="middle">LOTS SEPA</text>
-                        <text class="arch-chip-sub" x="784" y="264" text-anchor="middle">XML ISO 20022 · XSD</text>
+                        <rect class="arch-chip arch-chip-alt" x="688" y="218" width="192" height="68" rx="7"/>
+                        <text class="arch-chip-lbl" x="784" y="245" text-anchor="middle">MOTEUR XML / XSD</text>
+                        <text class="arch-chip-sub" x="784" y="262" text-anchor="middle">Standard ISO 20022</text>
 
-                        <rect class="arch-chip" x="64" y="306" width="192" height="70" rx="7"/>
-                        <text class="arch-chip-lbl" x="160" y="334" text-anchor="middle">IMPORT / EXPORT</text>
-                        <text class="arch-chip-sub" x="160" y="350" text-anchor="middle">Excel · Grand Livre</text>
+                        <rect class="arch-chip" x="64" y="302" width="192" height="68" rx="7"/>
+                        <text class="arch-chip-lbl" x="160" y="329" text-anchor="middle">IMPORT DE FLUX</text>
+                        <text class="arch-chip-sub" x="160" y="346" text-anchor="middle">Parsing &amp; Mapping</text>
 
-                        <rect class="arch-chip" x="272" y="306" width="192" height="70" rx="7"/>
-                        <text class="arch-chip-lbl" x="368" y="334" text-anchor="middle">RAPPROCHEMENT</text>
-                        <text class="arch-chip-sub" x="368" y="350" text-anchor="middle">Bancaire</text>
+                        <rect class="arch-chip" x="272" y="302" width="192" height="68" rx="7"/>
+                        <text class="arch-chip-lbl" x="368" y="329" text-anchor="middle">RAPPROCHEMENT</text>
+                        <text class="arch-chip-sub" x="368" y="346" text-anchor="middle">Contrôle de cohérence</text>
 
-                        <rect class="arch-chip" x="480" y="306" width="192" height="70" rx="7"/>
-                        <text class="arch-chip-lbl" x="576" y="334" text-anchor="middle">MULTI-SOCIÉTÉ · RBAC</text>
-                        <text class="arch-chip-sub" x="576" y="350" text-anchor="middle">Rôles &amp; utilisateurs</text>
+                        <rect class="arch-chip" x="480" y="302" width="192" height="68" rx="7"/>
+                        <text class="arch-chip-lbl" x="576" y="329" text-anchor="middle">CONTRÔLE D'ACCÈS</text>
+                        <text class="arch-chip-sub" x="576" y="346" text-anchor="middle">Isolation par contexte</text>
 
-                        <rect class="arch-chip" x="688" y="306" width="192" height="70" rx="7"/>
-                        <text class="arch-chip-lbl" x="784" y="334" text-anchor="middle">AUDIT &amp; NOTIFS</text>
-                        <text class="arch-chip-sub" x="784" y="350" text-anchor="middle">Traçabilité · Alertes</text>
+                        <rect class="arch-chip" x="688" y="302" width="192" height="68" rx="7"/>
+                        <text class="arch-chip-lbl" x="784" y="329" text-anchor="middle">TRAÇABILITÉ</text>
+                        <text class="arch-chip-sub" x="784" y="346" text-anchor="middle">Journalisation métier</text>
 
-                        <!-- Persistance / Sortie -->
-                        <rect class="arch-box arch-box-main" x="150" y="434" width="280" height="66" rx="8"/>
-                        <text class="arch-tag" x="290" y="452" text-anchor="middle">04 — PERSISTANCE</text>
-                        <text class="arch-lbl" x="290" y="473" text-anchor="middle">SQL SERVER 2019+</text>
-                        <text class="arch-sub" x="290" y="489" text-anchor="middle">EF Core · Migrations · French_CI_AS</text>
+                        <!-- 03 Data Access & 04 External Output -->
+                        <rect class="arch-box arch-box-main" x="150" y="422" width="280" height="64" rx="8"/>
+                        <text class="arch-tag" x="290" y="440" text-anchor="middle">03 — DATA ACCESS LAYER</text>
+                        <text class="arch-lbl" x="290" y="460" text-anchor="middle">SQL SERVER · EF CORE</text>
+                        <text class="arch-sub" x="290" y="476" text-anchor="middle">Repositories · Transactions ACID</text>
 
-                        <rect class="arch-box arch-box-alt" x="530" y="434" width="280" height="66" rx="8"/>
-                        <text class="arch-tag arch-tag-alt" x="670" y="452" text-anchor="middle">04 — SORTIE</text>
-                        <text class="arch-lbl" x="670" y="473" text-anchor="middle">FICHIERS XML SCT / SDD</text>
-                        <text class="arch-sub" x="670" y="489" text-anchor="middle">Conforme ISO 20022</text>
+                        <rect class="arch-box arch-box-alt" x="530" y="422" width="280" height="64" rx="8"/>
+                        <text class="arch-tag arch-tag-alt" x="670" y="440" text-anchor="middle">04 — EXTERNAL INTEGRATIONS</text>
+                        <text class="arch-lbl" x="670" y="460" text-anchor="middle">EXPORT XML ISO 20022</text>
+                        <text class="arch-sub" x="670" y="476" text-anchor="middle">Validation stricte par schéma XSD</text>
 
                         <!-- CI/CD -->
-                        <line x1="30" y1="524" x2="930" y2="524" class="arch-divider"/>
-                        <text class="arch-tag" x="480" y="546" text-anchor="middle">CI/CD — GITHUB ACTIONS</text>
+                        <line x1="30" y1="504" x2="930" y2="504" class="arch-divider"/>
+                        <text class="arch-tag" x="480" y="524" text-anchor="middle">AUTOMATISATION CI/CD — GITHUB ACTIONS</text>
 
-                        <rect class="arch-box arch-box-ext" x="50" y="560" width="270" height="46" rx="8"/>
-                        <text class="arch-lbl arch-lbl-sm" x="185" y="588" text-anchor="middle">PUSH → BUILD</text>
+                        <rect class="arch-box arch-box-ext" x="50" y="534" width="270" height="42" rx="8"/>
+                        <text class="arch-lbl arch-lbl-sm" x="185" y="560" text-anchor="middle">1. BUILD &amp; ANALYSE</text>
 
-                        <rect class="arch-box arch-box-ext" x="345" y="560" width="270" height="46" rx="8"/>
-                        <text class="arch-lbl arch-lbl-sm" x="480" y="588" text-anchor="middle">TESTS AUTOMATISÉS</text>
+                        <rect class="arch-box arch-box-ext" x="345" y="534" width="270" height="42" rx="8"/>
+                        <text class="arch-lbl arch-lbl-sm" x="480" y="560" text-anchor="middle">2. TESTS AUTOMATISÉS</text>
 
-                        <rect class="arch-box arch-box-ext" x="640" y="560" width="270" height="46" rx="8"/>
-                        <text class="arch-lbl arch-lbl-sm" x="775" y="588" text-anchor="middle">DEPLOY → IIS / AZURE</text>
+                        <rect class="arch-box arch-box-ext" x="640" y="534" width="270" height="42" rx="8"/>
+                        <text class="arch-lbl arch-lbl-sm" x="775" y="560" text-anchor="middle">3. PACKAGING &amp; RELEASE</text>
                     </svg>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- 6. Education Section — Independent Cards with Glowing Curve Passing Behind (No Overlap, No "2026-CDI") -->
+    <section id="education" class="section">
+        <div class="container">
+            <span class="eyebrow" data-i18n="edu_eyebrow">05 — Bagage académique</span>
+            <h2 class="section-title" data-i18n="edu_title">Formation</h2>
+
+            <div class="edu-curve-wrapper">
+                <!-- Glowing Curved Background Path (strictly behind the cards, z-index: 0) -->
+                <svg class="edu-curve-svg" viewBox="0 0 1200 420" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <defs>
+                        <filter id="eduBeamGlow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="6" result="b1"/>
+                            <feGaussianBlur stdDeviation="16" result="b2"/>
+                            <feMerge>
+                                <feMergeNode in="b2"/>
+                                <feMergeNode in="b1"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <path d="M 60 320 C 320 310, 440 120, 600 210 C 760 300, 920 95, 1140 110"
+                          stroke="rgba(57, 213, 255, 0.38)" stroke-width="6" stroke-linecap="round" filter="url(#eduBeamGlow)"/>
+                    <path d="M 60 320 C 320 310, 440 120, 600 210 C 760 300, 920 95, 1140 110"
+                          stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/>
+                </svg>
+
+                <div class="edu-cards-grid">
+                    <!-- Card 1: 2021 - 2023 -->
+                    <article class="edu-card">
+                        <div class="edu-card-header">
+                            <span class="edu-node-dot"></span>
+                            <span class="edu-years">2021 – 2023</span>
+                        </div>
+                        <h3 data-i18n="edu_1_title">Licence en Ingénierie Informatique (Computer Engineering)</h3>
+                        <h4 data-i18n="edu_1_school">ESISA — École Supérieure d'Ingénierie en Sciences Appliquées (Fès)</h4>
+                        <p data-i18n="edu_1_desc">Algorithmique avancée, structures de données, programmation orientée objet (C++, Java), bases de données SQL, réseaux informatiques et systèmes Linux.</p>
+                    </article>
+
+                    <!-- Card 2: 2023 - 2024 -->
+                    <article class="edu-card">
+                        <div class="edu-card-header">
+                            <span class="edu-node-dot"></span>
+                            <span class="edu-years">2023 – 2024</span>
+                        </div>
+                        <h3 data-i18n="edu_2_title">Master 1 (M1) — Ingénierie des Systèmes d'Information</h3>
+                        <h4 data-i18n="edu_2_school">ESISA — Fès, Maroc</h4>
+                        <p data-i18n="edu_2_desc">Conception logicielle (principes SOLID, Design Patterns, modélisation UML), architectures distribuées et développement d'applications Full-Stack et mobiles.</p>
+                    </article>
+
+                    <!-- Card 3: 2024 - 2026 (Official RNCP Title) -->
+                    <article class="edu-card edu-card-highlight">
+                        <div class="edu-card-header">
+                            <span class="edu-node-dot edu-node-active"></span>
+                            <span class="edu-years">2024 – 2026</span>
+                            <span class="edu-rncp-badge">RNCP35584 · Niveau 7</span>
+                        </div>
+                        <h3 data-i18n="edu_3_title">Expert en informatique et système d'information</h3>
+                        <h4 data-i18n="edu_3_school">EPSI Montpellier — Titre RNCP niveau 7 (Bac+5), obtenu en octobre 2026</h4>
+                        <p data-i18n="edu_3_desc">Architecture d'applications d'entreprise (.NET, Java/Spring), qualité logicielle, DevOps (Docker, CI/CD), Cloud et pilotage de projets SI.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Certifications & Continuous Learning Section (Verifiable & Categorized) -->
+    <section id="certifications" class="section">
+        <div class="container">
+            <span class="eyebrow" data-i18n="cert_eyebrow">06 — Formation continue &amp; Certificats</span>
+            <h2 class="section-title" data-i18n="cert_title">Certifications</h2>
+            <div class="skills-grid certs-grid">
+                <div class="skill-card cert-card">
+                    <span class="skill-cat">Certificat Pro</span>
+                    <i class="fa-brands fa-docker"></i>
+                    <h4>Docker Foundations Professional Certificate</h4>
+                    <span class="cert-issuer">Docker, Inc.</span>
+                </div>
+
+                <div class="skill-card cert-card">
+                    <span class="skill-cat">Certificat Pro</span>
+                    <i class="fa-brands fa-ubuntu"></i>
+                    <h4>Ubuntu Linux Professional Certificate</h4>
+                    <span class="cert-issuer">Canonical</span>
+                </div>
+
+                <div class="skill-card cert-card">
+                    <span class="skill-cat">Certificat Pro</span>
+                    <i class="fa-brands fa-java"></i>
+                    <h4>Java Foundations Professional Certificate</h4>
+                    <span class="cert-issuer">JetBrains</span>
+                </div>
+
+                <div class="skill-card cert-card">
+                    <span class="skill-cat">Certificat Pro</span>
+                    <i class="fa-brands fa-js"></i>
+                    <h4>JavaScript Foundations Professional Certificate</h4>
+                    <span class="cert-issuer">Mozilla</span>
+                </div>
+
+                <div class="skill-card cert-card">
+                    <span class="skill-cat">Cloud Badge</span>
+                    <i class="fa-brands fa-google"></i>
+                    <h4>Google Cloud Engineering Certificate</h4>
+                    <span class="cert-issuer">Google Cloud Skills Boost</span>
+                </div>
+
+                <div class="skill-card cert-card">
+                    <span class="skill-cat">Skill Badge</span>
+                    <i class="fa-solid fa-cloud"></i>
+                    <h4>Terraform on Google Cloud</h4>
+                    <span class="cert-issuer">Google Cloud Skills Boost</span>
+                </div>
+
+                <a class="skill-card cert-card" href="https://coursera.org/verify/SUWPR7Z4JAE7" target="_blank" rel="noopener">
+                    <span class="skill-cat">Vérifiable ↗</span>
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <h4>Algorithms: Divide &amp; Conquer, Sorting and Searching</h4>
+                    <span class="cert-issuer">Stanford University · Coursera</span>
+                    <span class="cert-verify-link" data-i18n="cert_verify">Vérifier le certificat →</span>
+                </a>
+
+                <a class="skill-card cert-card" href="https://ude.my/UC-d59702cb-0193-4a40-867e-57d54fe06879" target="_blank" rel="noopener">
+                    <span class="skill-cat">Vérifiable ↗</span>
+                    <i class="fa-solid fa-code"></i>
+                    <h4>Java Programming Masterclass</h4>
+                    <span class="cert-issuer">Udemy — Certificat de formation</span>
+                    <span class="cert-verify-link" data-i18n="cert_verify">Vérifier le certificat →</span>
+                </a>
+
+                <a class="skill-card cert-card" href="https://ude.my/UC-01ac69ec-1e86-40a1-8e79-cd0bdc17b7d9" target="_blank" rel="noopener">
+                    <span class="skill-cat">Vérifiable ↗</span>
+                    <i class="fa-brands fa-python"></i>
+                    <h4>The Python Mega Course</h4>
+                    <span class="cert-issuer">Udemy — Certificat de formation</span>
+                    <span class="cert-verify-link" data-i18n="cert_verify">Vérifier le certificat →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Contact Section -->
     <section id="contact" class="section">
         <div class="container">
-            <span class="eyebrow">07 — Discutons</span>
-            <h2 class="section-title">Contact</h2>
+            <span class="eyebrow" data-i18n="contact_eyebrow">07 — Discutons</span>
+            <h2 class="section-title" data-i18n="contact_title">Contact</h2>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <p>Une idée de projet ? Une opportunité CDI Full Stack / .NET / DevOps ? N'hésitez pas à me contacter.</p>
+                    <p data-i18n="contact_intro">À la recherche d'un ingénieur logiciel C#/.NET et Full-Stack pour un CDI ? N'hésitez pas à me contacter directement.</p>
                     <div class="contact-links">
                         <div class="contact-email-row">
-                            <a href="mailto:assoilyoussef02@gmail.com"><i class="fa fa-envelope"></i> assoilyoussef02@gmail.com</a>
+                            <a href="mailto:assoilyoussef02@gmail.com"><i class="fa-solid fa-envelope"></i> assoilyoussef02@gmail.com</a>
                             <button type="button" class="copy-email-btn" id="copyEmailBtn" data-email="assoilyoussef02@gmail.com">
-                                <i class="fa-regular fa-copy"></i> <span>Copier</span>
+                                <i class="fa-regular fa-copy"></i> <span data-i18n="btn_copy">Copier l'email</span>
                             </button>
                         </div>
-                        <a href="tel:+33766319353"><i class="fa fa-phone"></i> +33 7 66 31 93 53</a>
-                        <a href="https://www.linkedin.com/in/assoilyoussef/" target="_blank"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/assoilyoussef</a>
-                        <a href="ASSOIL_YOUSSEF_CV.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Télécharger mon CV complet (PDF)</a>
+                        <a href="tel:+33766319353"><i class="fa-solid fa-phone"></i> +33 7 66 31 93 53</a>
+                        <a href="https://www.linkedin.com/in/assoilyoussef/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/assoilyoussef</a>
+                        <a href="https://github.com/youssef-ASSOIL" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> github.com/youssef-ASSOIL</a>
+                        <div class="contact-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span data-i18n="contact_loc">Montpellier, France — Mobile en France et à l'international</span>
+                        </div>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <input type="text" name="name" placeholder="Nom" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                    <textarea name="message" placeholder="Message" rows="5" required></textarea>
-                    <button type="submit" class="btn-talk btn-submit">Envoyer</button>
-                    <p class="form-hint" id="formHint" aria-live="polite">Envoi direct et instantané dans ma boîte mail.</p>
+                <form class="contact-form" id="contactForm" novalidate>
+                    <!-- Anti-spam honeypot -->
+                    <input type="checkbox" name="botcheck" style="display: none;" tabindex="-1" autocomplete="off">
+                    <input type="text" name="name" id="contactName" placeholder="Votre nom" data-i18n-placeholder="ph_name" required minlength="2">
+                    <input type="email" name="email" id="contactEmail" placeholder="Votre email professionnel" data-i18n-placeholder="ph_email" required>
+                    <textarea name="message" id="contactMessage" placeholder="Votre message (opportunité CDI, échange technique...)" data-i18n-placeholder="ph_msg" rows="5" required minlength="10"></textarea>
+                    <button type="submit" class="btn-talk btn-submit" data-i18n="btn_send">Envoyer le message</button>
+                    <p class="form-hint" id="formHint" aria-live="polite" data-i18n="form_hint_default">Formulaire connecté : envoi direct par email avec confirmation.</p>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer style="padding: 80px 0; border-top: 1px solid var(--border-soft); text-align: center; color: var(--text-gray);">
-        <p>&copy; 2026 Youssef ASSOIL. Built with Passion.</p>
+    <footer style="padding: 60px 0; border-top: 1px solid var(--border-soft); text-align: center; color: var(--text-gray); font-size: 0.9rem;">
+        <div class="container">
+            <p>&copy; 2026 Youssef ASSOIL — Software Engineer (C#/.NET &amp; Full-Stack).</p>
+        </div>
     </footer>
 
     <!-- Interactive Project Case Study Modal -->
@@ -626,29 +701,29 @@
             <button type="button" class="case-modal-close" id="caseModalClose" aria-label="Fermer">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <span class="tag" id="caseModalTag">Blazor / .NET 9</span>
-            <h3 id="caseModalTitle">SEPA Pro Solution</h3>
+            <span class="tag" id="caseModalTag">C# / .NET 9 · Blazor</span>
+            <h3 id="caseModalTitle">SEPA Pro</h3>
             <p class="case-modal-sub" id="caseModalSub"></p>
 
             <div class="case-modal-grid">
                 <div class="case-modal-box">
-                    <h4><i class="fa-solid fa-bolt"></i> Challenges &amp; Problématique</h4>
+                    <h4><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="modal_prob">Problématique métier</span></h4>
                     <p id="caseModalChallenge"></p>
                 </div>
                 <div class="case-modal-box">
-                    <h4><i class="fa-solid fa-gears"></i> Solution &amp; Architecture</h4>
+                    <h4><i class="fa-solid fa-user-gear"></i> <span data-i18n="modal_role">Mon rôle &amp; Contexte</span></h4>
                     <p id="caseModalSolution"></p>
                 </div>
             </div>
 
             <div class="case-modal-contrib">
-                <h4><i class="fa-solid fa-code-branch"></i> Ce que j'ai réalisé concrètement</h4>
+                <h4><i class="fa-solid fa-code-branch"></i> <span data-i18n="modal_contrib">Solution technique &amp; Réalisations</span></h4>
                 <ul id="caseModalBullets"></ul>
             </div>
 
             <div class="case-modal-footer">
                 <div class="case-modal-techs" id="caseModalTechs"></div>
-                <a href="#architecture" class="btn-talk" id="caseModalArchBtn">Voir le schéma d'architecture</a>
+                <a href="#architecture" class="btn-talk" id="caseModalArchBtn" data-i18n="modal_arch_btn">Explorer l'architecture</a>
             </div>
         </div>
     </div>
