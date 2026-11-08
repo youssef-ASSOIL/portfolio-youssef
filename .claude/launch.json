@@ -6,6 +6,18 @@
       "runtimeExecutable": "python3",
       "runtimeArgs": ["-m", "http.server", "4173"],
       "port": 4173
+    },
+    {
+      "name": "gaztoday",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "4180", "--directory", "/Users/mac/PhpstormProjects/PROXIEL/gaztoday"],
+      "port": 4180
+    },
+    {
+      "name": "bionettoyage-frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "/Users/mac/Desktop/BioNettoyage30/vet-cleaning-frontend", "start", "--", "--port", "4200"],
+      "port": 4200
     }
   ]
 }
