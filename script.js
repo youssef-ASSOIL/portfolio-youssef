@@ -11,7 +11,8 @@ let currentLang = localStorage.getItem('lang') || 'fr';
 if (!['fr', 'en', 'de', 'ar'].includes(currentLang)) {
     currentLang = 'fr';
 }
-let currentArchLayer = 'presentation';
+let currentArchProject = 'sepa';
+let currentArchLayer = 'layer1';
 
 const I18N = {
     fr: {
@@ -142,6 +143,13 @@ const I18N = {
         ph_msg: 'Votre message (opportunité CDI, échange technique...)',
         btn_send: 'Envoyer le message',
         form_hint_default: 'Formulaire connecté : envoi direct par email avec confirmation.',
+
+        arch_proj_sepa: 'SEPA Pro · .NET 9 & ISO 20022',
+        arch_proj_assala: 'Assala Iskane ERP · Spring Boot 3 & Docker',
+        modal_tab_overview: 'Aperçu',
+        modal_tab_arch: 'Architecture & Docker',
+        modal_tab_workflow: 'Circuit 6 Niveaux',
+        modal_tab_code: 'Code & API',
 
         modal_prob: 'Problématique métier',
         modal_role: 'Mon rôle & Contexte',
@@ -277,6 +285,13 @@ const I18N = {
         btn_send: 'Send Message',
         form_hint_default: 'Connected form: direct email delivery with instant confirmation.',
 
+        arch_proj_sepa: 'SEPA Pro · .NET 9 & ISO 20022',
+        arch_proj_assala: 'Assala Iskane ERP · Spring Boot 3 & Docker',
+        modal_tab_overview: 'Overview',
+        modal_tab_arch: 'Architecture & Docker',
+        modal_tab_workflow: '6-Stage Approval',
+        modal_tab_code: 'Code & API',
+
         modal_prob: 'Business Challenge',
         modal_role: 'My Role & Scope',
         modal_contrib: 'Technical Solution & Key Deliverables',
@@ -410,6 +425,13 @@ const I18N = {
         ph_msg: 'Ihre Nachricht (CDI-Möglichkeit, technischer Austausch...)',
         btn_send: 'Nachricht senden',
         form_hint_default: 'Integriertes Formular: direkter E-Mail-Versand mit sofortiger Bestätigung.',
+
+        arch_proj_sepa: 'SEPA Pro · .NET 9 & ISO 20022',
+        arch_proj_assala: 'Assala Iskane ERP · Spring Boot 3 & Docker',
+        modal_tab_overview: 'Übersicht',
+        modal_tab_arch: 'Architektur & Docker',
+        modal_tab_workflow: '6-Stufiger Workflow',
+        modal_tab_code: 'Code & API',
 
         modal_prob: 'Geschäftliche Herausforderung',
         modal_role: 'Meine Rolle & Rahmenbedingungen',
@@ -545,6 +567,13 @@ const I18N = {
         btn_send: 'إرسال الرسالة',
         form_hint_default: 'نموذج مباشر: إرسال فوري إلى بريدي الإلكتروني مع تأكيد الاستلام.',
 
+        arch_proj_sepa: 'SEPA Pro · .NET 9 ومعيار ISO 20022',
+        arch_proj_assala: 'Assala Iskane ERP · Spring Boot و Docker',
+        modal_tab_overview: 'نظرة عامة',
+        modal_tab_arch: 'الهندسة المعمارية و Docker',
+        modal_tab_workflow: 'مسار المصادقة (6 مستويات)',
+        modal_tab_code: 'الكود وواجهات البرمجة',
+
         modal_prob: 'التحدي المؤسساتي',
         modal_role: 'دوري ونطاق العمل',
         modal_contrib: 'الحل التقني والإنجازات',
@@ -552,77 +581,179 @@ const I18N = {
     }
 };
 
-const ARCH_LAYERS = {
-    presentation: {
-        fr: {
-            title: '01 — Presentation Layer (UI & Contrôle d\'accès)',
-            desc: 'Interface web interactive basée sur des composants serveur (.NET / Blazor), offrant une validation des formulaires en temps réel, un contrôle d\'accès par rôle (RBAC) et une prévisualisation sécurisée des opérations avant validation.'
+const ARCH_PROJECTS = {
+    sepa: {
+        terminalTitle: 'architecture-blueprint@dotnet-sepa: ~',
+        intro: {
+            fr: 'Vue pédagogique et anonymisée d\'une architecture <strong>.NET / ISO 20022</strong> en couches. Cliquez sur chaque couche ci-dessous pour explorer les choix techniques de conception.',
+            en: 'Pedagogical, sanitized view of a layered <strong>.NET / ISO 20022</strong> architecture. Click each layer below to explore technical design decisions.',
+            de: 'Pädagogische Übersicht einer geschichteten <strong>.NET / ISO 20022</strong> Architektur. Klicken Sie auf jede Ebene, um technische Entwurfsentscheidungen zu erkunden.',
+            ar: 'رؤية معمارية تعليمية لمنظومة <strong>.NET / ISO 20022</strong> متعددة الطبقات. اضغط على أي طبقة لاستكشاف القرارات الهندسية المعتمدة.'
         },
-        en: {
-            title: '01 — Presentation Layer (UI & Access Control)',
-            desc: 'Interactive server-side component UI (.NET / Blazor) providing real-time form validation, Role-Based Access Control (RBAC), and secure batch preview before final execution.'
-        },
-        de: {
-            title: '01 — Presentation Layer (Benutzeroberfläche & Zugriffskontrolle)',
-            desc: 'Interaktive serverseitige Komponenten-Benutzeroberfläche (.NET / Blazor) mit Formularvalidierung in Echtzeit, rollenbasierter Zugriffskontrolle (RBAC) und sicherer Batch-Vorschau vor der endgültigen Ausführung.'
-        },
-        ar: {
-            title: '01 — Presentation Layer (واجهة المستخدم وضبط الصلاحيات)',
-            desc: 'واجهة ويب تفاعلية مبنية على مكونات خادم متقدمة (.NET / Blazor)، تتيح التحقق الفوري من صحة النماذج، وضبط الصلاحيات وفق الأدوار (RBAC)، ومعاينة آمنة للعمليات قبل الاعتماد النهائي.'
+        layers: {
+            layer1: {
+                tab: { fr: 'Presentation Layer', en: 'Presentation Layer', de: 'Presentation Layer', ar: 'Presentation Layer' },
+                fr: {
+                    title: '01 — Presentation Layer (UI & Contrôle d\'accès)',
+                    desc: 'Interface web interactive basée sur des composants serveur (.NET / Blazor), offrant une validation des formulaires en temps réel, un contrôle d\'accès par rôle (RBAC) et une prévisualisation sécurisée des opérations avant validation.'
+                },
+                en: {
+                    title: '01 — Presentation Layer (UI & Access Control)',
+                    desc: 'Interactive server-side component UI (.NET / Blazor) providing real-time form validation, Role-Based Access Control (RBAC), and secure batch preview before final execution.'
+                },
+                de: {
+                    title: '01 — Presentation Layer (Benutzeroberfläche & Zugriffskontrolle)',
+                    desc: 'Interaktive serverseitige Komponenten-Benutzeroberfläche (.NET / Blazor) mit Formularvalidierung in Echtzeit, rollenbasierter Zugriffskontrolle (RBAC) und sicherer Batch-Vorschau vor der endgültigen Ausführung.'
+                },
+                ar: {
+                    title: '01 — Presentation Layer (واجهة المستخدم وضبط الصلاحيات)',
+                    desc: 'واجهة ويب تفاعلية مبنية على مكونات خادم متقدمة (.NET / Blazor)، تتيح التحقق الفوري من صحة النماذج، وضبط الصلاحيات وفق الأدوار (RBAC)، ومعاينة آمنة للعمليات قبل الاعتماد النهائي.'
+                }
+            },
+            layer2: {
+                tab: { fr: 'Business Logic Layer', en: 'Business Logic Layer', de: 'Business Logic Layer', ar: 'Business Logic Layer' },
+                fr: {
+                    title: '02 — Business Logic Layer (Services Métier & Conformité)',
+                    desc: 'Cœur métier découplé gérant la validation des coordonnées bancaires (IBAN/BIC), le cycle de vie des mandats SEPA, l\'import structuré de fichiers comptables et l\'assemblage des lots selon les règles ISO 20022.'
+                },
+                en: {
+                    title: '02 — Business Logic Layer (Domain Services & Compliance)',
+                    desc: 'Decoupled domain layer handling IBAN/BIC validation, SEPA mandate lifecycle, structured accounting file parsing, and payment batch assembly according to ISO 20022 rules.'
+                },
+                de: {
+                    title: '02 — Business Logic Layer (Geschäftslogik & Compliance)',
+                    desc: 'Entkoppelte Domänenschicht zur Validierung von Bankdaten (IBAN/BIC), Verwaltung des SEPA-Mandatslebenszyklus, Parsing von Buchhaltungsdateien und Zusammenstellung von Zahlungsstapeln nach ISO 20022.'
+                },
+                ar: {
+                    title: '02 — Business Logic Layer (خدمات الأعمال والمطابقة)',
+                    desc: 'طبقة المنطق التجاري المسؤولة عن تدقيق الحسابات البنكية (IBAN/BIC)، إدارة تفويضات SEPA، تحليل ملفات المحاسبة واستخراج الدفعات وفق معايير ISO 20022.'
+                }
+            },
+            layer3: {
+                tab: { fr: 'Data Access Layer', en: 'Data Access Layer', de: 'Data Access Layer', ar: 'Data Access Layer' },
+                fr: {
+                    title: '03 — Data Access Layer (Persistance & Intégrité)',
+                    desc: 'Accès aux données relationnelles via Entity Framework Core et SQL Server. Utilisation de transactions ACID, de migrations versionnées et d\'une journalisation d\'audit pour garantir la traçabilité des opérations.'
+                },
+                en: {
+                    title: '03 — Data Access Layer (Persistence & Integrity)',
+                    desc: 'Relational data access powered by Entity Framework Core and SQL Server, leveraging ACID transactions, versioned migrations, and audit logging for end-to-end traceability.'
+                },
+                de: {
+                    title: '03 — Data Access Layer (Datenzugriff & Integrität)',
+                    desc: 'Relationaler Datenzugriff über Entity Framework Core und SQL Server mit ACID-Transaktionen, versionierten Migrationen und lückenloser Audit-Protokollierung für höchste Nachvollziehbarkeit.'
+                },
+                ar: {
+                    title: '03 — Data Access Layer (حفظ وتكامل البيانات)',
+                    desc: 'الوصول لقواعد البيانات العلائقية عبر Entity Framework Core و SQL Server، بالاعتماد على معاملات ACID الصارمة وتتبع التغييرات لتأمين أعلى مستويات الموثوقية.'
+                }
+            },
+            layer4: {
+                tab: { fr: 'Integrations & CI/CD', en: 'Integrations & CI/CD', de: 'Integrations & CI/CD', ar: 'Integrations & CI/CD' },
+                fr: {
+                    title: '04 — External Integrations & CI/CD (XML/XSD & Automatisation)',
+                    desc: 'Génération de fichiers XML SEPA (SCT/SDD) systématiquement validés contre les schémas officiels XSD avant export, accompagnée d\'un pipeline GitHub Actions automatisant la compilation et les tests.'
+                },
+                en: {
+                    title: '04 — External Integrations & CI/CD (XML/XSD & Automation)',
+                    desc: 'SEPA XML batch generation (SCT/SDD) strictly validated against official XSD schemas prior to export, backed by a GitHub Actions pipeline automating builds and test suites.'
+                },
+                de: {
+                    title: '04 — External Integrations & CI/CD (XML/XSD & Automatisierung)',
+                    desc: 'Generierung von SEPA-XML-Dateien (SCT/SDD) mit automatischer XSD-Prüfung vor dem Export, unterstützt durch eine GitHub Actions Pipeline für automatisierte Builds und Tests.'
+                },
+                ar: {
+                    title: '04 — External Integrations & CI/CD (تكامل XML/XSD والأتمتة)',
+                    desc: 'توليد ملفات XML البنكية (SCT/SDD) والتحقق التلقائي منها عبر مخططات XSD الرسمية قبل التصدير، مع خطوط تكامل مستمر GitHub Actions لأتمتة الاختبارات.'
+                }
+            }
         }
     },
-    business: {
-        fr: {
-            title: '02 — Business Logic Layer (Services Métier & Conformité)',
-            desc: 'Cœur métier découplé gérant la validation des coordonnées bancaires (IBAN/BIC), le cycle de vie des mandats SEPA, l\'import structuré de fichiers comptables et l\'assemblage des lots selon les règles ISO 20022.'
+    assala: {
+        terminalTitle: 'architecture-blueprint@spring-docker-assala: ~',
+        intro: {
+            fr: 'Architecture conteneurisée <strong>Spring Boot 3 / React 18 / Docker</strong> d\'Assala Iskane ERP : reverse-proxy Nginx, isolation réseau sans port DB exposé, et workflow d\'approbation à 6 niveaux.',
+            en: 'Containerized <strong>Spring Boot 3 / React 18 / Docker</strong> architecture for Assala Iskane ERP: Nginx reverse-proxy, network isolation with zero exposed DB ports, and 6-stage approval workflow.',
+            de: 'Containerisierte <strong>Spring Boot 3 / React 18 / Docker</strong> Architektur für Assala Iskane ERP: Nginx Reverse Proxy, Netzwerkisolation ohne freiliegende DB-Ports und 6-stufiger Freigabeprozess.',
+            ar: 'الهندسة المعمارية المحتواة بـ <strong>Spring Boot 3 و React 18 و Docker</strong> لنظام Assala Iskane ERP: خادم Nginx وسيط، عزل تام لقاعدة البيانات، ومسار موافقات بـ 6 مستويات.'
         },
-        en: {
-            title: '02 — Business Logic Layer (Domain Services & Compliance)',
-            desc: 'Decoupled domain layer handling IBAN/BIC validation, SEPA mandate lifecycle, structured accounting file parsing, and payment batch assembly according to ISO 20022 rules.'
-        },
-        de: {
-            title: '02 — Business Logic Layer (Geschäftslogik & Compliance)',
-            desc: 'Entkoppelte Domänenschicht zur Validierung von Bankdaten (IBAN/BIC), Verwaltung des SEPA-Mandatslebenszyklus, Parsing von Buchhaltungsdateien und Zusammenstellung von Zahlungsstapeln nach ISO 20022.'
-        },
-        ar: {
-            title: '02 — Business Logic Layer (خدمات الأعمال والمطابقة)',
-            desc: 'طبقة المنطق التجاري المسؤولة عن تدقيق الحسابات البنكية (IBAN/BIC)، إدارة تفويضات SEPA، تحليل ملفات المحاسبة واستخراج الدفعات وفق معايير ISO 20022.'
-        }
-    },
-    data: {
-        fr: {
-            title: '03 — Data Access Layer (Persistance & Intégrité)',
-            desc: 'Accès aux données relationnelles via Entity Framework Core et SQL Server. Utilisation de transactions ACID, de migrations versionnées et d\'une journalisation d\'audit pour garantir la traçabilité des opérations.'
-        },
-        en: {
-            title: '03 — Data Access Layer (Persistence & Integrity)',
-            desc: 'Relational data access powered by Entity Framework Core and SQL Server, leveraging ACID transactions, versioned migrations, and audit logging for end-to-end traceability.'
-        },
-        de: {
-            title: '03 — Data Access Layer (Datenzugriff & Integrität)',
-            desc: 'Relationaler Datenzugriff über Entity Framework Core und SQL Server mit ACID-Transaktionen, versionierten Migrationen und lückenloser Audit-Protokollierung für höchste Nachvollziehbarkeit.'
-        },
-        ar: {
-            title: '03 — Data Access Layer (حفظ وتكامل البيانات)',
-            desc: 'الوصول لقواعد البيانات العلائقية عبر Entity Framework Core و SQL Server، بالاعتماد على معاملات ACID الصارمة وتتبع التغييرات لتأمين أعلى مستويات الموثوقية.'
-        }
-    },
-    integration: {
-        fr: {
-            title: '04 — External Integrations & CI/CD (XML/XSD & Automatisation)',
-            desc: 'Génération de fichiers XML SEPA (SCT/SDD) systématiquement validés contre les schémas officiels XSD avant export, accompagnée d\'un pipeline GitHub Actions automatisant la compilation et les tests.'
-        },
-        en: {
-            title: '04 — External Integrations & CI/CD (XML/XSD & Automation)',
-            desc: 'SEPA XML batch generation (SCT/SDD) strictly validated against official XSD schemas prior to export, backed by a GitHub Actions pipeline automating builds and test suites.'
-        },
-        de: {
-            title: '04 — External Integrations & CI/CD (XML/XSD & Automatisierung)',
-            desc: 'Generierung von SEPA-XML-Dateien (SCT/SDD) mit automatischer XSD-Prüfung vor dem Export, unterstützt durch eine GitHub Actions Pipeline für automatisierte Builds und Tests.'
-        },
-        ar: {
-            title: '04 — External Integrations & CI/CD (تكامل XML/XSD والأتمتة)',
-            desc: 'توليد ملفات XML البنكية (SCT/SDD) والتحقق التلقائي منها عبر مخططات XSD الرسمية قبل التصدير، مع خطوط تكامل مستمر GitHub Actions لأتمتة الاختبارات.'
+        layers: {
+            layer1: {
+                tab: { fr: 'Gateway & Nginx', en: 'Gateway & Nginx', de: 'Gateway & Nginx', ar: 'الوسيط Nginx' },
+                fr: {
+                    title: '01 — Nginx Gateway & Routage Multi-Périphériques',
+                    desc: 'Reverse proxy Nginx exposant l\'unique port 80 public. Sert le build React statique minifié et transfère les requêtes /assalaiskane/ au backend Spring Boot via le réseau Docker privé, permettant un accès sans configuration depuis tout smartphone ou PC du réseau.'
+                },
+                en: {
+                    title: '01 — Nginx Gateway & Multi-Device Routing',
+                    desc: 'Nginx reverse proxy exposing solely public port 80. Delivers minified static React builds and forwards /assalaiskane/ requests to Spring Boot over private Docker networking, ensuring zero-config access from any mobile or laptop on the subnet.'
+                },
+                de: {
+                    title: '01 — Nginx Gateway & Multi-Device Routing',
+                    desc: 'Nginx Reverse Proxy mit Port 80 als einziger öffentlicher Schnittstelle. Liefert das minifizierte React-Frontend aus und leitet /assalaiskane/-Aufrufe intern über das Docker-Netzwerk an Spring Boot weiter.'
+                },
+                ar: {
+                    title: '01 — بوابة Nginx والتوجيه متعدد الأجهزة',
+                    desc: 'خادم Nginx وسيط يوفر المنفذ العام الوحيد 80. يوزع ملفات React الثابتة ويوجه طلبات /assalaiskane/ تلقائياً إلى خادم Spring Boot عبر شبكة Docker الداخلية بأمان تام.'
+                }
+            },
+            layer2: {
+                tab: { fr: 'Backend Spring Boot 3', en: 'Spring Boot 3 Backend', de: 'Backend Spring Boot 3', ar: 'الخادم Spring Boot 3' },
+                fr: {
+                    title: '02 — API REST & Contrôle d\'Accès RBAC (Spring Boot 3)',
+                    desc: 'Services Java 17 modulaires avec Spring Data JPA et sécurité granulaire par rôle (Chef de Chantier, Responsable Projet, Technique, Comptable, etc.). Gestion transactionnelle ACID des stocks, des présences ouvriers et de la GED (fichiers jusqu\'à 50 Mo).'
+                },
+                en: {
+                    title: '02 — REST API & RBAC Security (Spring Boot 3)',
+                    desc: 'Modular Java 17 services built with Spring Data JPA and granular Role-Based Access Control. Transactional management of material inventories, attendance tracking, and construction file uploads up to 50MB.'
+                },
+                de: {
+                    title: '02 — REST API & RBAC Sicherheitskontrolle (Spring Boot 3)',
+                    desc: 'Modulare Java 17 Services mit Spring Data JPA und rollenbasierter Zugriffskontrolle (RBAC). Transaktionales Management von Materialbeständen, Anwesenheiten und Baustellendokumenten bis 50MB.'
+                },
+                ar: {
+                    title: '02 — واجهة REST البرمجية وضبط الصلاحيات (Spring Boot 3)',
+                    desc: 'خدمات Java 17 مع Spring Data JPA ونظام صلاحيات RBAC دقيق لكل دور وورش. إدارة معاملات المواد، حضور العمال، وتخزين مستندات الأوراش حتى 50 ميغابايت.'
+                }
+            },
+            layer3: {
+                tab: { fr: 'Base MySQL Isolée', en: 'Shielded MySQL DB', de: 'Isolierte MySQL DB', ar: 'قاعدة بيانات MySQL معزولة' },
+                fr: {
+                    title: '03 — Persistance MySQL 5.7 & Isolation Docker',
+                    desc: 'Base de données relationnelle confinée dans le réseau assala_network avec aucun port exposé vers l\'extérieur (ports: !reset []). Persistance assurée par volume Docker dédié et initialisation automatisée du schéma.'
+                },
+                en: {
+                    title: '03 — MySQL 5.7 Persistence & Docker Isolation',
+                    desc: 'Relational database confined within assala_network with zero public ports exposed (ports: !reset []). Data persistence ensured via dedicated named volumes and automatic schema seeding.'
+                },
+                de: {
+                    title: '03 — MySQL 5.7 Persistenz & Docker Isolation',
+                    desc: 'Relationale Datenbank innerhalb des isolierten assala_network ohne offene externe Ports (ports: !reset []). Persistenz über dedizierte Docker Volumes und automatisches Schema-Seeding.'
+                },
+                ar: {
+                    title: '03 — قاعدة بيانات MySQL 5.7 المعزولة في Docker',
+                    desc: 'قاعدة بيانات علائقية محصنة داخل شبكة assala_network الخاصة بدون أي منافذ عامة مفتوحة. استمرارية وحفظ البيانات عبر وحدات تخزين Docker مخصصة.'
+                }
+            },
+            layer4: {
+                tab: { fr: 'Workflow 6 Niveaux', en: '6-Stage Workflow', de: '6-Stufiger Workflow', ar: 'مسار 6 مستويات' },
+                fr: {
+                    title: '04 — Circuit Hiérarchique de Validation des Besoins',
+                    desc: 'Pipeline métier séquentiel : Expression du besoin par le Chef de Chantier (/addBesoin) → Contrôle par le Resp. Projet → Affectation technique par le Resp. Technique → Arbitrage financier par le Resp. Comptable (/validateBesoin) → Achat ST → Livraison Magasin RM.'
+                },
+                en: {
+                    title: '04 — 6-Stage Hierarchical Approval Workflow',
+                    desc: 'Sequential operational pipeline: Site demand by Site Manager (/addBesoin) → Project review → Technical allocation → Budget clearance by Accounting (/validateBesoin) → Tech purchasing → Warehouse delivery.'
+                },
+                de: {
+                    title: '04 — 6-stufiger Genehmigungsworkflow für Baustellen',
+                    desc: 'Sequenzielle Prozesskette: Bedarfsanforderung durch Bauleiter (/addBesoin) → Projektprüfung → Technische Allokation → Budgetfreigabe durch Buchhaltung (/validateBesoin) → Einkauf → Warenlieferung.'
+                },
+                ar: {
+                    title: '04 — مسار المصادقة الهرمي ذو الـ 6 مستويات',
+                    desc: 'مسار إداري متسلسل: طلب الاحتياجات من رئيس الورش (/addBesoin) ← مراجعة مسؤول المشروع ← التدقيق التقني ← المصادقة المالية للمحاسب (/validateBesoin) ← الشراء ← التسليم بالمستودع.'
+                }
+            }
         }
     }
 };
@@ -630,11 +761,49 @@ const ARCH_LAYERS = {
 function updateArchExplainer() {
     const titleEl = document.getElementById('archLayerTitle');
     const descEl = document.getElementById('archLayerDesc');
-    const layerData = ARCH_LAYERS[currentArchLayer] && ARCH_LAYERS[currentArchLayer][currentLang];
+    const project = ARCH_PROJECTS[currentArchProject] || ARCH_PROJECTS.sepa;
+    const layer = project.layers[currentArchLayer] || project.layers.layer1;
+    const layerData = layer && (layer[currentLang] || layer.fr);
     if (titleEl && descEl && layerData) {
         titleEl.textContent = layerData.title;
         descEl.textContent = layerData.desc;
     }
+}
+
+function updateArchView() {
+    const project = ARCH_PROJECTS[currentArchProject] || ARCH_PROJECTS.sepa;
+    const termTitle = document.getElementById('archTerminalTitle');
+    if (termTitle) {
+        termTitle.textContent = project.terminalTitle;
+    }
+
+    const introEl = document.getElementById('archIntroText');
+    if (introEl && project.intro) {
+        introEl.innerHTML = project.intro[currentLang] || project.intro.fr;
+    }
+
+    // Update Layer Tab Labels
+    ['layer1', 'layer2', 'layer3', 'layer4'].forEach((layerKey, idx) => {
+        const lbl = document.getElementById(`archTabLabel${idx + 1}`);
+        if (lbl && project.layers[layerKey] && project.layers[layerKey].tab) {
+            lbl.textContent = project.layers[layerKey].tab[currentLang] || project.layers[layerKey].tab.fr;
+        }
+    });
+
+    // Toggle Visible SVG
+    const svgSepa = document.getElementById('archSvgSepa');
+    const svgAssala = document.getElementById('archSvgAssala');
+    if (svgSepa && svgAssala) {
+        if (currentArchProject === 'sepa') {
+            svgSepa.style.display = 'block';
+            svgAssala.style.display = 'none';
+        } else {
+            svgSepa.style.display = 'none';
+            svgAssala.style.display = 'block';
+        }
+    }
+
+    updateArchExplainer();
 }
 
 function applyLanguage(lang) {
@@ -680,7 +849,7 @@ function applyLanguage(lang) {
         }
     }
 
-    updateArchExplainer();
+    updateArchView();
 }
 
 // Bind all 4 language buttons
@@ -694,12 +863,28 @@ document.querySelectorAll('.lang-opt').forEach(btn => {
     });
 });
 
-// Interactive Architecture Tabs
+// Architecture Project Switcher Tabs (SEPA vs Assala)
+document.querySelectorAll('.arch-proj-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.arch-proj-tab').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentArchProject = btn.getAttribute('data-arch-proj') || 'sepa';
+        currentArchLayer = 'layer1';
+
+        document.querySelectorAll('.arch-tab').forEach((t, i) => {
+            t.classList.toggle('active', i === 0);
+        });
+
+        updateArchView();
+    });
+});
+
+// Interactive Architecture Layer Tabs
 document.querySelectorAll('.arch-tab').forEach(tab => {
     tab.addEventListener('click', () => {
         document.querySelectorAll('.arch-tab').forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
-        currentArchLayer = tab.getAttribute('data-layer') || 'presentation';
+        currentArchLayer = tab.getAttribute('data-layer') || 'layer1';
         updateArchExplainer();
     });
 });
@@ -1188,10 +1373,368 @@ const caseModalBullets = document.getElementById('caseModalBullets');
 const caseModalTechs = document.getElementById('caseModalTechs');
 const caseModalArchBtn = document.getElementById('caseModalArchBtn');
 
+const modalTabBtns = document.querySelectorAll('.modal-tab-btn');
+const modalTabPanes = document.querySelectorAll('.modal-tab-pane');
+const modalArchContainer = document.getElementById('modalArchContainer');
+const modalWorkflowSteps = document.getElementById('modalWorkflowSteps');
+const modalCodeViewer = document.getElementById('modalCodeViewer');
+
+// Modal tab clicking
+modalTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        modalTabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const targetTab = btn.getAttribute('data-tab');
+        modalTabPanes.forEach(pane => pane.classList.remove('active'));
+        if (targetTab === 'overview') document.getElementById('modalPaneOverview')?.classList.add('active');
+        else if (targetTab === 'arch') document.getElementById('modalPaneArch')?.classList.add('active');
+        else if (targetTab === 'workflow') document.getElementById('modalPaneWorkflow')?.classList.add('active');
+        else if (targetTab === 'code') document.getElementById('modalPaneCode')?.classList.add('active');
+    });
+});
+
+function escapeHtml(str) {
+    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function renderCodeTabs(snippets) {
+    if (!modalCodeViewer || !snippets.length) return;
+    const tabHeaders = snippets.map((s, i) => `
+        <button type="button" class="code-viewer-tab ${i === 0 ? 'active' : ''}" data-snippet-idx="${i}">
+            ${s.name}
+        </button>
+    `).join('');
+
+    const codeBlocks = snippets.map((s, i) => `
+        <div class="code-block-wrapper" style="display: ${i === 0 ? 'block' : 'none'};" data-snippet-block="${i}">
+            <button type="button" class="code-copy-btn">Copier</button>
+            <pre><code>${escapeHtml(s.code)}</code></pre>
+        </div>
+    `).join('');
+
+    modalCodeViewer.innerHTML = `
+        <div class="code-viewer-tabs">${tabHeaders}</div>
+        ${codeBlocks}
+    `;
+
+    modalCodeViewer.querySelectorAll('.code-viewer-tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const idx = btn.getAttribute('data-snippet-idx');
+            modalCodeViewer.querySelectorAll('.code-viewer-tab').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            modalCodeViewer.querySelectorAll('[data-snippet-block]').forEach(b => {
+                b.style.display = b.getAttribute('data-snippet-block') === idx ? 'block' : 'none';
+            });
+        });
+    });
+
+    modalCodeViewer.querySelectorAll('.code-copy-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+            const pre = btn.parentElement.querySelector('pre');
+            if (!pre) return;
+            try {
+                await navigator.clipboard.writeText(pre.innerText);
+                const prev = btn.textContent;
+                btn.textContent = currentLang === 'en' ? 'Copied!' : 'Copié !';
+                setTimeout(() => { btn.textContent = prev; }, 2000);
+            } catch (err) {}
+        });
+    });
+}
+
+function renderModalArch(projectKey, lang) {
+    if (!modalArchContainer) return;
+    if (projectKey === 'assala-erp') {
+        modalArchContainer.innerHTML = `
+            <div class="modal-arch-box">
+                <h4 style="color: var(--accent); margin-bottom: 8px;"><i class="fa-solid fa-network-wired"></i> ${lang === 'en' ? 'Containerized Micro-Topology (Docker Compose)' : lang === 'de' ? 'Containerisierte Mikro-Topologie (Docker Compose)' : lang === 'ar' ? 'البنية التحتية المحتواة بـ Docker Compose' : 'Architecture Conteneurisée & Réseau Isolé (Docker Compose)'}</h4>
+                <p style="font-size: 0.88rem; line-height: 1.6; color: #cbd5e1; margin-bottom: 14px;">
+                    ${lang === 'en' 
+                        ? 'Orchestrated via Docker Compose with 3 isolated services on private bridge network <code>assala_network</code>. In production, MySQL and Spring Boot expose zero host ports (<code>ports: !reset []</code>), routing solely through public Nginx port 80.'
+                        : lang === 'de'
+                        ? 'Orchestriert über Docker Compose mit 3 isolierten Diensten im Bridge-Netzwerk <code>assala_network</code>. In Produktion sind MySQL und Spring Boot vollständig nach außen abgeschirmt (<code>ports: !reset []</code>).'
+                        : lang === 'ar'
+                        ? 'تشغيل منسق عبر Docker Compose بثلاث حاويات مستقلة على شبكة <code>assala_network</code> الداخلية. في بيئة الإنتاج، يتم عزل قاعدة البيانات وخادم Spring Boot تماماً بدون فتح منافذ خارجية، والاعتماد فقط على المنفذ 80 لخادم Nginx.'
+                        : 'Déployé sous Docker Compose avec 3 conteneurs distincts sur le réseau pont privé <code>assala_network</code>. En production, la base MySQL et le backend Spring Boot n\'exposent aucun port sur la machine hôte (<code>ports: !reset []</code>), tout le trafic transitant exclusivement par le port 80 de Nginx.'}
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 14px;">
+                    <div style="background: rgba(255,255,255,0.04); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+                        <div style="color: var(--accent); font-weight: 700; font-size: 0.82rem; margin-bottom: 4px;">Nginx 1.25 (Frontend)</div>
+                        <div style="font-size: 0.76rem; color: #94a3b8;">Port public :80 · Proxy-Pass <code>/assalaiskane/</code></div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.04); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+                        <div style="color: #A78BFA; font-weight: 700; font-size: 0.82rem; margin-bottom: 4px;">Spring Boot 3 (Java 17)</div>
+                        <div style="font-size: 0.76rem; color: #94a3b8;">Port interne :9092 · REST &amp; RBAC Security</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.04); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+                        <div style="color: #3ddc84; font-weight: 700; font-size: 0.82rem; margin-bottom: 4px;">MySQL 5.7 (Persistance)</div>
+                        <div style="font-size: 0.76rem; color: #94a3b8;">Volume <code>db_data_final</code> · Healthcheck actif</div>
+                    </div>
+                </div>
+                <div style="font-size: 0.83rem; color: #94a3b8; background: rgba(57, 213, 255, 0.05); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 6px;">
+                    <strong>${lang === 'en' ? 'Core Advantage:' : lang === 'de' ? 'Hauptvorteil:' : lang === 'ar' ? 'الميزة الهندسية:' : 'Avantage Ingénierie :'}</strong> ${lang === 'en' 
+                        ? 'Relative URL routing enables on-site workers to open the application from any mobile, tablet, or laptop on the Wi-Fi subnet with zero manual configuration.'
+                        : lang === 'de'
+                        ? 'Dank relativer URLs ist die Anwendung auf Baustellen von jedem Smartphone oder Tablet im lokalen Wi-Fi ohne jegliche manuelle Konfiguration sofort erreichbar.'
+                        : lang === 'ar'
+                        ? 'بفضل الروابط النسبية، يعمل التطبيق فوراً وبدون أي إعدادات إضافية من أي هاتف ذكي أو لوحة إلكترونية متصلة بشبكة الورش.'
+                        : 'L\'utilisation d\'URLs relatives permet à tout smartphone ou tablette connecté au Wi-Fi du chantier d\'accéder à l\'ERP sans aucune manipulation d\'adresse IP.'}
+                </div>
+            </div>
+        `;
+    } else if (projectKey === 'sepa') {
+        modalArchContainer.innerHTML = `
+            <div class="modal-arch-box">
+                <h4 style="color: var(--accent); margin-bottom: 8px;"><i class="fa-solid fa-layer-group"></i> ${lang === 'en' ? 'Layered C#/.NET 9 & ISO 20022 Engine' : 'Architecture .NET 9 en Couches & Moteur ISO 20022'}</h4>
+                <p style="font-size: 0.88rem; line-height: 1.6; color: #cbd5e1; margin-bottom: 14px;">
+                    ${lang === 'en'
+                        ? 'Clean Architecture separating Blazor Server presentation from transactional domain services and EF Core persistence. SEPA payment batches (SCT/SDD) undergo automated XSD schema verification before bank remittance generation.'
+                        : 'Architecture Clean séparant la couche de présentation Blazor Server des services métier transactionnels et de l\'accès aux données EF Core. Chaque lot de paiement SEPA (SCT/SDD) fait l\'objet d\'une validation stricte par schéma XSD officiel avant export bancaire.'}
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 14px;">
+                    <div style="background: rgba(255,255,255,0.04); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+                        <div style="color: var(--accent); font-weight: 700; font-size: 0.82rem; margin-bottom: 4px;">Presentation (.NET 9)</div>
+                        <div style="font-size: 0.76rem; color: #94a3b8;">Blazor Server · Temps réel · RBAC</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.04); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+                        <div style="color: #A78BFA; font-weight: 700; font-size: 0.82rem; margin-bottom: 4px;">Domain &amp; XML Core</div>
+                        <div style="font-size: 0.76rem; color: #94a3b8;">Validation XSD · pain.001 / pain.008</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.04); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+                        <div style="color: #3ddc84; font-weight: 700; font-size: 0.82rem; margin-bottom: 4px;">Data Access Layer</div>
+                        <div style="font-size: 0.76rem; color: #94a3b8;">SQL Server · EF Core · Transactions ACID</div>
+                    </div>
+                </div>
+            </div>
+        `;
+    } else {
+        modalArchContainer.innerHTML = `
+            <div class="modal-arch-box">
+                <h4 style="color: var(--accent); margin-bottom: 8px;"><i class="fa-solid fa-mobile-screen"></i> Architecture Offline-First (.NET MAUI &amp; SQLite)</h4>
+                <p style="font-size: 0.88rem; line-height: 1.6; color: #cbd5e1;">
+                    Persistance locale SQLite garantissant l'accès complet aux procédures d'astreinte hors réseau. Synchronisation différentielle bi-directionnelle avec l'API REST CodeIgniter 4 dès détection de connectivité.
+                </p>
+            </div>
+        `;
+    }
+}
+
+function renderModalWorkflow(projectKey, lang) {
+    if (!modalWorkflowSteps) return;
+    if (projectKey === 'assala-erp') {
+        const steps = [
+            { num: '01', role: 'Chef de Chantier (CC)', desc: 'Expression des besoins quotidiens en matériaux (sable, ciment) et engins de chantier.', api: 'POST /AddBesoin · GET /getBesoinsCC' },
+            { num: '02', role: 'Responsable Projet (RP)', desc: 'Contrôle de conformité de la demande vis-à-vis du planning contractuel et de l\'ordre de service.', api: 'GET /getBesoinsRP' },
+            { num: '03', role: 'Responsable Technique (RT)', desc: 'Vérification de la disponibilité dans les stocks centraux et affectation du parc matériel.', api: 'GET /getBesoinsRT · POST /addMateriel' },
+            { num: '04', role: 'Responsable Comptabilité (RC)', desc: 'Arbitrage financier, validation sur le budget du marché ou rejet motivé avec motif.', api: 'POST /validateBesoin · POST /deleteBesoin' },
+            { num: '05', role: 'Service Technique (ST)', desc: 'Traitement de la commande fournisseur agréé et coordination logistique.', api: 'GET /getBesoinsST' },
+            { num: '06', role: 'Responsable Marchandise (RM)', desc: 'Réception physique des livraisons, enregistrement en stock et expédition sur site.', api: 'GET /getBesoinsRM' }
+        ];
+        modalWorkflowSteps.innerHTML = steps.map(s => `
+            <div class="workflow-card">
+                <div class="workflow-card-head">
+                    <span class="workflow-step-num">Étape ${s.num}</span>
+                    <span class="workflow-badge-api">${s.api}</span>
+                </div>
+                <div class="workflow-role-title">${s.role}</div>
+                <div class="workflow-desc">${s.desc}</div>
+            </div>
+        `).join('');
+    } else if (projectKey === 'sepa') {
+        const steps = [
+            { num: '01', role: 'Import des Données Comptables', desc: 'Parsing automatisé des fichiers Excel (Tiers, Comptes, IBAN/BIC, Mandats actifs).', api: 'ExcelDataReader · Mapping EF Core' },
+            { num: '02', role: 'Contrôle & Règles de Cohérence', desc: 'Validation syntaxique et algorithmique des identifiants bancaires et statut des mandats.', api: 'Validation IBAN/BIC · Modèle Domaine' },
+            { num: '03', role: 'Génération & Validation XSD', desc: 'Génération des lots XML pain.001 (SCT) ou pain.008 (SDD) et validation stricte par schéma XSD officiel.', api: 'XmlSchemaSet · ISO 20022' },
+            { num: '04', role: 'Piste d\'Audit & Remise Bancaire', desc: 'Clôture transactionnelle ACID du lot, archivage sécurisé et mise à disposition pour la banque.', api: 'Transactions ACID · Logs d\'audit' }
+        ];
+        modalWorkflowSteps.innerHTML = steps.map(s => `
+            <div class="workflow-card">
+                <div class="workflow-card-head">
+                    <span class="workflow-step-num">Étape ${s.num}</span>
+                    <span class="workflow-badge-api">${s.api}</span>
+                </div>
+                <div class="workflow-role-title">${s.role}</div>
+                <div class="workflow-desc">${s.desc}</div>
+            </div>
+        `).join('');
+    } else {
+        const steps = [
+            { num: '01', role: 'Authentification & Token JWT', desc: 'Connexion sécurisée de l\'agent d\'astreinte et chiffrement du token.', api: 'POST /api/login · JWT Auth' },
+            { num: '02', role: 'Mise en Cache Hors-Ligne', desc: 'Stockage des procédures d\'urgence et de l\'annuaire des agents en base SQLite locale.', api: 'SQLite-net · Persistance locale' },
+            { num: '03', role: 'Intervention Terrain Autonome', desc: 'Consultation et validation des fiches sans aucune dépendance réseau.', api: 'UI .NET MAUI Responsive' },
+            { num: '04', role: 'Synchronisation Automatique', desc: 'Envoi des comptes-rendus d\'intervention dès rétablissement de la connectivité.', api: 'NetworkAccess Listener · Sync Engine' }
+        ];
+        modalWorkflowSteps.innerHTML = steps.map(s => `
+            <div class="workflow-card">
+                <div class="workflow-card-head">
+                    <span class="workflow-step-num">Étape ${s.num}</span>
+                    <span class="workflow-badge-api">${s.api}</span>
+                </div>
+                <div class="workflow-role-title">${s.role}</div>
+                <div class="workflow-desc">${s.desc}</div>
+            </div>
+        `).join('');
+    }
+}
+
+function renderModalCode(projectKey, lang) {
+    if (!modalCodeViewer) return;
+    if (projectKey === 'assala-erp') {
+        const snippets = [
+            {
+                name: 'ProjetController.java',
+                lang: 'java',
+                code: `// Validation hiérarchique du Responsable Comptabilité (RC)
+@PostMapping("/validateBesoin")
+public ResponseEntity<String> validateBesoin(
+        @RequestParam String id_resp,
+        @RequestParam String id_besoin) {
+    // Met à jour le besoin et notifie le Service Technique pour commande
+    service.validateBesoin(id_resp, id_besoin);
+    return ResponseEntity.ok("Besoin " + id_besoin + " validé avec succès.");
+}
+
+// Enregistrement d'une nouvelle demande émise par le Chef de Chantier
+@PostMapping("/AddBesoin")
+public void addBesoin(
+        @RequestParam String nom,
+        @RequestParam String date_demande,
+        @RequestParam String qte,
+        @RequestParam String unite,
+        @RequestParam String valide_par,
+        @RequestParam String id_projet) throws ParseException {
+    service.addBesoin(nom, new SimpleDateFormat("yyyy-MM-dd").parse(date_demande), 
+                      qte, unite, valide_par, id_projet);
+}`
+            },
+            {
+                name: 'docker-compose.prod.yml',
+                lang: 'yaml',
+                code: `# Topologie de production isolée — Aucun port base de données exposé
+services:
+  frontend:
+    build:
+      target: final
+      args:
+        REACT_APP_API_URL: /assalaiskane/
+    ports:
+      - "80:80" # Seul port exposé publiquement
+    command: ["nginx", "-g", "daemon off;"]
+
+  backend:
+    build: { target: final }
+    ports: !reset [] # Ports réinitialisés : accessible uniquement sur le réseau Docker interne
+    command: ["java", "-jar", "app.jar"]
+
+  db:
+    image: mysql:5.7
+    ports: !reset [] # Base isolée, inaccessible depuis l'extérieur
+    volumes:
+      - db_data_final:/var/lib/mysql`
+            },
+            {
+                name: 'api.js (Axios)',
+                lang: 'javascript',
+                code: `import axios from 'axios';
+
+// Utilisation d'une URL relative en production :
+// Permet à l'application de fonctionner sans aucune reconfiguration
+// depuis n'importe quel smartphone ou PC connecté au réseau du chantier
+const api = axios.create({
+  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:9092/assalaiskane/',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+export default api;`
+            }
+        ];
+        renderCodeTabs(snippets);
+    } else if (projectKey === 'sepa') {
+        const snippets = [
+            {
+                name: 'SepaXmlValidationService.cs',
+                lang: 'csharp',
+                code: `public class SepaXmlValidationService : ISepaXmlValidationService
+{
+    private readonly XmlSchemaSet _schemas = new();
+
+    public SepaXmlValidationService(IWebHostEnvironment env)
+    {
+        // Chargement du schéma officiel ISO 20022 (pain.001.001.03)
+        var xsdPath = Path.Combine(env.ContentRootPath, "Schemas", "pain.001.001.03.xsd");
+        _schemas.Add("urn:iso:std:iso:20022:tech:xsd:pain.001.001.03", xsdPath);
+    }
+
+    public ValidationResult ValidateXml(XDocument doc)
+    {
+        var errors = new List<string>();
+        doc.Validate(_schemas, (sender, e) => errors.Add($"[{e.Severity}] {e.Message}"));
+        return new ValidationResult { IsValid = errors.Count == 0, Errors = errors };
+    }
+}`
+            },
+            {
+                name: 'PaymentBatchService.cs',
+                lang: 'csharp',
+                code: `public async Task<BatchExecutionResult> ProcessPaymentBatchAsync(int batchId, CancellationToken ct)
+{
+    await using var tx = await _context.Database.BeginTransactionAsync(IsolationLevel.ReadCommitted, ct);
+    try
+    {
+        var batch = await _context.PaymentBatches
+            .Include(b => b.Transactions)
+            .FirstOrDefaultAsync(b => b.Id == batchId, ct);
+
+        ValidateBatchIntegrity(batch); // Vérification IBAN, BIC et Mandats
+        batch.Status = BatchStatus.Validated;
+        
+        await _context.SaveChangesAsync(ct);
+        await tx.CommitAsync(ct);
+        return BatchExecutionResult.Success(batch.Id);
+    }
+    catch (Exception ex)
+    {
+        await tx.RollbackAsync(ct);
+        _logger.LogError(ex, "Erreur lors de la validation du lot SEPA {BatchId}", batchId);
+        throw;
+    }
+}`
+            }
+        ];
+        renderCodeTabs(snippets);
+    } else {
+        const snippets = [
+            {
+                name: 'SyncService.cs',
+                lang: 'csharp',
+                code: `public async Task SynchronizeProceduresAsync()
+{
+    if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
+        return; // Mode autonome : travail exclusif sur le cache local SQLite
+
+    var remoteProcedures = await _apiClient.GetProceduresAsync();
+    await _localDb.RunInTransactionAsync(conn =>
+    {
+        conn.DeleteAll<LocalProcedure>();
+        conn.InsertAll(remoteProcedures.Select(p => p.ToLocalEntity()));
+    });
+}`
+            }
+        ];
+        renderCodeTabs(snippets);
+    }
+}
+
 function openCaseModal(projectKey) {
     const entry = CASE_STUDIES[projectKey];
     const data = entry && (entry[currentLang] || entry.fr);
     if (!data || !caseModalOverlay) return;
+
+    // Reset to overview tab
+    modalTabBtns.forEach(b => b.classList.toggle('active', b.getAttribute('data-tab') === 'overview'));
+    modalTabPanes.forEach(p => p.classList.toggle('active', p.id === 'modalPaneOverview'));
 
     caseModalTag.textContent = data.tag;
     caseModalTitle.textContent = data.title;
@@ -1201,6 +1744,10 @@ function openCaseModal(projectKey) {
 
     caseModalBullets.innerHTML = data.bullets.map(b => `<li>${b}</li>`).join('');
     caseModalTechs.innerHTML = data.techs.map(t => `<span class="case-tech-pill">${t}</span>`).join('');
+
+    renderModalArch(projectKey, currentLang);
+    renderModalWorkflow(projectKey, currentLang);
+    renderModalCode(projectKey, currentLang);
 
     if (caseModalArchBtn) {
         caseModalArchBtn.style.display = data.showArchLink ? 'inline-block' : 'none';

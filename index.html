@@ -389,21 +389,33 @@
         <div class="container">
             <span class="eyebrow" data-i18n="arch_eyebrow">04 — Ingénierie &amp; Conception</span>
             <h2 class="section-title" data-i18n="arch_title">Architecture Logicielle</h2>
-            <p class="architecture-intro" data-i18n="arch_intro">Vue pédagogique et anonymisée d'une architecture <strong>.NET / ISO 20022</strong> en couches. Cliquez sur chaque couche ci-dessous pour explorer les choix techniques de conception.</p>
+            <p class="architecture-intro" id="archIntroText" data-i18n="arch_intro">Vue pédagogique et anonymisée d'une architecture <strong>.NET / ISO 20022</strong> en couches. Cliquez sur chaque couche ci-dessous pour explorer les choix techniques de conception.</p>
+
+            <!-- Project Blueprint Switcher -->
+            <div class="arch-project-tabs" role="tablist" aria-label="Sélection du projet d'ingénierie">
+                <button type="button" class="arch-proj-tab active" data-arch-proj="sepa">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span data-i18n="arch_proj_sepa">SEPA Pro · .NET 9 &amp; ISO 20022</span>
+                </button>
+                <button type="button" class="arch-proj-tab" data-arch-proj="assala">
+                    <i class="fa-solid fa-cubes-stacked"></i>
+                    <span data-i18n="arch_proj_assala">Assala Iskane ERP · Spring Boot 3 &amp; Docker</span>
+                </button>
+            </div>
 
             <!-- Interactive Layer Selector -->
             <div class="arch-layer-tabs" role="tablist" aria-label="Couches d'architecture">
-                <button type="button" class="arch-tab active" data-layer="presentation">
-                    <span>01</span> <strong data-i18n="arch_tab_1">Presentation Layer</strong>
+                <button type="button" class="arch-tab active" data-layer="layer1">
+                    <span>01</span> <strong id="archTabLabel1" data-i18n="arch_tab_1">Presentation Layer</strong>
                 </button>
-                <button type="button" class="arch-tab" data-layer="business">
-                    <span>02</span> <strong data-i18n="arch_tab_2">Business Logic Layer</strong>
+                <button type="button" class="arch-tab" data-layer="layer2">
+                    <span>02</span> <strong id="archTabLabel2" data-i18n="arch_tab_2">Business Logic Layer</strong>
                 </button>
-                <button type="button" class="arch-tab" data-layer="data">
-                    <span>03</span> <strong data-i18n="arch_tab_3">Data Access Layer</strong>
+                <button type="button" class="arch-tab" data-layer="layer3">
+                    <span>03</span> <strong id="archTabLabel3" data-i18n="arch_tab_3">Data Access Layer</strong>
                 </button>
-                <button type="button" class="arch-tab" data-layer="integration">
-                    <span>04</span> <strong data-i18n="arch_tab_4">Integrations &amp; CI/CD</strong>
+                <button type="button" class="arch-tab" data-layer="layer4">
+                    <span>04</span> <strong id="archTabLabel4" data-i18n="arch_tab_4">Integrations &amp; CI/CD</strong>
                 </button>
             </div>
 
@@ -417,10 +429,11 @@
                     <span class="term-dot red"></span>
                     <span class="term-dot yellow"></span>
                     <span class="term-dot green"></span>
-                    <span class="terminal-title">architecture-blueprint@dotnet-sepa: ~</span>
+                    <span class="terminal-title" id="archTerminalTitle">architecture-blueprint@dotnet-sepa: ~</span>
                 </div>
                 <div class="arch-body">
-                    <svg viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schéma pédagogique d'architecture en couches : Présentation, Logique Métier, Accès aux Données et Intégrations.">
+                    <!-- Blueprint 1: SEPA Pro (.NET 9 / ISO 20022) -->
+                    <svg id="archSvgSepa" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schéma pédagogique d'architecture SEPA Pro en couches.">
                         <defs>
                             <marker id="archArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                                 <path d="M0,0 L10,5 L0,10 z" fill="#39D5FF"/>
@@ -510,6 +523,122 @@
 
                         <rect class="arch-box arch-box-ext" x="640" y="534" width="270" height="42" rx="8"/>
                         <text class="arch-lbl arch-lbl-sm" x="775" y="560" text-anchor="middle">3. PACKAGING &amp; RELEASE</text>
+                    </svg>
+
+                    <!-- Blueprint 2: Assala Iskane ERP (Spring Boot 3 / React / Docker Topology & 6-Level Workflow) -->
+                    <svg id="archSvgAssala" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schéma d'architecture Assala Iskane ERP : Docker Multi-Containers et Workflow 6 Niveaux." style="display: none;">
+                        <defs>
+                            <marker id="archArrowAssala" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                                <path d="M0,0 L10,5 L0,10 z" fill="#39D5FF"/>
+                            </marker>
+                            <marker id="archArrowVioletAssala" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                                <path d="M0,0 L10,5 L0,10 z" fill="#A78BFA"/>
+                            </marker>
+                        </defs>
+
+                        <line x1="480" y1="66" x2="480" y2="92" class="arch-edge arch-edge-main" marker-end="url(#archArrowAssala)"/>
+                        <line x1="480" y1="164" x2="480" y2="186" class="arch-edge arch-edge-main" marker-end="url(#archArrowAssala)"/>
+                        <line x1="540" y1="315" x2="586" y2="315" class="arch-edge arch-edge-alt" marker-end="url(#archArrowVioletAssala)"/>
+
+                        <!-- Client Node -->
+                        <rect class="arch-box arch-box-ext" x="280" y="16" width="400" height="50" rx="8"/>
+                        <text class="arch-tag" x="480" y="34" text-anchor="middle">CLIENTS MULTI-DEVICES (SMARTPHONES · TABLETTES · PC)</text>
+                        <text class="arch-sub" x="480" y="52" text-anchor="middle">Sous-réseau Wi-Fi Chantier &amp; Siège · Port Public HTTP 80</text>
+
+                        <!-- 01 Gateway / Nginx Reverse Proxy Container -->
+                        <rect class="arch-box arch-box-main" x="160" y="94" width="640" height="70" rx="8"/>
+                        <text class="arch-tag" x="480" y="112" text-anchor="middle">01 — GATEWAY &amp; REVERSE PROXY · CONTAINER : assala_frontend</text>
+                        <rect class="arch-chip" x="180" y="122" width="285" height="32" rx="6"/>
+                        <text class="arch-chip-lbl" x="322" y="143" text-anchor="middle">REACT 18 SPA (Build statique Nginx)</text>
+                        <rect class="arch-chip" x="495" y="122" width="285" height="32" rx="6"/>
+                        <text class="arch-chip-lbl" x="637" y="143" text-anchor="middle">PROXY PASS /assalaiskane/ → :9092</text>
+
+                        <!-- Docker Isolated Network -->
+                        <rect class="arch-group" x="40" y="188" width="880" height="236" rx="10"/>
+                        <text class="arch-tag" x="480" y="208" text-anchor="middle">RÉSEAU DOCKER ISOLÉ (assala_network · Bridge · Ports privés non exposés)</text>
+
+                        <!-- Spring Boot Container -->
+                        <rect class="arch-box arch-box-main" x="60" y="222" width="480" height="186" rx="8"/>
+                        <text class="arch-tag" x="300" y="242" text-anchor="middle">02 — API REST · SPRING BOOT 3 (Java 17 · Port 9092)</text>
+                        <rect class="arch-chip" x="80" y="258" width="210" height="64" rx="7"/>
+                        <text class="arch-chip-lbl" x="185" y="284" text-anchor="middle">CONTRÔLE D'ACCÈS RBAC</text>
+                        <text class="arch-chip-sub" x="185" y="302" text-anchor="middle">Cloisonnement rôles &amp; chantiers</text>
+                        <rect class="arch-chip arch-chip-alt" x="310" y="258" width="210" height="64" rx="7"/>
+                        <text class="arch-chip-lbl" x="415" y="284" text-anchor="middle">CIRCUIT 6 NIVEAUX</text>
+                        <text class="arch-chip-sub" x="415" y="302" text-anchor="middle">Validation hiérarchique</text>
+                        <rect class="arch-chip" x="80" y="332" width="210" height="62" rx="7"/>
+                        <text class="arch-chip-lbl" x="185" y="357" text-anchor="middle">GESTION DES RESSOURCES</text>
+                        <text class="arch-chip-sub" x="185" y="375" text-anchor="middle">Matériaux, engins &amp; pointage</text>
+                        <rect class="arch-chip" x="310" y="332" width="210" height="62" rx="7"/>
+                        <text class="arch-chip-lbl" x="415" y="357" text-anchor="middle">GED &amp; UPLOADS BLOB</text>
+                        <text class="arch-chip-sub" x="415" y="375" text-anchor="middle">Plans &amp; PV chantiers (≤ 50 Mo)</text>
+
+                        <!-- MySQL 5.7 Container -->
+                        <rect class="arch-box arch-box-alt" x="590" y="222" width="310" height="186" rx="8"/>
+                        <text class="arch-tag arch-tag-alt" x="745" y="242" text-anchor="middle">03 — PERSISTANCE · MYSQL 5.7</text>
+                        <rect class="arch-chip arch-chip-alt" x="610" y="258" width="270" height="42" rx="6"/>
+                        <text class="arch-chip-lbl" x="745" y="284" text-anchor="middle">Volume persistant db_data_final</text>
+                        <rect class="arch-chip arch-chip-alt" x="610" y="310" width="270" height="42" rx="6"/>
+                        <text class="arch-chip-lbl" x="745" y="336" text-anchor="middle">Healthcheck daemon automatique</text>
+                        <rect class="arch-chip arch-chip-alt" x="610" y="362" width="270" height="34" rx="6"/>
+                        <text class="arch-chip-lbl" x="745" y="384" text-anchor="middle">Zero port public exposé (Shielded)</text>
+
+                        <!-- Workflow Pipeline Bar -->
+                        <line x1="30" y1="440" x2="930" y2="440" class="arch-divider"/>
+                        <text class="arch-tag" x="480" y="460" text-anchor="middle">04 — WORKFLOW MÉTIER DES BESOINS (CHAÎNE D'APPROBATION EN 6 ÉTAPES)</text>
+
+                        <!-- 6 Step Nodes -->
+                        <!-- 1. CC -->
+                        <rect class="arch-box arch-box-main" x="46" y="476" width="130" height="96" rx="8"/>
+                        <text class="arch-tag" x="111" y="496" text-anchor="middle">1. CHEF CHANTIER</text>
+                        <text class="arch-lbl-sm arch-lbl" x="111" y="516" text-anchor="middle">Émission besoin</text>
+                        <text class="arch-sub" x="111" y="534" text-anchor="middle">Qte / Unité</text>
+                        <text class="arch-tag" x="111" y="556" text-anchor="middle">/addBesoin</text>
+
+                        <line x1="176" y1="524" x2="194" y2="524" class="arch-edge arch-edge-main" marker-end="url(#archArrowAssala)"/>
+
+                        <!-- 2. RP -->
+                        <rect class="arch-box arch-box-main" x="196" y="476" width="130" height="96" rx="8"/>
+                        <text class="arch-tag" x="261" y="496" text-anchor="middle">2. RESP. PROJET</text>
+                        <text class="arch-lbl-sm arch-lbl" x="261" y="516" text-anchor="middle">Contrôle planning</text>
+                        <text class="arch-sub" x="261" y="534" text-anchor="middle">Ordre service</text>
+                        <text class="arch-tag" x="261" y="556" text-anchor="middle">/getBesoinsRP</text>
+
+                        <line x1="326" y1="524" x2="344" y2="524" class="arch-edge arch-edge-main" marker-end="url(#archArrowAssala)"/>
+
+                        <!-- 3. RT -->
+                        <rect class="arch-box arch-box-main" x="346" y="476" width="130" height="96" rx="8"/>
+                        <text class="arch-tag" x="411" y="496" text-anchor="middle">3. RESP. TECH</text>
+                        <text class="arch-lbl-sm arch-lbl" x="411" y="516" text-anchor="middle">Stocks centraux</text>
+                        <text class="arch-sub" x="411" y="534" text-anchor="middle">Parc matériel</text>
+                        <text class="arch-tag" x="411" y="556" text-anchor="middle">/getBesoinsRT</text>
+
+                        <line x1="476" y1="524" x2="494" y2="524" class="arch-edge arch-edge-main" marker-end="url(#archArrowAssala)"/>
+
+                        <!-- 4. RC -->
+                        <rect class="arch-box arch-box-alt" x="496" y="476" width="130" height="96" rx="8"/>
+                        <text class="arch-tag arch-tag-alt" x="561" y="496" text-anchor="middle">4. COMPTABILITÉ</text>
+                        <text class="arch-lbl-sm arch-lbl" x="561" y="516" text-anchor="middle">Arbitrage budget</text>
+                        <text class="arch-sub" x="561" y="534" text-anchor="middle">Validation achat</text>
+                        <text class="arch-tag arch-tag-alt" x="561" y="556" text-anchor="middle">/validateBesoin</text>
+
+                        <line x1="626" y1="524" x2="644" y2="524" class="arch-edge arch-edge-alt" marker-end="url(#archArrowVioletAssala)"/>
+
+                        <!-- 5. ST -->
+                        <rect class="arch-box arch-box-main" x="646" y="476" width="130" height="96" rx="8"/>
+                        <text class="arch-tag" x="711" y="496" text-anchor="middle">5. SERVICE TECH</text>
+                        <text class="arch-lbl-sm arch-lbl" x="711" y="516" text-anchor="middle">Traitement achat</text>
+                        <text class="arch-sub" x="711" y="534" text-anchor="middle">Bon commande</text>
+                        <text class="arch-tag" x="711" y="556" text-anchor="middle">/getBesoinsST</text>
+
+                        <line x1="776" y1="524" x2="794" y2="524" class="arch-edge arch-edge-main" marker-end="url(#archArrowAssala)"/>
+
+                        <!-- 6. RM -->
+                        <rect class="arch-box arch-box-main" x="796" y="476" width="130" height="96" rx="8"/>
+                        <text class="arch-tag" x="861" y="496" text-anchor="middle">6. MARCHANDISE</text>
+                        <text class="arch-lbl-sm arch-lbl" x="861" y="516" text-anchor="middle">Expédition stock</text>
+                        <text class="arch-sub" x="861" y="534" text-anchor="middle">Livraison site</text>
+                        <text class="arch-tag" x="861" y="556" text-anchor="middle">/getBesoinsRM</text>
                     </svg>
                 </div>
             </div>
@@ -699,7 +828,7 @@
         </div>
     </footer>
 
-    <!-- Interactive Project Case Study Modal -->
+    <!-- Interactive Project Case Study Modal (Multi-Tab Deep Dive) -->
     <div class="case-modal-overlay" id="caseModalOverlay" aria-hidden="true">
         <div class="case-modal" role="dialog" aria-modal="true" aria-labelledby="caseModalTitle">
             <button type="button" class="case-modal-close" id="caseModalClose" aria-label="Fermer">
@@ -709,20 +838,60 @@
             <h3 id="caseModalTitle">SEPA Pro</h3>
             <p class="case-modal-sub" id="caseModalSub"></p>
 
-            <div class="case-modal-grid">
-                <div class="case-modal-box">
-                    <h4><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="modal_prob">Problématique métier</span></h4>
-                    <p id="caseModalChallenge"></p>
+            <!-- Modal Nav Tabs -->
+            <div class="modal-tab-nav" id="modalTabNav" role="tablist" aria-label="Sections de l'étude de cas">
+                <button type="button" class="modal-tab-btn active" data-tab="overview">
+                    <i class="fa-solid fa-circle-info"></i> <span data-i18n="modal_tab_overview">Aperçu</span>
+                </button>
+                <button type="button" class="modal-tab-btn" data-tab="arch">
+                    <i class="fa-solid fa-diagram-project"></i> <span data-i18n="modal_tab_arch">Architecture &amp; Docker</span>
+                </button>
+                <button type="button" class="modal-tab-btn" data-tab="workflow">
+                    <i class="fa-solid fa-timeline"></i> <span data-i18n="modal_tab_workflow">Circuit 6 Niveaux</span>
+                </button>
+                <button type="button" class="modal-tab-btn" data-tab="code">
+                    <i class="fa-solid fa-code"></i> <span data-i18n="modal_tab_code">Code &amp; API</span>
+                </button>
+            </div>
+
+            <!-- Tab 1: Overview -->
+            <div class="modal-tab-pane active" id="modalPaneOverview">
+                <div class="case-modal-grid">
+                    <div class="case-modal-box">
+                        <h4><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="modal_prob">Problématique métier</span></h4>
+                        <p id="caseModalChallenge"></p>
+                    </div>
+                    <div class="case-modal-box">
+                        <h4><i class="fa-solid fa-user-gear"></i> <span data-i18n="modal_role">Mon rôle &amp; Contexte</span></h4>
+                        <p id="caseModalSolution"></p>
+                    </div>
                 </div>
-                <div class="case-modal-box">
-                    <h4><i class="fa-solid fa-user-gear"></i> <span data-i18n="modal_role">Mon rôle &amp; Contexte</span></h4>
-                    <p id="caseModalSolution"></p>
+
+                <div class="case-modal-contrib">
+                    <h4><i class="fa-solid fa-code-branch"></i> <span data-i18n="modal_contrib">Solution technique &amp; Réalisations</span></h4>
+                    <ul id="caseModalBullets"></ul>
                 </div>
             </div>
 
-            <div class="case-modal-contrib">
-                <h4><i class="fa-solid fa-code-branch"></i> <span data-i18n="modal_contrib">Solution technique &amp; Réalisations</span></h4>
-                <ul id="caseModalBullets"></ul>
+            <!-- Tab 2: Architecture & Topology -->
+            <div class="modal-tab-pane" id="modalPaneArch">
+                <div class="modal-arch-container" id="modalArchContainer">
+                    <!-- Dynamic architectural breakdown rendered by script.js -->
+                </div>
+            </div>
+
+            <!-- Tab 3: Workflow / Approval Pipeline -->
+            <div class="modal-tab-pane" id="modalPaneWorkflow">
+                <div class="workflow-steps-grid" id="modalWorkflowSteps">
+                    <!-- 6 Interactive Step Cards rendered by script.js -->
+                </div>
+            </div>
+
+            <!-- Tab 4: Code & API Snippets -->
+            <div class="modal-tab-pane" id="modalPaneCode">
+                <div class="modal-code-viewer" id="modalCodeViewer">
+                    <!-- Clean syntax-highlighted snippets rendered by script.js -->
+                </div>
             </div>
 
             <div class="case-modal-footer">
