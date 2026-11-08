@@ -43,11 +43,17 @@
                 <li><a href="#home">Accueil</a></li>
                 <li><a href="#skills">Compétences</a></li>
                 <li><a href="#experience">Expérience</a></li>
-                <li><a href="#certifications">Certs</a></li>
+                <li><a href="#education">Formation</a></li>
                 <li><a href="#portfolio">Projets</a></li>
+                <li><a href="#architecture">Architecture</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="navbar-actions">
+                <button type="button" class="cmd-trigger" id="cmdTrigger" aria-label="Ouvrir la palette de commandes">
+                    <i class="fa-solid fa-terminal"></i>
+                    <span>Système</span>
+                    <kbd>⌘K</kbd>
+                </button>
                 <a href="#contact" class="btn-talk">Contact</a>
                 <button type="button" class="theme-toggle" aria-label="Changer de thème">
                     <i class="fa-solid fa-moon"></i>
@@ -103,18 +109,38 @@
         </div>
     </section>
 
-    <!-- Terminal Widget -->
-    <section class="terminal-section">
+    <!-- Terminal Widget (Interactive Computer System Shell) -->
+    <section class="terminal-section" id="system-terminal">
         <div class="container">
+            <div class="sys-telemetry-bar">
+                <div class="sys-telemetry-item"><span class="sys-pulse"></span> SYS.KERNEL: <strong>ONLINE</strong></div>
+                <div class="sys-telemetry-item"><i class="fa-solid fa-microchip"></i> ARCH: <strong>FULLSTACK_DEVOPS_x64</strong></div>
+                <div class="sys-telemetry-item"><i class="fa-solid fa-shield-halved"></i> ISO_20022 / JWT / DOCKER</div>
+                <div class="sys-telemetry-item sys-clock-wrap"><i class="fa-regular fa-clock"></i> UPTIME: <strong id="sysUptime">99.98%</strong></div>
+            </div>
             <div class="terminal-window">
                 <div class="terminal-header">
                     <span class="term-dot red"></span>
                     <span class="term-dot yellow"></span>
                     <span class="term-dot green"></span>
-                    <span class="terminal-title">youssef@portfolio: ~</span>
+                    <span class="terminal-title">youssef@portfolio: ~ (interactive zsh)</span>
+                    <span class="terminal-badge">INTERACTIF</span>
                 </div>
-                <div class="terminal-body">
-                    <pre id="terminal-output" aria-hidden="true"></pre>
+                <div class="terminal-body" id="terminalBody">
+                    <pre id="terminal-output" aria-live="polite"></pre>
+                    <div class="terminal-input-row" id="terminalInputRow">
+                        <span class="prompt">➜</span> <span class="path">~</span>
+                        <input type="text" id="terminalInput" class="terminal-input" placeholder="Tapez 'help', 'skills', 'sepa', 'story', 'cv' ou cliquez ci-dessous..." autocomplete="off" spellcheck="false" aria-label="Commande terminal">
+                    </div>
+                </div>
+                <div class="terminal-QuickBar">
+                    <span class="quick-label">Exécuter :</span>
+                    <button type="button" class="term-chip" data-cmd="help">help</button>
+                    <button type="button" class="term-chip" data-cmd="skills">skills</button>
+                    <button type="button" class="term-chip" data-cmd="sepa">sepa-arch</button>
+                    <button type="button" class="term-chip" data-cmd="story">formation</button>
+                    <button type="button" class="term-chip" data-cmd="sudo hire">sudo hire</button>
+                    <button type="button" class="term-chip" data-cmd="clear">clear</button>
                 </div>
             </div>
         </div>
@@ -217,15 +243,106 @@
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="section">
+    <!-- Education Section — Curved Glowing Trajectory & Technical Story -->
+    <section id="education" class="section story-section">
         <div class="container">
-            <span class="eyebrow">03 — Bagage académique</span>
-            <h2 class="section-title">Formation</h2>
-            <div class="timeline">
-                <div class="timeline-item"><div class="timeline-dot"></div><span class="timeline-date">2024 - 2026</span><div class="timeline-content"><h3>Master en Ingénierie (Expert SI)</h3><h4>EPSI - L'école d'ingénierie informatique</h4></div></div>
-                <div class="timeline-item"><div class="timeline-dot"></div><span class="timeline-date">2023 - 2024</span><div class="timeline-content"><h3>Master 1 (M1) - Ingénierie des SI</h3><h4>ESISA</h4></div></div>
-                <div class="timeline-item"><div class="timeline-dot"></div><span class="timeline-date">2021 - 2023</span><div class="timeline-content"><h3>Licence Computer Engineering</h3><h4>ESISA</h4></div></div>
+            <span class="eyebrow">03 — Bagage académique &amp; Évolution</span>
+            <h2 class="section-title">Formation &amp; Trajectoire</h2>
+            <p class="story-intro">Du bas-niveau système jusqu'aux architectures Cloud &amp; bancaires critiques : chaque étape académique a construit une brique de mon ingénierie logicielle.</p>
+
+            <div class="trajectory-canvas">
+                <!-- Glowing Curved SVG Trajectory (Inspired by System Bus / Orbital Path) -->
+                <svg class="trajectory-svg" viewBox="0 0 1160 760" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <defs>
+                        <filter id="lineGlow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="8" result="blur1"/>
+                            <feGaussianBlur stdDeviation="18" result="blur2"/>
+                            <feMerge>
+                                <feMergeNode in="blur2"/>
+                                <feMergeNode in="blur1"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                        <filter id="nodeGlow" x="-150%" y="-150%" width="400%" height="400%">
+                            <feGaussianBlur stdDeviation="7" result="blur"/>
+                            <feMerge>
+                                <feMergeNode in="blur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                        <linearGradient id="curveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+                            <stop offset="45%" stop-color="#dbeafe" stop-opacity="0.95"/>
+                            <stop offset="80%" stop-color="#8b5cf6" stop-opacity="0.9"/>
+                            <stop offset="100%" stop-color="#5b8cff" stop-opacity="0.25"/>
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Ambient Halo Path -->
+                    <path class="traj-path-glow"
+                          d="M 90 220 C 280 225, 460 233, 640 250 C 1120 295, 1160 500, 900 570 C 760 608, 610 663, 475 700 L 340 737"
+                          filter="url(#lineGlow)"/>
+
+                    <!-- Main Crisp Glowing Curve -->
+                    <path class="traj-path-main" id="trajMainPath"
+                          d="M 90 220 C 280 225, 460 233, 640 250 C 1120 295, 1160 500, 900 570 C 760 608, 610 663, 475 700 L 340 737"/>
+
+                    <!-- Animated Energy Stream along Curve -->
+                    <path class="traj-path-pulse"
+                          d="M 90 220 C 280 225, 460 233, 640 250 C 1120 295, 1160 500, 900 570 C 760 608, 610 663, 475 700 L 340 737"/>
+
+                    <!-- Node 1 Stem & Dot (2021 - 2023) -->
+                    <line x1="90" y1="220" x2="90" y2="152" class="traj-stem"/>
+                    <circle cx="90" cy="220" r="11" class="traj-dot-halo"/>
+                    <circle cx="90" cy="220" r="5.5" class="traj-dot" filter="url(#nodeGlow)"/>
+
+                    <!-- Node 2 Stem & Dot (2023 - 2024) -->
+                    <line x1="640" y1="250" x2="640" y2="182" class="traj-stem"/>
+                    <circle cx="640" cy="250" r="11" class="traj-dot-halo"/>
+                    <circle cx="640" cy="250" r="5.5" class="traj-dot" filter="url(#nodeGlow)"/>
+
+                    <!-- Node 3 Stem & Dot (2024 - 2026) -->
+                    <line x1="900" y1="570" x2="900" y2="502" class="traj-stem"/>
+                    <circle cx="900" cy="570" r="11" class="traj-dot-halo"/>
+                    <circle cx="900" cy="570" r="5.5" class="traj-dot" filter="url(#nodeGlow)"/>
+
+                    <!-- Node 4 Stem & Dot (2026 - CDI) -->
+                    <line x1="475" y1="700" x2="475" y2="632" class="traj-stem"/>
+                    <circle cx="475" cy="700" r="13" class="traj-dot-halo traj-dot-active"/>
+                    <circle cx="475" cy="700" r="6" class="traj-dot" filter="url(#nodeGlow)"/>
+                </svg>
+
+                <!-- Milestone 1: 2021 - 2023 -->
+                <article class="traj-milestone traj-m1">
+                    <span class="traj-sys-tag">01 // KERNEL_INIT · ESISA</span>
+                    <h3 class="traj-year">2021 - 2023</h3>
+                    <h4 class="traj-degree">Licence Computer Engineering</h4>
+                    <p>Immersion dans les fondations système : algorithmique avancée, structures de données, administration Linux, réseaux Cisco (CCNA) et programmation orientée objet.</p>
+                </article>
+
+                <!-- Milestone 2: 2023 - 2024 -->
+                <article class="traj-milestone traj-m2">
+                    <span class="traj-sys-tag">02 // CORE_ARCHITECTURE · ESISA</span>
+                    <h3 class="traj-year">2023 - 2024</h3>
+                    <h4 class="traj-degree">Master 1 (M1) — Ingénierie des SI</h4>
+                    <p>Passage aux systèmes d'information distribués : principes SOLID, Design Patterns, modélisation UML/DDD, bases SQL et premières plateformes Full Stack &amp; Mobile en production.</p>
+                </article>
+
+                <!-- Milestone 3: 2024 - 2026 -->
+                <article class="traj-milestone traj-m3">
+                    <span class="traj-sys-tag">03 // CLOUD_SCALE · EPSI MONTPELLIER</span>
+                    <h3 class="traj-year">2024 - 2026</h3>
+                    <h4 class="traj-degree">Master en Ingénierie (Expert SI)</h4>
+                    <p>Spécialisation en architectures critiques &amp; DevOps : automatisation bancaire ISO 20022 (.NET 9 / Blazor), ERP multi-site (Spring Boot 3 / React), Docker, CI/CD &amp; Google Cloud.</p>
+                </article>
+
+                <!-- Milestone 4: 2026+ CDI -->
+                <article class="traj-milestone traj-m4">
+                    <span class="traj-sys-tag traj-sys-live"><span class="sys-pulse"></span> 04 // PRODUCTION_READY · CDI</span>
+                    <h3 class="traj-year">2026 — Next</h3>
+                    <h4 class="traj-degree">Ingénieur Logiciel Full Stack &amp; DevOps</h4>
+                    <p>Prêt à concevoir, déployer et faire évoluer des plateformes à haute disponibilité — de l'architecture métier jusqu'à l'automatisation Cloud.</p>
+                </article>
             </div>
         </div>
     </section>
@@ -415,9 +532,92 @@
         </div>
     </section>
 
-    <footer style="padding: 80px 0; border-top: 1px solid var(--border-soft); text-align: center; color: var(--text-gray);">
-        <p>&copy; 2026 Youssef ASSOIL. Built with Passion.</p>
+    <footer class="sys-footer">
+        <div class="container sys-footer-inner">
+            <p>&copy; 2026 Youssef ASSOIL — Built like a Computer System.</p>
+            <div class="sys-footer-meta">
+                <span><span class="sys-pulse"></span> ALL SYSTEMS OPERATIONAL</span>
+                <span>PRESS <kbd>⌘K</kbd> FOR COMMAND PALETTE</span>
+            </div>
+        </div>
     </footer>
+
+    <!-- OS Command Palette Modal (⌘K / Ctrl+K) -->
+    <div class="cmd-overlay" id="cmdOverlay" aria-hidden="true">
+        <div class="cmd-modal" role="dialog" aria-modal="true" aria-label="Palette de commandes système">
+            <div class="cmd-search-bar">
+                <i class="fa-solid fa-terminal"></i>
+                <input type="text" id="cmdSearchInput" placeholder="Rechercher une section ou exécuter une commande système..." autocomplete="off">
+                <kbd class="cmd-esc" id="cmdCloseBtn">ESC</kbd>
+            </div>
+            <div class="cmd-list" id="cmdList">
+                <button type="button" class="cmd-item" data-action="goto" data-target="#education">
+                    <i class="fa-solid fa-route"></i>
+                    <div class="cmd-item-text">
+                        <strong>Trajectoire &amp; Formation (Story Technique)</strong>
+                        <span>03 — De la Licence Computer Engineering au Master Expert SI</span>
+                    </div>
+                    <kbd>↵</kbd>
+                </button>
+                <button type="button" class="cmd-item" data-action="goto" data-target="#architecture">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <div class="cmd-item-text">
+                        <strong>Architecture Système — SEPA Pro</strong>
+                        <span>06 — Schéma .NET 9 / Blazor Server / ISO 20022</span>
+                    </div>
+                    <kbd>↵</kbd>
+                </button>
+                <button type="button" class="cmd-item" data-action="goto" data-target="#experience">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <div class="cmd-item-text">
+                        <strong>Expérience Professionnelle</strong>
+                        <span>02 — Proxiel, Assala Iskane, Medzair</span>
+                    </div>
+                    <kbd>↵</kbd>
+                </button>
+                <button type="button" class="cmd-item" data-action="goto" data-target="#skills">
+                    <i class="fa-solid fa-microchip"></i>
+                    <div class="cmd-item-text">
+                        <strong>Compétences Techniques</strong>
+                        <span>01 — Java/Spring, .NET 9, React, Angular, Docker, GCP</span>
+                    </div>
+                    <kbd>↵</kbd>
+                </button>
+                <button type="button" class="cmd-item" data-action="goto" data-target="#system-terminal">
+                    <i class="fa-solid fa-code"></i>
+                    <div class="cmd-item-text">
+                        <strong>Terminal Interactif (Shell ZSH)</strong>
+                        <span>Exécuter des commandes en direct sur le portfolio</span>
+                    </div>
+                    <kbd>↵</kbd>
+                </button>
+                <button type="button" class="cmd-item" data-action="cv">
+                    <i class="fa-solid fa-file-arrow-down"></i>
+                    <div class="cmd-item-text">
+                        <strong>Télécharger le CV (PDF)</strong>
+                        <span>Ouvrir ASSOIL_YOUSSEF_CV.pdf</span>
+                    </div>
+                    <kbd>PDF</kbd>
+                </button>
+                <button type="button" class="cmd-item" data-action="theme">
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+                    <div class="cmd-item-text">
+                        <strong>Basculer le thème (Dark / Light OS)</strong>
+                        <span>Changer l'apparence du système</span>
+                    </div>
+                    <kbd>THEME</kbd>
+                </button>
+                <button type="button" class="cmd-item" data-action="goto" data-target="#contact">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <div class="cmd-item-text">
+                        <strong>Me Contacter directement</strong>
+                        <span>07 — Envoyer un message instantané</span>
+                    </div>
+                    <kbd>↵</kbd>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
