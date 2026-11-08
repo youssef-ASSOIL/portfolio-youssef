@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youssef ASSOIL | Portfolio</title>
     <meta name="description" content="Portfolio de Youssef ASSOIL, Ingénieur Logiciel Full Stack & DevOps — Java/Spring, .NET, React, Angular, Docker, Cloud. Disponible pour un CDI.">
-    <meta name="theme-color" content="#0a0a0a">
+    <meta name="theme-color" content="#090D18">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://youssef-assoil.github.io/portfolio-youssef/">
@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         (function () {
             try {
@@ -43,17 +43,11 @@
                 <li><a href="#home">Accueil</a></li>
                 <li><a href="#skills">Compétences</a></li>
                 <li><a href="#experience">Expérience</a></li>
-                <li><a href="#education">Formation</a></li>
+                <li><a href="#certifications">Certs</a></li>
                 <li><a href="#portfolio">Projets</a></li>
-                <li><a href="#architecture">Architecture</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="navbar-actions">
-                <button type="button" class="cmd-trigger" id="cmdTrigger" aria-label="Ouvrir la palette de commandes">
-                    <i class="fa-solid fa-terminal"></i>
-                    <span>Système</span>
-                    <kbd>⌘K</kbd>
-                </button>
                 <a href="#contact" class="btn-talk">Contact</a>
                 <button type="button" class="theme-toggle" aria-label="Changer de thème">
                     <i class="fa-solid fa-moon"></i>
@@ -67,8 +61,10 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with 3D Network Sphere & Typing Effect -->
     <section id="home" class="hero">
+        <canvas id="heroSphereCanvas" class="hero-sphere-canvas" aria-hidden="true"></canvas>
+
         <div class="vertical-text">
             <div class="v-line"></div>
             <div class="v-label">Full Stack</div>
@@ -80,14 +76,18 @@
                 <img src="profile.jpg" alt="Youssef ASSOIL">
                 <div class="testimonial-overlay">
                     <span class="status-dot"></span>
-                    <p>Disponible pour un CDI<br><span class="status-sub">Full Stack & DevOps</span></p>
+                    <p>Disponible pour un CDI<br><span class="status-sub">Full Stack &amp; DevOps</span></p>
                 </div>
             </div>
 
             <div class="hero-right">
-                <h3>Bonjour, je suis</h3>
+                <div class="hero-role-pill">Software Engineer &nbsp;|&nbsp; Full Stack &nbsp;|&nbsp; Cloud &amp; DevOps</div>
                 <h1>ASSOIL <span>Youssef</span></h1>
-                <p>Ingénieur Logiciel & DevOps, 24 ans. Expert en développement Full Stack et architectures Cloud. Passionné par la qualité logicielle (SOLID, Design Patterns) et l'innovation technique.</p>
+                <div class="hero-typing-line" aria-live="polite">
+                    <span class="typing-prefix">&gt;</span>
+                    <span id="heroTypingText">Building intelligent software.</span><span class="typing-caret"></span>
+                </div>
+                <p>Ingénieur Logiciel &amp; DevOps, 24 ans. Expert en développement Full Stack (.NET 9, Java/Spring, React, Angular) et architectures Cloud. Passionné par la qualité logicielle (SOLID, Design Patterns) et l'innovation technique.</p>
 
                 <div class="hero-stats">
                     <div class="stat"><h4>3+</h4><span>Stages Réalisés</span></div>
@@ -96,74 +96,127 @@
                 </div>
 
                 <div class="cta-group">
-                    <a href="#portfolio" class="btn-portfolio">Mon Portfolio</a>
+                    <a href="#portfolio" class="btn-portfolio">Explore My Work</a>
                     <a href="ASSOIL_YOUSSEF_CV.pdf" target="_blank" class="btn-cv"><i class="fa-solid fa-download"></i> Télécharger CV</a>
                 </div>
             </div>
         </div>
 
         <div class="social-sidebar">
-            <a href="https://www.linkedin.com/in/assoilyoussef/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://github.com/youssef-ASSOIL" target="_blank"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.instagram.com/youssef_assoil/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/assoilyoussef/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/youssef-ASSOIL" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.instagram.com/youssef_assoil/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
         </div>
     </section>
 
-    <!-- Terminal Widget (Interactive Computer System Shell) -->
-    <section class="terminal-section" id="system-terminal">
+    <!-- Interactive Terminal Widget -->
+    <section class="terminal-section">
         <div class="container">
-            <div class="sys-telemetry-bar">
-                <div class="sys-telemetry-item"><span class="sys-pulse"></span> SYS.KERNEL: <strong>ONLINE</strong></div>
-                <div class="sys-telemetry-item"><i class="fa-solid fa-microchip"></i> ARCH: <strong>FULLSTACK_DEVOPS_x64</strong></div>
-                <div class="sys-telemetry-item"><i class="fa-solid fa-shield-halved"></i> ISO_20022 / JWT / DOCKER</div>
-                <div class="sys-telemetry-item sys-clock-wrap"><i class="fa-regular fa-clock"></i> UPTIME: <strong id="sysUptime">99.98%</strong></div>
-            </div>
             <div class="terminal-window">
                 <div class="terminal-header">
                     <span class="term-dot red"></span>
                     <span class="term-dot yellow"></span>
                     <span class="term-dot green"></span>
-                    <span class="terminal-title">youssef@portfolio: ~ (interactive zsh)</span>
-                    <span class="terminal-badge">INTERACTIF</span>
+                    <span class="terminal-title">youssef@portfolio: ~</span>
                 </div>
                 <div class="terminal-body" id="terminalBody">
                     <pre id="terminal-output" aria-live="polite"></pre>
-                    <div class="terminal-input-row" id="terminalInputRow">
+                    <div class="terminal-input-row">
                         <span class="prompt">➜</span> <span class="path">~</span>
-                        <input type="text" id="terminalInput" class="terminal-input" placeholder="Tapez 'help', 'skills', 'sepa', 'story', 'cv' ou cliquez ci-dessous..." autocomplete="off" spellcheck="false" aria-label="Commande terminal">
+                        <input type="text" id="terminalInput" class="terminal-input" placeholder="Tapez une commande : whoami, projects, skills, contact, sudo hire youssef..." autocomplete="off" spellcheck="false" aria-label="Terminal interactif">
                     </div>
                 </div>
-                <div class="terminal-QuickBar">
-                    <span class="quick-label">Exécuter :</span>
-                    <button type="button" class="term-chip" data-cmd="help">help</button>
-                    <button type="button" class="term-chip" data-cmd="skills">skills</button>
-                    <button type="button" class="term-chip" data-cmd="sepa">sepa-arch</button>
-                    <button type="button" class="term-chip" data-cmd="story">formation</button>
-                    <button type="button" class="term-chip" data-cmd="sudo hire">sudo hire</button>
-                    <button type="button" class="term-chip" data-cmd="clear">clear</button>
+                <div class="terminal-hints">
+                    <span>Commandes :</span>
+                    <button type="button" class="term-cmd-btn" data-cmd="whoami">whoami</button>
+                    <button type="button" class="term-cmd-btn" data-cmd="projects">projects</button>
+                    <button type="button" class="term-cmd-btn" data-cmd="skills">skills</button>
+                    <button type="button" class="term-cmd-btn" data-cmd="contact">contact</button>
+                    <button type="button" class="term-cmd-btn" data-cmd="sudo hire youssef">sudo hire youssef</button>
+                    <button type="button" class="term-cmd-btn" data-cmd="clear">clear</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section — Interactive Technology Universe -->
     <section id="skills" class="section">
         <div class="container">
             <span class="eyebrow">01 — Ce que je maîtrise</span>
             <h2 class="section-title">Compétences Techniques</h2>
             <div class="skills-grid">
-                <div class="skill-card"><i class="fa-brands fa-java"></i><h3>Spring Boot / JAVA</h3></div>
-                <div class="skill-card"><i class="fa-brands fa-microsoft"></i><h3>.NET 9 / Blazor</h3></div>
-                <div class="skill-card"><i class="fa-brands fa-react"></i><h3>React 18 / TS</h3></div>
-                <div class="skill-card"><i class="fa-brands fa-angular"></i><h3>Angular</h3></div>
-                <div class="skill-card"><i class="fa-brands fa-docker"></i><h3>Docker / CI-CD</h3></div>
-                <div class="skill-card"><i class="fa-solid fa-cloud"></i><h3>Google Cloud / SQL</h3></div>
-                <div class="skill-card"><i class="fa-brands fa-python"></i><h3>Python / AI</h3></div>
-                <div class="skill-card"><i class="fa-brands fa-linux"></i><h3>Linux / Shell</h3></div>
-                <div class="skill-card"><i class="fa-solid fa-cubes"></i><h3>SOLID / DDD</h3></div>
-                <div class="skill-card"><i class="fa-solid fa-sitemap"></i><h3>UML / Design Patterns</h3></div>
-                <div class="skill-card"><i class="fa-solid fa-gears"></i><h3>REST API / JWT</h3></div>
-                <div class="skill-card"><i class="fa-brands fa-php"></i><h3>Symfony / CI4</h3></div>
+                <div class="skill-card">
+                    <span class="skill-cat">Backend</span>
+                    <i class="fa-brands fa-microsoft"></i>
+                    <h3>.NET 9 / Blazor</h3>
+                    <p class="skill-proof">Utilisé sur <strong>SEPA Pro</strong> : 22 pages Razor, EF Core &amp; génération XML ISO 20022.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-cat">Backend</span>
+                    <i class="fa-brands fa-java"></i>
+                    <h3>Spring Boot / JAVA</h3>
+                    <p class="skill-proof">Utilisé sur <strong>Assala Iskane ERP</strong> : API REST Java 17, RBAC 6 rôles &amp; workflow métier.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-cat">Frontend</span>
+                    <i class="fa-brands fa-react"></i>
+                    <h3>React 18 / TS</h3>
+                    <p class="skill-proof">Utilisé sur <strong>Assala Iskane ERP</strong> : tableaux de bord temps réel &amp; validation multi-niveau.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-cat">Frontend</span>
+                    <i class="fa-brands fa-angular"></i>
+                    <h3>Angular</h3>
+                    <p class="skill-proof">Applications SPA modulaires, RxJS, TypeScript strict &amp; architectures orientées composants.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-cat">DevOps</span>
+                    <i class="fa-brands fa-docker"></i>
+                    <h3>Docker / CI-CD</h3>
+                    <p class="skill-proof">Pipelines <strong>GitHub Actions</strong> (build, test, deploy) &amp; conteneurisation multi-services Nginx.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-cat">Cloud &amp; Data</span>
+                    <i class="fa-solid fa-cloud"></i>
+                    <h3>Google Cloud / SQL</h3>
+                    <p class="skill-proof">SQL Server 2019+, MySQL, SQLite &amp; infrastructure Cloud provisionnée avec <strong>Terraform</strong>.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-cat">Architecture</span>
+                    <i class="fa-solid fa-cubes"></i>
+                    <h3>SOLID / DDD</h3>
+                    <p class="skill-proof">Clean Architecture, séparation stricte du domaine métier &amp; maintenabilité long terme.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-cat">Architecture</span>
+                    <i class="fa-solid fa-sitemap"></i>
+                    <h3>UML / Design Patterns</h3>
+                    <p class="skill-proof">Modélisation de systèmes complexes, patterns GoF, Repository, Strategy &amp; Factory.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-cat">Sécurité &amp; API</span>
+                    <i class="fa-solid fa-gears"></i>
+                    <h3>REST API / JWT</h3>
+                    <p class="skill-proof">Utilisé sur <strong>Astreinte V2</strong> : authentification stateless par Token/JWT &amp; conformité RGPD.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-cat">Backend</span>
+                    <i class="fa-brands fa-php"></i>
+                    <h3>Symfony / CI4</h3>
+                    <p class="skill-proof">Refonte complète du backend <strong>Astreinte Web V2</strong> sous CodeIgniter 4 &amp; Symfony.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-cat">AI &amp; Scripting</span>
+                    <i class="fa-brands fa-python"></i>
+                    <h3>Python / AI</h3>
+                    <p class="skill-proof">Automatisation de traitement de données, scripts système &amp; intégration de modèles IA.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-cat">Système</span>
+                    <i class="fa-brands fa-linux"></i>
+                    <h3>Linux / Shell</h3>
+                    <p class="skill-proof">Certifié Cisco Linux Essentials : administration serveur, Bash scripting &amp; déploiement.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -181,13 +234,13 @@
                     <div class="timeline-content">
                         <h3>Ingénieur Logiciel Full Stack</h3>
                         <h4>Proxiel (Alternance/Stage) - Montpellier</h4>
-                        <p><strong>Conception de Solutions Critiques & Automatisation Financière :</strong></p>
+                        <p><strong>Conception de Solutions Critiques &amp; Automatisation Financière :</strong></p>
                         
                         <div style="margin-top: 20px;">
-                            <h5 style="color: var(--text-white); font-size: 1.05rem; margin-bottom: 10px;">1. Écosystème d'Astreinte V2 (Web & Mobile)</h5>
+                            <h5 style="color: var(--text-white); font-size: 1.05rem; margin-bottom: 10px;">1. Écosystème d'Astreinte V2 (Web &amp; Mobile)</h5>
                             <p style="font-size: 0.95rem; color: var(--text-gray); margin-bottom: 10px;">Modernisation d'un système de gestion pour le secteur public assurant la haute disponibilité des données agents.</p>
                             <ul style="list-style: disc; margin-left: 20px; color: var(--text-gray); font-size: 0.85rem;">
-                                <li><strong>Backend & API</strong> : Développement sous <strong>CodeIgniter 4</strong> avec architecture REST sécurisée via Token/JWT.</li>
+                                <li><strong>Backend &amp; API</strong> : Développement sous <strong>CodeIgniter 4</strong> avec architecture REST sécurisée via Token/JWT.</li>
                                 <li><strong>Application Mobile</strong> : Création d'une app <strong>.NET MAUI</strong> pour tablettes, supportant un mode hors-ligne complet (procedures/annuaires).</li>
                                 <li><strong>Synchronisation Intelligente</strong> : Implémentation d'une stratégie "REPLACE" garantissant l'intégrité des données entre Web et terminaux mobiles.</li>
                                 <li><strong>UX/UI Premium</strong> : Design moderne intégrant le Glassmorphism pour l'interface de back-office.</li>
@@ -218,8 +271,8 @@
                         <ul style="list-style: disc; margin-left: 20px; color: var(--text-gray); font-size: 0.85rem; margin-top: 10px;">
                             <li><strong>Stack Technique</strong> : Backend <strong>Spring Boot 3</strong> (Java 17), Frontend <strong>React 18</strong>, Persistance <strong>MySQL</strong>.</li>
                             <li><strong>Workflow Complexe</strong> : Implémentation d'une chaîne de validation à 6 niveaux (Chef de Chantier → Responsable Projet → Tech Manager → Comptabilité → Service Tech → Magasin).</li>
-                            <li><strong>Sécurité & RBAC</strong> : Gestion granulaire des accès pour 6 rôles distincts avec isolation des données par chantier.</li>
-                            <li><strong>Monitoring & DevOps</strong> : Déploiement conteneurisé via <strong>Docker Compose</strong> avec reverse-proxy <strong>Nginx</strong> pour un accès multi-device sécurisé.</li>
+                            <li><strong>Sécurité &amp; RBAC</strong> : Gestion granulaire des accès pour 6 rôles distincts avec isolation des données par chantier.</li>
+                            <li><strong>Monitoring &amp; DevOps</strong> : Déploiement conteneurisé via <strong>Docker Compose</strong> avec reverse-proxy <strong>Nginx</strong> pour un accès multi-device sécurisé.</li>
                         </ul>
                     </div>
                 </div>
@@ -229,11 +282,11 @@
                     <div class="timeline-dot"></div>
                     <span class="timeline-date">Juin 2023 - Août 2023</span>
                     <div class="timeline-content">
-                        <h3>Software Engineer Full Stack (Web & Mobile)</h3>
+                        <h3>Software Engineer Full Stack (Web &amp; Mobile)</h3>
                         <h4>Medzair (Stage) - France (Remote)</h4>
                         <p><strong>Plateforme de Gestion des Remplacements Médicaux :</strong> Solution de mise en relation établissements de santé / praticiens.</p>
                         <ul style="list-style: disc; margin-left: 20px; color: var(--text-gray); font-size: 0.85rem; margin-top: 10px;">
-                            <li><strong>Backend & Mobile</strong> : Développement sous <strong>Node.js</strong> et <strong>Flutter / Dart</strong> pour une expérience cross-platform fluide.</li>
+                            <li><strong>Backend &amp; Mobile</strong> : Développement sous <strong>Node.js</strong> et <strong>Flutter / Dart</strong> pour une expérience cross-platform fluide.</li>
                             <li><strong>Temps Réel</strong> : Intégration de <strong>Firebase Realtime Database</strong> pour la synchronisation instantanée des offres de remplacement.</li>
                             <li><strong>Fonctionnalités</strong> : Calendrier de disponibilité interactif et système automatisé de notifications d'acceptation.</li>
                         </ul>
@@ -243,106 +296,81 @@
         </div>
     </section>
 
-    <!-- Education Section — Curved Glowing Trajectory & Technical Story -->
-    <section id="education" class="section story-section">
+    <!-- Education Section — Clean Curved Glowing Line (Exact Screenshot Design) -->
+    <section id="education" class="section">
         <div class="container">
-            <span class="eyebrow">03 — Bagage académique &amp; Évolution</span>
-            <h2 class="section-title">Formation &amp; Trajectoire</h2>
-            <p class="story-intro">Du bas-niveau système jusqu'aux architectures Cloud &amp; bancaires critiques : chaque étape académique a construit une brique de mon ingénierie logicielle.</p>
+            <span class="eyebrow">03 — Bagage académique</span>
+            <h2 class="section-title">Formation</h2>
 
-            <div class="trajectory-canvas">
-                <!-- Glowing Curved SVG Trajectory (Inspired by System Bus / Orbital Path) -->
-                <svg class="trajectory-svg" viewBox="0 0 1160 760" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <div class="curve-roadmap">
+                <svg class="curve-svg" viewBox="0 0 1200 680" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <defs>
-                        <filter id="lineGlow" x="-20%" y="-20%" width="140%" height="140%">
-                            <feGaussianBlur stdDeviation="8" result="blur1"/>
-                            <feGaussianBlur stdDeviation="18" result="blur2"/>
+                        <filter id="whiteBeamGlow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="6" result="b1"/>
+                            <feGaussianBlur stdDeviation="16" result="b2"/>
                             <feMerge>
-                                <feMergeNode in="blur2"/>
-                                <feMergeNode in="blur1"/>
+                                <feMergeNode in="b2"/>
+                                <feMergeNode in="b1"/>
                                 <feMergeNode in="SourceGraphic"/>
                             </feMerge>
                         </filter>
-                        <filter id="nodeGlow" x="-150%" y="-150%" width="400%" height="400%">
-                            <feGaussianBlur stdDeviation="7" result="blur"/>
+                        <filter id="dotGlow" x="-200%" y="-200%" width="500%" height="500%">
+                            <feGaussianBlur stdDeviation="6" result="b"/>
                             <feMerge>
-                                <feMergeNode in="blur"/>
+                                <feMergeNode in="b"/>
                                 <feMergeNode in="SourceGraphic"/>
                             </feMerge>
                         </filter>
-                        <linearGradient id="curveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
-                            <stop offset="45%" stop-color="#dbeafe" stop-opacity="0.95"/>
-                            <stop offset="80%" stop-color="#8b5cf6" stop-opacity="0.9"/>
-                            <stop offset="100%" stop-color="#5b8cff" stop-opacity="0.25"/>
-                        </linearGradient>
                     </defs>
 
-                    <!-- Ambient Halo Path -->
-                    <path class="traj-path-glow"
-                          d="M 90 220 C 280 225, 460 233, 640 250 C 1120 295, 1160 500, 900 570 C 760 608, 610 663, 475 700 L 340 737"
-                          filter="url(#lineGlow)"/>
+                    <!-- Soft outer glow of the curve -->
+                    <path d="M 85 180 C 310 185, 510 195, 710 212 C 1190 252, 1220 445, 1005 505 C 835 552, 665 595, 530 626 L 395 656"
+                          stroke="rgba(255, 255, 255, 0.35)" stroke-width="5" stroke-linecap="round" filter="url(#whiteBeamGlow)"/>
 
-                    <!-- Main Crisp Glowing Curve -->
-                    <path class="traj-path-main" id="trajMainPath"
-                          d="M 90 220 C 280 225, 460 233, 640 250 C 1120 295, 1160 500, 900 570 C 760 608, 610 663, 475 700 L 340 737"/>
+                    <!-- Crisp bright core line -->
+                    <path d="M 85 180 C 310 185, 510 195, 710 212 C 1190 252, 1220 445, 1005 505 C 835 552, 665 595, 530 626 L 395 656"
+                          stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
 
-                    <!-- Animated Energy Stream along Curve -->
-                    <path class="traj-path-pulse"
-                          d="M 90 220 C 280 225, 460 233, 640 250 C 1120 295, 1160 500, 900 570 C 760 608, 610 663, 475 700 L 340 737"/>
+                    <!-- Node 1 (2021 - 2023) at (85, 180) -->
+                    <line x1="85" y1="180" x2="85" y2="118" stroke="rgba(255,255,255,0.55)" stroke-width="1.3"/>
+                    <circle cx="85" cy="180" r="6" fill="#ffffff" filter="url(#dotGlow)"/>
 
-                    <!-- Node 1 Stem & Dot (2021 - 2023) -->
-                    <line x1="90" y1="220" x2="90" y2="152" class="traj-stem"/>
-                    <circle cx="90" cy="220" r="11" class="traj-dot-halo"/>
-                    <circle cx="90" cy="220" r="5.5" class="traj-dot" filter="url(#nodeGlow)"/>
+                    <!-- Node 2 (2023 - 2024) at (710, 212) -->
+                    <line x1="710" y1="212" x2="710" y2="150" stroke="rgba(255,255,255,0.55)" stroke-width="1.3"/>
+                    <circle cx="710" cy="212" r="6" fill="#ffffff" filter="url(#dotGlow)"/>
 
-                    <!-- Node 2 Stem & Dot (2023 - 2024) -->
-                    <line x1="640" y1="250" x2="640" y2="182" class="traj-stem"/>
-                    <circle cx="640" cy="250" r="11" class="traj-dot-halo"/>
-                    <circle cx="640" cy="250" r="5.5" class="traj-dot" filter="url(#nodeGlow)"/>
+                    <!-- Node 3 (2024 - 2026) at (1005, 505) -->
+                    <line x1="1005" y1="505" x2="1005" y2="443" stroke="rgba(255,255,255,0.55)" stroke-width="1.3"/>
+                    <circle cx="1005" cy="505" r="6" fill="#ffffff" filter="url(#dotGlow)"/>
 
-                    <!-- Node 3 Stem & Dot (2024 - 2026) -->
-                    <line x1="900" y1="570" x2="900" y2="502" class="traj-stem"/>
-                    <circle cx="900" cy="570" r="11" class="traj-dot-halo"/>
-                    <circle cx="900" cy="570" r="5.5" class="traj-dot" filter="url(#nodeGlow)"/>
-
-                    <!-- Node 4 Stem & Dot (2026 - CDI) -->
-                    <line x1="475" y1="700" x2="475" y2="632" class="traj-stem"/>
-                    <circle cx="475" cy="700" r="13" class="traj-dot-halo traj-dot-active"/>
-                    <circle cx="475" cy="700" r="6" class="traj-dot" filter="url(#nodeGlow)"/>
+                    <!-- Node 4 (2026 — CDI) at (530, 626) -->
+                    <line x1="530" y1="626" x2="530" y2="564" stroke="rgba(255,255,255,0.55)" stroke-width="1.3"/>
+                    <circle cx="530" cy="626" r="6" fill="#ffffff" filter="url(#dotGlow)"/>
                 </svg>
 
-                <!-- Milestone 1: 2021 - 2023 -->
-                <article class="traj-milestone traj-m1">
-                    <span class="traj-sys-tag">01 // KERNEL_INIT · ESISA</span>
-                    <h3 class="traj-year">2021 - 2023</h3>
-                    <h4 class="traj-degree">Licence Computer Engineering</h4>
-                    <p>Immersion dans les fondations système : algorithmique avancée, structures de données, administration Linux, réseaux Cisco (CCNA) et programmation orientée objet.</p>
-                </article>
+                <!-- Stop 1 -->
+                <div class="curve-node curve-node-1">
+                    <h4>2021 - 2023</h4>
+                    <p><strong>Licence Computer Engineering — ESISA.</strong> Fondations solides en algorithmique, structures de données, architecture Linux, réseaux Cisco et programmation orientée objet.</p>
+                </div>
 
-                <!-- Milestone 2: 2023 - 2024 -->
-                <article class="traj-milestone traj-m2">
-                    <span class="traj-sys-tag">02 // CORE_ARCHITECTURE · ESISA</span>
-                    <h3 class="traj-year">2023 - 2024</h3>
-                    <h4 class="traj-degree">Master 1 (M1) — Ingénierie des SI</h4>
-                    <p>Passage aux systèmes d'information distribués : principes SOLID, Design Patterns, modélisation UML/DDD, bases SQL et premières plateformes Full Stack &amp; Mobile en production.</p>
-                </article>
+                <!-- Stop 2 -->
+                <div class="curve-node curve-node-2">
+                    <h4>2023 - 2024</h4>
+                    <p><strong>Master 1 Ingénierie des SI — ESISA.</strong> Conception logicielle avancée (SOLID, Design Patterns, UML), bases de données SQL et développement Full Stack &amp; Mobile.</p>
+                </div>
 
-                <!-- Milestone 3: 2024 - 2026 -->
-                <article class="traj-milestone traj-m3">
-                    <span class="traj-sys-tag">03 // CLOUD_SCALE · EPSI MONTPELLIER</span>
-                    <h3 class="traj-year">2024 - 2026</h3>
-                    <h4 class="traj-degree">Master en Ingénierie (Expert SI)</h4>
-                    <p>Spécialisation en architectures critiques &amp; DevOps : automatisation bancaire ISO 20022 (.NET 9 / Blazor), ERP multi-site (Spring Boot 3 / React), Docker, CI/CD &amp; Google Cloud.</p>
-                </article>
+                <!-- Stop 3 -->
+                <div class="curve-node curve-node-3">
+                    <h4>2024 - 2026</h4>
+                    <p><strong>Master en Ingénierie (Expert SI) — EPSI Montpellier.</strong> Spécialisation en architectures critiques (.NET 9, Spring Boot 3, React/Angular), DevOps (Docker, CI/CD) et Cloud GCP.</p>
+                </div>
 
-                <!-- Milestone 4: 2026+ CDI -->
-                <article class="traj-milestone traj-m4">
-                    <span class="traj-sys-tag traj-sys-live"><span class="sys-pulse"></span> 04 // PRODUCTION_READY · CDI</span>
-                    <h3 class="traj-year">2026 — Next</h3>
-                    <h4 class="traj-degree">Ingénieur Logiciel Full Stack &amp; DevOps</h4>
-                    <p>Prêt à concevoir, déployer et faire évoluer des plateformes à haute disponibilité — de l'architecture métier jusqu'à l'automatisation Cloud.</p>
-                </article>
+                <!-- Stop 4 -->
+                <div class="curve-node curve-node-4">
+                    <h4>2026 — CDI</h4>
+                    <p><strong>Ingénieur Logiciel Full Stack &amp; DevOps.</strong> Prêt à concevoir des systèmes scalables, automatiser les flux critiques (ISO 20022) et piloter des pipelines de production.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -366,32 +394,36 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- Portfolio Section — Interactive Case Studies -->
     <section id="portfolio" class="section">
         <div class="container">
             <span class="eyebrow">05 — Réalisations concrètes</span>
             <h2 class="section-title">Projets Récents</h2>
             <div class="portfolio-grid">
-                <a href="#experience" class="portfolio-card">
-                    <div class="portfolio-card-top"><span class="tag">PHP / CI4</span><i class="fa-solid fa-arrow-up-right-from-square portfolio-icon"></i></div>
-                    <h3>Astreinte Web V2</h3>
-                    <p>Architecture backend sécurisée pour la gestion critique des services d'astreinte publique (RGPD/JWT).</p>
-                </a>
-                <a href="#experience" class="portfolio-card">
-                    <div class="portfolio-card-top"><span class="tag">.NET MAUI</span><i class="fa-solid fa-arrow-up-right-from-square portfolio-icon"></i></div>
-                    <h3>Astreinte Mobile</h3>
-                    <p>Application de terrain haute performance supportant le mode hors-ligne intégral (SQLite).</p>
-                </a>
-                <a href="#experience" class="portfolio-card">
-                    <div class="portfolio-card-top"><span class="tag">Spring Boot 3</span><i class="fa-solid fa-arrow-up-right-from-square portfolio-icon"></i></div>
-                    <h3>Assala Iskane ERP</h3>
-                    <p>ERP de gestion immobilière avec workflow complexe à 6 niveaux et monitoring Docker.</p>
-                </a>
-                <a href="#architecture" class="portfolio-card">
+                <button type="button" class="portfolio-card" data-project="sepa">
                     <div class="portfolio-card-top"><span class="tag">Blazor / .NET 9</span><i class="fa-solid fa-arrow-up-right-from-square portfolio-icon"></i></div>
                     <h3>SEPA Pro Solution</h3>
                     <p>Automatisation bancaire intelligente avec auto-création d'entités et conformité ISO 20022.</p>
-                </a>
+                    <span class="case-study-cta">Voir l'étude de cas &amp; architecture →</span>
+                </button>
+                <button type="button" class="portfolio-card" data-project="astreinte-web">
+                    <div class="portfolio-card-top"><span class="tag">PHP / CI4</span><i class="fa-solid fa-arrow-up-right-from-square portfolio-icon"></i></div>
+                    <h3>Astreinte Web V2</h3>
+                    <p>Architecture backend sécurisée pour la gestion critique des services d'astreinte publique (RGPD/JWT).</p>
+                    <span class="case-study-cta">Voir l'étude de cas →</span>
+                </button>
+                <button type="button" class="portfolio-card" data-project="astreinte-mobile">
+                    <div class="portfolio-card-top"><span class="tag">.NET MAUI</span><i class="fa-solid fa-arrow-up-right-from-square portfolio-icon"></i></div>
+                    <h3>Astreinte Mobile</h3>
+                    <p>Application de terrain haute performance supportant le mode hors-ligne intégral (SQLite).</p>
+                    <span class="case-study-cta">Voir l'étude de cas →</span>
+                </button>
+                <button type="button" class="portfolio-card" data-project="assala-erp">
+                    <div class="portfolio-card-top"><span class="tag">Spring Boot 3</span><i class="fa-solid fa-arrow-up-right-from-square portfolio-icon"></i></div>
+                    <h3>Assala Iskane ERP</h3>
+                    <p>ERP de gestion immobilière avec workflow complexe à 6 niveaux et monitoring Docker.</p>
+                    <span class="case-study-cta">Voir l'étude de cas →</span>
+                </button>
             </div>
         </div>
     </section>
@@ -414,10 +446,10 @@
                     <svg viewBox="0 0 960 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagramme d'architecture de SEPA Pro : navigateur, Blazor Server, huit modules métier (tiers, mandats, paiements, lots SEPA, import/export, rapprochement, multi-société, audit), base SQL Server, sortie XML ISO 20022, et pipeline CI/CD GitHub Actions.">
                         <defs>
                             <marker id="archArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                                <path d="M0,0 L10,5 L0,10 z" fill="#5b8cff"/>
+                                <path d="M0,0 L10,5 L0,10 z" fill="#39D5FF"/>
                             </marker>
                             <marker id="archArrowViolet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                                <path d="M0,0 L10,5 L0,10 z" fill="#8b5cf6"/>
+                                <path d="M0,0 L10,5 L0,10 z" fill="#A78BFA"/>
                             </marker>
                             <marker id="archArrowGrey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                                 <path d="M0,0 L10,5 L0,10 z" fill="#5c5f6b"/>
@@ -514,11 +546,17 @@
             <h2 class="section-title">Contact</h2>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <p>Une idée de projet ? Un besoin technique ? N'hésitez pas à me contacter.</p>
+                    <p>Une idée de projet ? Une opportunité CDI Full Stack / .NET / DevOps ? N'hésitez pas à me contacter.</p>
                     <div class="contact-links">
-                        <a href="mailto:assoilyoussef02@gmail.com"><i class="fa fa-envelope"></i> assoilyoussef02@gmail.com</a>
+                        <div class="contact-email-row">
+                            <a href="mailto:assoilyoussef02@gmail.com"><i class="fa fa-envelope"></i> assoilyoussef02@gmail.com</a>
+                            <button type="button" class="copy-email-btn" id="copyEmailBtn" data-email="assoilyoussef02@gmail.com">
+                                <i class="fa-regular fa-copy"></i> <span>Copier</span>
+                            </button>
+                        </div>
                         <a href="tel:+33766319353"><i class="fa fa-phone"></i> +33 7 66 31 93 53</a>
                         <a href="https://www.linkedin.com/in/assoilyoussef/" target="_blank"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/assoilyoussef</a>
+                        <a href="ASSOIL_YOUSSEF_CV.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Télécharger mon CV complet (PDF)</a>
                     </div>
                 </div>
                 <form class="contact-form" id="contactForm">
@@ -526,95 +564,45 @@
                     <input type="email" name="email" placeholder="Email" required>
                     <textarea name="message" placeholder="Message" rows="5" required></textarea>
                     <button type="submit" class="btn-talk btn-submit">Envoyer</button>
-                    <p class="form-hint" id="formHint" aria-live="polite">Réponse rapide directement par email.</p>
+                    <p class="form-hint" id="formHint" aria-live="polite">Envoi direct et instantané dans ma boîte mail.</p>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer class="sys-footer">
-        <div class="container sys-footer-inner">
-            <p>&copy; 2026 Youssef ASSOIL — Built like a Computer System.</p>
-            <div class="sys-footer-meta">
-                <span><span class="sys-pulse"></span> ALL SYSTEMS OPERATIONAL</span>
-                <span>PRESS <kbd>⌘K</kbd> FOR COMMAND PALETTE</span>
-            </div>
-        </div>
+    <footer style="padding: 80px 0; border-top: 1px solid var(--border-soft); text-align: center; color: var(--text-gray);">
+        <p>&copy; 2026 Youssef ASSOIL. Built with Passion.</p>
     </footer>
 
-    <!-- OS Command Palette Modal (⌘K / Ctrl+K) -->
-    <div class="cmd-overlay" id="cmdOverlay" aria-hidden="true">
-        <div class="cmd-modal" role="dialog" aria-modal="true" aria-label="Palette de commandes système">
-            <div class="cmd-search-bar">
-                <i class="fa-solid fa-terminal"></i>
-                <input type="text" id="cmdSearchInput" placeholder="Rechercher une section ou exécuter une commande système..." autocomplete="off">
-                <kbd class="cmd-esc" id="cmdCloseBtn">ESC</kbd>
+    <!-- Interactive Project Case Study Modal -->
+    <div class="case-modal-overlay" id="caseModalOverlay" aria-hidden="true">
+        <div class="case-modal" role="dialog" aria-modal="true" aria-labelledby="caseModalTitle">
+            <button type="button" class="case-modal-close" id="caseModalClose" aria-label="Fermer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span class="tag" id="caseModalTag">Blazor / .NET 9</span>
+            <h3 id="caseModalTitle">SEPA Pro Solution</h3>
+            <p class="case-modal-sub" id="caseModalSub"></p>
+
+            <div class="case-modal-grid">
+                <div class="case-modal-box">
+                    <h4><i class="fa-solid fa-bolt"></i> Challenges &amp; Problématique</h4>
+                    <p id="caseModalChallenge"></p>
+                </div>
+                <div class="case-modal-box">
+                    <h4><i class="fa-solid fa-gears"></i> Solution &amp; Architecture</h4>
+                    <p id="caseModalSolution"></p>
+                </div>
             </div>
-            <div class="cmd-list" id="cmdList">
-                <button type="button" class="cmd-item" data-action="goto" data-target="#education">
-                    <i class="fa-solid fa-route"></i>
-                    <div class="cmd-item-text">
-                        <strong>Trajectoire &amp; Formation (Story Technique)</strong>
-                        <span>03 — De la Licence Computer Engineering au Master Expert SI</span>
-                    </div>
-                    <kbd>↵</kbd>
-                </button>
-                <button type="button" class="cmd-item" data-action="goto" data-target="#architecture">
-                    <i class="fa-solid fa-diagram-project"></i>
-                    <div class="cmd-item-text">
-                        <strong>Architecture Système — SEPA Pro</strong>
-                        <span>06 — Schéma .NET 9 / Blazor Server / ISO 20022</span>
-                    </div>
-                    <kbd>↵</kbd>
-                </button>
-                <button type="button" class="cmd-item" data-action="goto" data-target="#experience">
-                    <i class="fa-solid fa-briefcase"></i>
-                    <div class="cmd-item-text">
-                        <strong>Expérience Professionnelle</strong>
-                        <span>02 — Proxiel, Assala Iskane, Medzair</span>
-                    </div>
-                    <kbd>↵</kbd>
-                </button>
-                <button type="button" class="cmd-item" data-action="goto" data-target="#skills">
-                    <i class="fa-solid fa-microchip"></i>
-                    <div class="cmd-item-text">
-                        <strong>Compétences Techniques</strong>
-                        <span>01 — Java/Spring, .NET 9, React, Angular, Docker, GCP</span>
-                    </div>
-                    <kbd>↵</kbd>
-                </button>
-                <button type="button" class="cmd-item" data-action="goto" data-target="#system-terminal">
-                    <i class="fa-solid fa-code"></i>
-                    <div class="cmd-item-text">
-                        <strong>Terminal Interactif (Shell ZSH)</strong>
-                        <span>Exécuter des commandes en direct sur le portfolio</span>
-                    </div>
-                    <kbd>↵</kbd>
-                </button>
-                <button type="button" class="cmd-item" data-action="cv">
-                    <i class="fa-solid fa-file-arrow-down"></i>
-                    <div class="cmd-item-text">
-                        <strong>Télécharger le CV (PDF)</strong>
-                        <span>Ouvrir ASSOIL_YOUSSEF_CV.pdf</span>
-                    </div>
-                    <kbd>PDF</kbd>
-                </button>
-                <button type="button" class="cmd-item" data-action="theme">
-                    <i class="fa-solid fa-circle-half-stroke"></i>
-                    <div class="cmd-item-text">
-                        <strong>Basculer le thème (Dark / Light OS)</strong>
-                        <span>Changer l'apparence du système</span>
-                    </div>
-                    <kbd>THEME</kbd>
-                </button>
-                <button type="button" class="cmd-item" data-action="goto" data-target="#contact">
-                    <i class="fa-solid fa-paper-plane"></i>
-                    <div class="cmd-item-text">
-                        <strong>Me Contacter directement</strong>
-                        <span>07 — Envoyer un message instantané</span>
-                    </div>
-                    <kbd>↵</kbd>
-                </button>
+
+            <div class="case-modal-contrib">
+                <h4><i class="fa-solid fa-code-branch"></i> Ce que j'ai réalisé concrètement</h4>
+                <ul id="caseModalBullets"></ul>
+            </div>
+
+            <div class="case-modal-footer">
+                <div class="case-modal-techs" id="caseModalTechs"></div>
+                <a href="#architecture" class="btn-talk" id="caseModalArchBtn">Voir le schéma d'architecture</a>
             </div>
         </div>
     </div>
