@@ -8,14 +8,15 @@
     <meta name="theme-color" content="#0a0a0a">
 
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://youssef-assoil.github.io/portfolio-youssef/">
     <meta property="og:title" content="Youssef ASSOIL | Ingénieur Logiciel Full Stack & DevOps">
     <meta property="og:description" content="Portfolio de Youssef ASSOIL, Ingénieur Logiciel Full Stack & DevOps — Java/Spring, .NET, React, Angular, Docker, Cloud. Disponible pour un CDI.">
-    <meta property="og:image" content="profile.jpg">
+    <meta property="og:image" content="https://youssef-assoil.github.io/portfolio-youssef/profile.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Youssef ASSOIL | Ingénieur Logiciel Full Stack & DevOps">
     <meta name="twitter:description" content="Portfolio de Youssef ASSOIL, Ingénieur Logiciel Full Stack & DevOps — Java/Spring, .NET, React, Angular, Docker, Cloud. Disponible pour un CDI.">
-    <meta name="twitter:image" content="profile.jpg">
+    <meta name="twitter:image" content="https://youssef-assoil.github.io/portfolio-youssef/profile.jpg">
 
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" href="favicon.svg">
@@ -157,7 +158,7 @@
                         <p><strong>Conception de Solutions Critiques & Automatisation Financière :</strong></p>
                         
                         <div style="margin-top: 20px;">
-                            <h5 style="color: #fff; margin-bottom: 10px;">1. Écosystème d'Astreinte V2 (Web & Mobile)</h5>
+                            <h5 style="color: var(--text-white); font-size: 1.05rem; margin-bottom: 10px;">1. Écosystème d'Astreinte V2 (Web & Mobile)</h5>
                             <p style="font-size: 0.95rem; color: var(--text-gray); margin-bottom: 10px;">Modernisation d'un système de gestion pour le secteur public assurant la haute disponibilité des données agents.</p>
                             <ul style="list-style: disc; margin-left: 20px; color: var(--text-gray); font-size: 0.85rem;">
                                 <li><strong>Backend & API</strong> : Développement sous <strong>CodeIgniter 4</strong> avec architecture REST sécurisée via Token/JWT.</li>
@@ -168,7 +169,7 @@
                         </div>
 
                         <div style="margin-top: 20px;">
-                            <h5 style="color: #fff; margin-bottom: 10px;">2. Plateforme Bancaire SEPA Pro</h5>
+                            <h5 style="color: var(--text-white); font-size: 1.05rem; margin-bottom: 10px;">2. Plateforme Bancaire SEPA Pro</h5>
                             <p style="font-size: 0.95rem; color: var(--text-gray); margin-bottom: 10px;">Solution d'automatisation des flux financiers conforme aux normes <strong>ISO 20022</strong>.</p>
                             <ul style="list-style: disc; margin-left: 20px; color: var(--text-gray); font-size: 0.85rem;">
                                 <li><strong>Stack Moderne</strong> : Migration vers <strong>.NET 9 (Blazor Server)</strong> et <strong>SQL Server 2019+</strong>.</li>
@@ -254,26 +255,26 @@
             <span class="eyebrow">05 — Réalisations concrètes</span>
             <h2 class="section-title">Projets Récents</h2>
             <div class="portfolio-grid">
-                <div class="portfolio-card">
+                <a href="#experience" class="portfolio-card">
                     <div class="portfolio-card-top"><span class="tag">PHP / CI4</span><i class="fa-solid fa-arrow-up-right-from-square portfolio-icon"></i></div>
                     <h3>Astreinte Web V2</h3>
                     <p>Architecture backend sécurisée pour la gestion critique des services d'astreinte publique (RGPD/JWT).</p>
-                </div>
-                <div class="portfolio-card">
+                </a>
+                <a href="#experience" class="portfolio-card">
                     <div class="portfolio-card-top"><span class="tag">.NET MAUI</span><i class="fa-solid fa-arrow-up-right-from-square portfolio-icon"></i></div>
                     <h3>Astreinte Mobile</h3>
                     <p>Application de terrain haute performance supportant le mode hors-ligne intégral (SQLite).</p>
-                </div>
-                <div class="portfolio-card">
+                </a>
+                <a href="#experience" class="portfolio-card">
                     <div class="portfolio-card-top"><span class="tag">Spring Boot 3</span><i class="fa-solid fa-arrow-up-right-from-square portfolio-icon"></i></div>
                     <h3>Assala Iskane ERP</h3>
                     <p>ERP de gestion immobilière avec workflow complexe à 6 niveaux et monitoring Docker.</p>
-                </div>
-                <div class="portfolio-card">
+                </a>
+                <a href="#architecture" class="portfolio-card">
                     <div class="portfolio-card-top"><span class="tag">Blazor / .NET 9</span><i class="fa-solid fa-arrow-up-right-from-square portfolio-icon"></i></div>
                     <h3>SEPA Pro Solution</h3>
                     <p>Automatisation bancaire intelligente avec auto-création d'entités et conformité ISO 20022.</p>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -403,12 +404,12 @@
                         <a href="https://www.linkedin.com/in/assoilyoussef/" target="_blank"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/assoilyoussef</a>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Nom" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Message" rows="5" required></textarea>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" name="name" placeholder="Nom" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="message" placeholder="Message" rows="5" required></textarea>
                     <button type="submit" class="btn-talk btn-submit">Envoyer</button>
-                    <p class="form-hint">Ouvre votre application email avec le message pré-rempli.</p>
+                    <p class="form-hint" id="formHint" aria-live="polite">Réponse rapide directement par email.</p>
                 </form>
             </div>
         </div>

@@ -475,7 +475,7 @@ a { color: inherit; }
 .timeline {
     max-width: 900px;
     margin-left: 120px;
-    border-left: 1px solid rgba(255,255,255,0.1);
+    border-left: 1px solid var(--border-soft);
     padding-left: 60px;
 }
 
@@ -520,6 +520,8 @@ a { color: inherit; }
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+    text-decoration: none;
+    display: block;
 }
 
 .skill-card:hover, .portfolio-card:hover,
@@ -813,11 +815,27 @@ a { color: inherit; }
     background: transparent;
 }
 
+.btn-submit:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
 .form-hint {
     margin-top: 14px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--text-gray);
     text-align: center;
+    transition: var(--transition);
+}
+
+.form-hint-success {
+    color: #3ddc84;
+    font-weight: 500;
+}
+
+.form-hint-error {
+    color: #ff5f57;
+    font-weight: 500;
 }
 
 /* Responsive */

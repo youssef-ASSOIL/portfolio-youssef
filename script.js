@@ -69,20 +69,73 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Contact Form (opens the visitor's email client with the message pre-filled)
+// Contact Form — Direct background email submission via Web3Forms
 const form = document.querySelector('.contact-form');
 if (form) {
-    form.addEventListener('submit', (e) => {
+    const submitBtn = form.querySelector('.btn-submit');
+    const hint = form.querySelector('.form-hint');
+
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const name = form.querySelector('input[type="text"]').value.trim();
-        const email = form.querySelector('input[type="email"]').value.trim();
-        const message = form.querySelector('textarea').value.trim();
+        const nameInput = form.querySelector('input[type="text"]');
+        const emailInput = form.querySelector('input[type="email"]');
+        const messageInput = form.querySelector('textarea');
 
-        const subject = `Nouveau message de ${name} — Portfolio`;
-        const body = `Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
 
-        window.location.href = `mailto:assoilyoussef02@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        if (!name || !email || !message) return;
+
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Envoi en cours...';
+        }
+        if (hint) {
+            hint.textContent = 'Transmission de votre message...';
+            hint.className = 'form-hint';
+        }
+
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    access_key: '8edf2dd1-77a8-4ba0-b4e8-ae19f7fd90ba',
+                    from_name: 'Portfolio Youssef ASSOIL',
+                    subject: `Nouveau message de ${name} — Portfolio`,
+                    name: name,
+                    email: email,
+                    message: message
+                })
+            });
+
+            const result = await response.json();
+
+            if (response.ok && result.success) {
+                form.reset();
+                if (hint) {
+                    hint.textContent = '✔ Merci ! Votre message a bien été envoyé. Je vous répondrai très rapidement.';
+                    hint.className = 'form-hint form-hint-success';
+                }
+            } else {
+                throw new Error(result.message || 'Erreur lors de l\'envoi');
+            }
+        } catch (err) {
+            if (hint) {
+                hint.textContent = 'Une erreur est survenue lors de l\'envoi. Vous pouvez m\'écrire directement à assoilyoussef02@gmail.com.';
+                hint.className = 'form-hint form-hint-error';
+            }
+        } finally {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Envoyer';
+            }
+        }
     });
 }
 
