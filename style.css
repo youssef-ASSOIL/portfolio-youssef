@@ -1366,6 +1366,213 @@ button.portfolio-card {
 /* ==========================================================================
    7. Contact Section
    ========================================================================== */
+/* Cal.com Quick Booking Card */
+.cal-booking-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-hover) 100%);
+    border: 1px solid var(--border-soft);
+    border-radius: 20px;
+    padding: 32px 36px;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 36px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: var(--transition);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+}
+
+.cal-booking-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--accent), var(--accent-2));
+    border-radius: 4px 0 0 4px;
+}
+
+.cal-booking-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, var(--accent-soft) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.cal-booking-card:hover {
+    border-color: rgba(57, 213, 255, 0.35);
+    box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.5), 0 0 25px var(--accent-soft);
+    transform: translateY(-2px);
+}
+
+.cal-booking-content {
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+}
+
+.cal-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-soft);
+    border: 1px solid rgba(57, 213, 255, 0.25);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.cal-pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    animation: calPulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes calPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+.cal-booking-content h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+}
+
+.cal-booking-content p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.cal-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 0.82rem;
+    color: var(--text-gray);
+}
+
+.cal-features span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.cal-features span i {
+    color: var(--accent);
+    font-size: 0.85rem;
+}
+
+.cal-booking-action {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.btn-cal-book {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #090D18 !important;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 16px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 24px var(--accent-soft);
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.btn-cal-book:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 30px var(--accent-soft), 0 0 35px var(--accent-glow);
+    color: #000 !important;
+}
+
+.btn-cal-book i:first-child {
+    font-size: 1.05rem;
+}
+
+.btn-cal-book i:last-child {
+    font-size: 0.85rem;
+    transition: transform 0.25s ease;
+}
+
+.btn-cal-book:hover i:last-child {
+    transform: translateX(4px);
+}
+
+.cal-subtext {
+    font-size: 0.75rem;
+    color: var(--text-gray);
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .cal-booking-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px 20px;
+        gap: 20px;
+        margin-bottom: 36px;
+    }
+    .cal-booking-action {
+        width: 100%;
+        align-items: stretch;
+    }
+    .btn-cal-book {
+        width: 100%;
+    }
+}
+
+[dir="rtl"] .cal-booking-card::before {
+    left: auto;
+    right: 0;
+    border-radius: 0 4px 4px 0;
+}
+[dir="rtl"] .btn-cal-book:hover i:last-child {
+    transform: translateX(-4px);
+}
+
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
