@@ -791,28 +791,25 @@
             <span class="eyebrow" data-i18n="contact_eyebrow">07 — Discutons</span>
             <h2 class="section-title" data-i18n="contact_title">Contact</h2>
 
-            <!-- Cal.com Quick Scheduling Card -->
-            <div class="cal-booking-card" id="calBookingCard">
+            <!-- Cal.com Inline Embedded Scheduling -->
+            <div class="cal-booking-card cal-inline-card" id="calBookingCard">
                 <div class="cal-booking-content">
                     <div class="cal-badge">
                         <span class="cal-pulse-dot"></span>
                         <span data-i18n="cal_badge">Créneaux disponibles · 15 min à 1h</span>
                     </div>
                     <h3 data-i18n="cal_title">Planifier un échange direct</h3>
-                    <p data-i18n="cal_desc">Vous avez une opportunité professionnelle (CDI / mission) ou un projet technique à aborder ? Réservez directement un créneau de 15 minutes, 30 minutes ou 1 heure dans mon agenda pour échanger en visio ou par téléphone.</p>
+                    <p data-i18n="cal_desc">Vous avez une opportunité professionnelle (CDI / mission) ou un projet technique à aborder ? Choisissez directement un créneau ci-dessous dans mon agenda pour échanger en visio ou par téléphone.</p>
                     <div class="cal-features">
                         <span><i class="fa-solid fa-video"></i> <span data-i18n="cal_f1">Google Meet automatique</span></span>
                         <span><i class="fa-solid fa-clock"></i> <span data-i18n="cal_f2">15 min, 30 min ou 1h</span></span>
                         <span><i class="fa-solid fa-calendar-check"></i> <span data-i18n="cal_f3">Confirmation instantanée</span></span>
                     </div>
                 </div>
-                <div class="cal-booking-action">
-                    <a href="https://cal.com/youssef-assoil" target="_blank" rel="noopener" class="btn-cal-book" data-cal-link="youssef-assoil" data-cal-config='{"layout":"month_view"}'>
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <span data-i18n="cal_btn">Réserver un créneau</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                    <span class="cal-subtext" data-i18n="cal_subtext">Sans engagement · Synchronisé en temps réel</span>
+
+                <!-- Interactive Embedded Calendar (Never leaves the site) -->
+                <div class="cal-embed-box">
+                    <div id="cal-inline-target" style="width:100%;height:100%;min-height:580px;overflow:auto;"></div>
                 </div>
             </div>
 
@@ -929,11 +926,25 @@
 
     <script src="script.js"></script>
 
-    <!-- Cal.com Element-Click Embed Integration -->
+    <!-- Cal.com Inline & Modal Embed Integration -->
     <script type="text/javascript">
       (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
       Cal("init", {origin:"https://cal.com"});
-      Cal("ui", {"theme":"dark","styles":{"branding":{"brandColor":"#39D5FF"}},"hideEventTypeDetails":false,"layout":"month_view"});
+
+      Cal("inline", {
+        elementOrSelector: "#cal-inline-target",
+        calLink: "youssef-assoil",
+        layout: "month_view"
+      });
+
+      Cal("ui", {
+        theme: "dark",
+        styles: {
+          branding: { brandColor: "#39D5FF" }
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view"
+      });
     </script>
 </body>
 </html>
