@@ -148,7 +148,9 @@ a { color: inherit; }
     color: var(--accent);
 }
 
-.nav-links a i {
+.nav-links a i,
+.nav-links .nav-chevron,
+.nav-links li.mobile-drawer-cta {
     display: none;
 }
 
@@ -1506,6 +1508,62 @@ button.portfolio-card {
     flex-shrink: 0;
 }
 
+/* Cal.com Duration Pills */
+.cal-durations-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.cal-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 10px 18px;
+    cursor: pointer;
+    color: var(--text-white);
+    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: left;
+    outline: none;
+}
+
+.cal-pill i {
+    font-size: 1.1rem;
+    color: var(--accent);
+    transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cal-pill strong {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-white);
+    line-height: 1.25;
+}
+
+.cal-pill small {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--text-gray);
+    line-height: 1.25;
+}
+
+.cal-pill:hover {
+    background: linear-gradient(135deg, rgba(57, 213, 255, 0.12) 0%, rgba(167, 139, 250, 0.08) 100%);
+    border-color: rgba(57, 213, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 20px var(--accent-soft);
+}
+
+.cal-pill:hover i {
+    transform: scale(1.2) rotate(6deg);
+    color: #fff;
+}
+
 .btn-cal-book {
     display: inline-flex;
     align-items: center;
@@ -1563,7 +1621,63 @@ button.portfolio-card {
         width: 100%;
         align-items: stretch;
     }
-    .btn-cal-book {
+    /* Cal.com Duration Pills */
+.cal-durations-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.cal-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 10px 18px;
+    cursor: pointer;
+    color: var(--text-white);
+    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: left;
+    outline: none;
+}
+
+.cal-pill i {
+    font-size: 1.1rem;
+    color: var(--accent);
+    transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cal-pill strong {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-white);
+    line-height: 1.25;
+}
+
+.cal-pill small {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--text-gray);
+    line-height: 1.25;
+}
+
+.cal-pill:hover {
+    background: linear-gradient(135deg, rgba(57, 213, 255, 0.12) 0%, rgba(167, 139, 250, 0.08) 100%);
+    border-color: rgba(57, 213, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 20px var(--accent-soft);
+}
+
+.cal-pill:hover i {
+    transform: scale(1.2) rotate(6deg);
+    color: #fff;
+}
+
+.btn-cal-book {
         width: 100%;
     }
 }
@@ -2087,73 +2201,189 @@ button.portfolio-card {
         left: auto;
         right: -100%;
         height: 100vh;
-        width: 300px;
+        width: 320px;
         background: var(--mobile-nav-bg);
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
+        backdrop-filter: blur(28px);
+        -webkit-backdrop-filter: blur(28px);
         flex-direction: column;
         justify-content: flex-start;
         align-items: stretch;
-        padding: 95px 22px 30px;
+        padding: 95px 20px 30px;
         gap: 8px;
-        transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: right 0.38s cubic-bezier(0.16, 1, 0.3, 1);
         border-left: 1px solid var(--border-soft);
         overflow-y: auto;
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        box-shadow: -15px 0 45px rgba(0, 0, 0, 0.65);
         z-index: 1000;
     }
 
+    .nav-links.active { right: 0; }
+
+    /* Staggered entrance animation for mobile sidebar items */
     .nav-links li {
         width: 100%;
         list-style: none;
+        opacity: 0;
+        transform: translateX(24px);
+        transition: opacity 0.32s ease, transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
+    .nav-links.active li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .nav-links.active li:nth-child(1) { transition-delay: 0.04s; }
+    .nav-links.active li:nth-child(2) { transition-delay: 0.08s; }
+    .nav-links.active li:nth-child(3) { transition-delay: 0.12s; }
+    .nav-links.active li:nth-child(4) { transition-delay: 0.16s; }
+    .nav-links.active li:nth-child(5) { transition-delay: 0.20s; }
+    .nav-links.active li:nth-child(6) { transition-delay: 0.24s; }
+    .nav-links.active li:nth-child(7) { transition-delay: 0.28s; }
+    .nav-links.active li:nth-child(8) { transition-delay: 0.32s; }
+    .nav-links.active li:nth-child(9) { transition-delay: 0.36s; }
+
+    /* Animated pro button card */
     .nav-links a {
         display: flex;
         align-items: center;
         gap: 14px;
         width: 100%;
         padding: 10px 14px;
-        border-radius: 12px;
-        font-size: 0.88rem;
+        border-radius: 14px;
+        font-size: 0.9rem;
         font-weight: 600;
-        letter-spacing: 0.6px;
+        letter-spacing: 0.4px;
         color: var(--text-gray);
-        background: transparent;
-        border: 1px solid transparent;
-        transition: var(--transition);
-        white-space: nowrap;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
     }
 
-    .nav-links a i {
+    .nav-links a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 100%;
+        background: linear-gradient(180deg, var(--accent), var(--accent-2));
+        opacity: 0;
+        transition: opacity 0.25s ease;
+        border-radius: 3px 0 0 3px;
+    }
+
+    .nav-links a span {
+        flex: 1;
+        text-align: left;
+    }
+
+    /* Glowing icon badge */
+    .nav-links a i:first-child {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         width: 38px;
         height: 38px;
-        border-radius: 10px;
+        border-radius: 11px;
         background: rgba(57, 213, 255, 0.08);
-        border: 1px solid rgba(57, 213, 255, 0.18);
+        border: 1px solid rgba(57, 213, 255, 0.2);
         color: var(--accent);
         font-size: 0.95rem;
-        transition: var(--transition);
+        transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         flex-shrink: 0;
     }
 
+    /* Chevron arrow */
+    .nav-links .nav-chevron {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.25);
+        transition: all 0.25s ease;
+        margin-left: auto;
+    }
+
+    /* Hover & Active states */
     .nav-links a:hover,
     .nav-links a.active {
         color: var(--text-white);
-        background: rgba(255, 255, 255, 0.04);
-        border-color: rgba(57, 213, 255, 0.2);
+        background: linear-gradient(90deg, rgba(57, 213, 255, 0.09) 0%, rgba(167, 139, 250, 0.05) 100%);
+        border-color: rgba(57, 213, 255, 0.32);
+        transform: translateX(5px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     }
 
-    .nav-links a:hover i,
-    .nav-links a.active i {
+    .nav-links a:hover::before,
+    .nav-links a.active::before {
+        opacity: 1;
+    }
+
+    .nav-links a:hover i:first-child,
+    .nav-links a.active i:first-child {
         background: linear-gradient(135deg, var(--accent), var(--accent-2));
         color: #090D18;
         border-color: transparent;
-        box-shadow: 0 0 15px var(--accent-soft);
-        transform: scale(1.06);
+        box-shadow: 0 0 16px var(--accent-soft);
+        transform: scale(1.1) rotate(4deg);
+    }
+
+    .nav-links a:hover .nav-chevron,
+    .nav-links a.active .nav-chevron {
+        color: var(--accent);
+        transform: translateX(3px);
+    }
+
+    /* Mobile Drawer Cal.com CTA Button */
+    .nav-links li.mobile-drawer-cta {
+        display: block;
+        margin-top: 12px;
+        padding-top: 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .mobile-cal-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        padding: 13px 18px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, rgba(57, 213, 255, 0.12), rgba(167, 139, 250, 0.12));
+        border: 1px solid rgba(57, 213, 255, 0.35);
+        color: var(--text-white);
+        font-size: 0.86rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: var(--transition);
+        outline: none;
+    }
+
+    .mobile-cal-btn i {
+        color: var(--accent);
+        font-size: 0.95rem;
+    }
+
+    .mobile-cal-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #10b981;
+        box-shadow: 0 0 8px #10b981;
+        margin-left: auto;
+    }
+
+    .mobile-cal-btn:hover {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: #090D18;
+        box-shadow: 0 0 20px var(--accent-soft);
+    }
+    .mobile-cal-btn:hover i {
+        color: #090D18;
     }
 
     [dir="rtl"] .nav-links {
@@ -2162,7 +2392,7 @@ button.portfolio-card {
         border-left: none;
         border-right: 1px solid var(--border-soft);
         box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
-        transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: left 0.38s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     [dir="rtl"] .nav-links.active {
@@ -2170,9 +2400,33 @@ button.portfolio-card {
         right: auto;
     }
 
+    [dir="rtl"] .nav-links li {
+        transform: translateX(-24px);
+    }
+
     [dir="rtl"] .nav-links a {
         flex-direction: row-reverse;
         justify-content: flex-end;
+    }
+
+    [dir="rtl"] .nav-links a:hover,
+    [dir="rtl"] .nav-links a.active {
+        transform: translateX(-5px);
+    }
+
+    [dir="rtl"] .nav-links a::before {
+        left: auto;
+        right: 0;
+        border-radius: 0 3px 3px 0;
+    }
+
+    [dir="rtl"] .nav-links a:hover .nav-chevron,
+    [dir="rtl"] .nav-links a.active .nav-chevron {
+        transform: translateX(-3px) rotate(180deg);
+    }
+
+    [dir="rtl"] .nav-links .nav-chevron {
+        transform: rotate(180deg);
     }
 
     .nav-links.active { right: 0; }

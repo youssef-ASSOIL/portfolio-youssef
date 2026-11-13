@@ -44,14 +44,21 @@
         <div class="container">
             <a href="#home" class="logo">Youssef<span class="dot">.</span></a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home"><i class="fa-solid fa-house"></i> <span data-i18n="nav_home">Accueil</span></a></li>
-                <li><a href="#portfolio"><i class="fa-solid fa-laptop-code"></i> <span data-i18n="nav_projects">Projets</span></a></li>
-                <li><a href="#experience"><i class="fa-solid fa-briefcase"></i> <span data-i18n="nav_experience">Expérience</span></a></li>
-                <li><a href="#skills"><i class="fa-solid fa-microchip"></i> <span data-i18n="nav_skills">Compétences</span></a></li>
-                <li><a href="#architecture"><i class="fa-solid fa-network-wired"></i> <span data-i18n="nav_arch">Architecture</span></a></li>
-                <li><a href="#education"><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="nav_education">Formation</span></a></li>
-                <li><a href="#certifications"><i class="fa-solid fa-award"></i> <span data-i18n="nav_certs">Certifications</span></a></li>
-                <li><a href="#contact"><i class="fa-solid fa-paper-plane"></i> <span data-i18n="nav_contact">Contact</span></a></li>
+                <li><a href="#home"><i class="fa-solid fa-house"></i> <span data-i18n="nav_home">Accueil</span><i class="nav-chevron fa-solid fa-chevron-right"></i></a></li>
+                <li><a href="#portfolio"><i class="fa-solid fa-laptop-code"></i> <span data-i18n="nav_projects">Projets</span><i class="nav-chevron fa-solid fa-chevron-right"></i></a></li>
+                <li><a href="#experience"><i class="fa-solid fa-briefcase"></i> <span data-i18n="nav_experience">Expérience</span><i class="nav-chevron fa-solid fa-chevron-right"></i></a></li>
+                <li><a href="#skills"><i class="fa-solid fa-microchip"></i> <span data-i18n="nav_skills">Compétences</span><i class="nav-chevron fa-solid fa-chevron-right"></i></a></li>
+                <li><a href="#architecture"><i class="fa-solid fa-network-wired"></i> <span data-i18n="nav_arch">Architecture</span><i class="nav-chevron fa-solid fa-chevron-right"></i></a></li>
+                <li><a href="#education"><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="nav_education">Formation</span><i class="nav-chevron fa-solid fa-chevron-right"></i></a></li>
+                <li><a href="#certifications"><i class="fa-solid fa-award"></i> <span data-i18n="nav_certs">Certifications</span><i class="nav-chevron fa-solid fa-chevron-right"></i></a></li>
+                <li><a href="#contact"><i class="fa-solid fa-paper-plane"></i> <span data-i18n="nav_contact">Contact</span><i class="nav-chevron fa-solid fa-chevron-right"></i></a></li>
+                <li class="mobile-drawer-cta">
+                    <button type="button" class="mobile-cal-btn" data-cal-link="youssef-assoil" data-cal-config='{"layout":"month_view","theme":"dark"}'>
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <span>Réserver un échange</span>
+                        <span class="mobile-cal-dot"></span>
+                    </button>
+                </li>
             </ul>
             <div class="navbar-actions">
                 <div class="lang-selector-group" role="group" aria-label="Langues / Languages">
@@ -800,6 +807,32 @@
                     </div>
                     <h3 data-i18n="cal_title">Planifier un échange direct</h3>
                     <p data-i18n="cal_desc">Vous avez une opportunité professionnelle (CDI / mission) ou un projet technique à aborder ? Réservez directement un créneau de 15 minutes, 30 minutes ou 1 heure dans mon agenda pour échanger en visio ou par téléphone.</p>
+                    
+                    <!-- Direct Duration Selectors (15m, 30m, 1h) -->
+                    <div class="cal-durations-pills">
+                        <button type="button" class="cal-pill" data-cal-link="youssef-assoil/15min" data-cal-config='{"layout":"month_view","theme":"dark"}' title="Réserver 15 minutes">
+                            <i class="fa-solid fa-bolt"></i>
+                            <div>
+                                <strong>15 min</strong>
+                                <small data-i18n="cal_p1">Premier contact</small>
+                            </div>
+                        </button>
+                        <button type="button" class="cal-pill" data-cal-link="youssef-assoil/30min" data-cal-config='{"layout":"month_view","theme":"dark"}' title="Réserver 30 minutes">
+                            <i class="fa-solid fa-comments"></i>
+                            <div>
+                                <strong>30 min</strong>
+                                <small data-i18n="cal_p2">Échange cadrage</small>
+                            </div>
+                        </button>
+                        <button type="button" class="cal-pill" data-cal-link="youssef-assoil/1-h-meeting" data-cal-config='{"layout":"month_view","theme":"dark"}' title="Réserver 1 heure">
+                            <i class="fa-solid fa-code"></i>
+                            <div>
+                                <strong>1 heure</strong>
+                                <small data-i18n="cal_p3">Entretien technique</small>
+                            </div>
+                        </button>
+                    </div>
+
                     <div class="cal-features">
                         <span><i class="fa-solid fa-video"></i> <span data-i18n="cal_f1">Google Meet automatique</span></span>
                         <span><i class="fa-solid fa-clock"></i> <span data-i18n="cal_f2">15 min, 30 min ou 1h</span></span>
