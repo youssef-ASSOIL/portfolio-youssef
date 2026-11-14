@@ -35,6 +35,16 @@ const I18N = {
         stat_degree: 'Titre RNCP niveau 7',
         hero_cta_work: 'Voir mes projets',
         hero_cta_cv: 'Télécharger mon CV',
+        hero_cta_pfe: 'Mémoire PFE',
+        nav_status_avail: 'Disponible · CDI & Freelance',
+        edu_pfe_badge: 'Travail de Fin d\x27Études · Bac+5',
+        edu_pfe_title: 'Mémoire de Fin d\x27Études (PFE)',
+        edu_pfe_desc: 'Consultez le document académique et technique officiel détaillant la conception, la modélisation UML, l\x27architecture logicielle et la réalisation complète du projet d\x27ingénierie.',
+        edu_pfe_btn: 'Consulter le Mémoire (PDF)',
+        proj_bio_title: 'H&C Nettoyage — Plateforme Métier',
+        proj_bio_desc: 'Plateforme web moderne et vitrine commerciale pour une entreprise de bio-nettoyage dans le Gard (30). Architecture réactive en Angular 20 et parcours client fluide.',
+        proj_bio_role: 'Conception UI/UX, Dev Front-End Angular & SEO Local',
+        proj_bio_res: 'Architecture responsive, devis interactif & performance 95+',
 
         term_cmds_label: 'Commandes :',
 
@@ -187,6 +197,16 @@ const I18N = {
         stat_degree: 'Level 7 RNCP (Master\'s)',
         hero_cta_work: 'Explore My Work',
         hero_cta_cv: 'Download My CV',
+        hero_cta_pfe: 'Master Thesis',
+        nav_status_avail: 'Available · Full-Time / Freelance',
+        edu_pfe_badge: 'Master\x27s Capstone Project · Bac+5',
+        edu_pfe_title: 'Master\x27s Thesis (PFE)',
+        edu_pfe_desc: 'Explore the official academic and technical thesis detailing software architecture, UML modeling, system engineering, and full implementation.',
+        edu_pfe_btn: 'Read Master\x27s Thesis (PDF)',
+        proj_bio_title: 'H&C Cleaning — Business Web Platform',
+        proj_bio_desc: 'Modern web platform and commercial showcase for an eco-cleaning business in Gard (30). Reactive Angular 20 architecture and smooth client booking flow.',
+        proj_bio_role: 'UI/UX Design, Angular Front-End Dev & Local SEO',
+        proj_bio_res: 'Responsive architecture, live estimator & 95+ performance',
 
         term_cmds_label: 'Commands:',
 
@@ -339,6 +359,16 @@ const I18N = {
         stat_degree: 'RNCP Stufe 7 (Master)',
         hero_cta_work: 'Projekte ansehen',
         hero_cta_cv: 'Lebenslauf herunterladen',
+        hero_cta_pfe: 'Masterarbeit',
+        nav_status_avail: 'Verfügbar · Festanstellung / Freelance',
+        edu_pfe_badge: 'Master-Abschlussarbeit · Bac+5',
+        edu_pfe_title: 'Masterarbeit (PFE)',
+        edu_pfe_desc: 'Offizielles akademisches und technisches Dokument mit Softwarearchitektur, UML-Modellierung und vollständiger Implementierung.',
+        edu_pfe_btn: 'Masterarbeit lesen (PDF)',
+        proj_bio_title: 'H&C Nettoyage — Unternehmensplattform',
+        proj_bio_desc: 'Moderne Webplattform für ein Reinigungsunternehmen in Gard (30). Reaktive Angular 20-Architektur und reibungslose Buchung.',
+        proj_bio_role: 'UI/UX-Design, Angular-Frontend-Entwicklung & lokales SEO',
+        proj_bio_res: 'Responsive Architektur, Live-Kalkulator & 95+ Performance',
 
         term_cmds_label: 'Befehle:',
 
@@ -491,6 +521,16 @@ const I18N = {
         stat_degree: 'مستوى ماستر RNCP 7',
         hero_cta_work: 'استكشف مشاريعي',
         hero_cta_cv: 'تحميل السيرة الذاتية',
+        hero_cta_pfe: 'أطروحة PFE',
+        nav_status_avail: 'متاح للعمل · CDI / Freelance',
+        edu_pfe_badge: 'مشروع نهاية التخرج · Bac+5',
+        edu_pfe_title: 'أطروحة نهاية التخرج (PFE)',
+        edu_pfe_desc: 'اطّلع على الوثيقة الأكاديمية والتقنية الرسمية المفصلة لمعمارية البرمجيات، نمذجة UML، وهندسة النظم الكاملة.',
+        edu_pfe_btn: 'تحميل وقراءة الأطروحة (PDF)',
+        proj_bio_title: 'H&C Nettoyage — منصة أعمال متكاملة',
+        proj_bio_desc: 'منصة ويب عصرية وواجهة تجارية لخدمات التنظيف في Gard (30). معمارية تفاعلية بـ Angular 20 وتجربة حجز سلسة.',
+        proj_bio_role: 'تصميم الواجهات، تطوير Angular وتهيئة محركات البحث المحلية',
+        proj_bio_res: 'تصميم متجاوب، حاسبة أسعار تفاعلية وأداء فائق 95+',
 
         term_cmds_label: 'الأوامر:',
 
@@ -1488,6 +1528,31 @@ function renderCodeTabs(snippets) {
 
 function renderModalArch(projectKey, lang) {
     if (!modalArchContainer) return;
+    if (projectKey === 'bionettoyage') {
+        modalArchContainer.innerHTML = `
+            <div class="modal-arch-box">
+                <h4 style="color: var(--accent); margin-bottom: 8px;"><i class="fa-solid fa-layer-group"></i> ${lang === 'en' ? 'Angular 20 Standalone Architecture' : lang === 'de' ? 'Angular 20 Standalone-Architektur' : lang === 'ar' ? 'معمارية Angular 20 بـ Standalone Components' : 'Architecture Front-End Angular 20 (Signals & Standalone)'}</h4>
+                <p style="font-size: 0.88rem; line-height: 1.6; color: #cbd5e1; margin-bottom: 14px;">
+                    ${lang === 'en'
+                        ? 'Built entirely on Angular 20 standalone components without NgModule boilerplate. Component state is driven by fine-grained reactive Signals (<code>signal()</code>, <code>computed()</code>), eliminating unnecessary DOM re-renders and guaranteeing instant UI updates.'
+                        : lang === 'de'
+                        ? 'Vollständig auf Angular 20 Standalone-Komponenten aufgebaut. Der Zustand wird durch reaktive Signals gesteuert, was für maximale Render-Performance sorgt.'
+                        : lang === 'ar'
+                        ? 'مبني بالكامل على مكونات Angular 20 المستقلة بدون فوضى NgModules، مع إدارة الحالة عبر Signals التفاعلية الفائقة السرعة.'
+                        : 'Conçu intégralement avec les Standalone Components d\x27Angular 20. L\x27état réactif de l\x27application repose sur les Signals (<code>signal()</code>, <code>computed()</code>), garantissant un rendu ultra-rapide sans détection de changement superflue.'}
+                </p>
+                <div class="arch-layer-card" style="margin-top: 10px;">
+                    <div class="arch-layer-pill">SPA Modular Architecture</div>
+                    <ul class="arch-layer-list">
+                        <li><strong>Core Services :</strong> <code>BookingService</code>, <code>PricingEstimatorService</code>, <code>SeoLocalService</code>.</li>
+                        <li><strong>Feature Modules :</strong> Canapé (<code>/services/canape</code>), Matelas (<code>/services/lit</code>), Tapis (<code>/services/tapis</code>).</li>
+                        <li><strong>Production Bundle :</strong> Tree-shaking complet, styles Tailwind optimisés et hébergement Edge haute disponibilité.</li>
+                    </ul>
+                </div>
+            </div>
+        `;
+        return;
+    }
     if (projectKey === 'assala-erp') {
         modalArchContainer.innerHTML = `
             <div class="modal-arch-box">
@@ -1565,6 +1630,25 @@ function renderModalArch(projectKey, lang) {
 
 function renderModalWorkflow(projectKey, lang) {
     if (!modalWorkflowSteps) return;
+    if (projectKey === 'bionettoyage') {
+        const steps = [
+            { num: '01', role: 'Exploration & Choix du Service', desc: 'Découverte des prestations détaillées (Canapés, Matelas, Tapis) avec fiches techniques et tarifs de base.', api: 'Routing Angular 20 · Lazy loading' },
+            { num: '02', role: 'Calculateur de Devis Dynamique', desc: 'Estimation du prix en temps réel selon les dimensions, options de détachage et remises volume.', api: 'Signals computed() · Estimation instantanée' },
+            { num: '03', role: 'Réservation & Cadrage du Besoin', desc: 'Formulaire réactif validé côté client avec sélection de créneau horaire d\x27intervention.', api: 'ReactiveFormsModule · Local Validation' },
+            { num: '04', role: 'Dispatch & Espace Opérationnel', desc: 'Transmission du dossier client et mise à disposition dans l\x27interface de gestion sécurisée.', api: '@if (showManagement) · Dispatch CRM' }
+        ];
+        modalWorkflowSteps.innerHTML = steps.map(s => `
+            <div class="workflow-card">
+                <div class="workflow-card-head">
+                    <span class="workflow-step-num">Étape ${s.num}</span>
+                    <span class="workflow-badge-api">${s.api}</span>
+                </div>
+                <div class="workflow-role-title">${s.role}</div>
+                <div class="workflow-desc">${s.desc}</div>
+            </div>
+        `).join('');
+        return;
+    }
     if (projectKey === 'assala-erp') {
         const steps = [
             { num: '01', role: 'Chef de Chantier (CC)', desc: 'Expression des besoins quotidiens en matériaux (sable, ciment) et engins de chantier.', api: 'POST /AddBesoin · GET /getBesoinsCC' },
@@ -1623,6 +1707,63 @@ function renderModalWorkflow(projectKey, lang) {
 
 function renderModalCode(projectKey, lang) {
     if (!modalCodeViewer) return;
+    if (projectKey === 'bionettoyage') {
+        const snippets = [
+            {
+                name: 'pricing-estimator.component.ts (Angular 20 Signals)',
+                lang: 'typescript',
+                code: `@Component({
+  selector: \x27app-pricing-estimator\x27,
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
+  templateUrl: \x27./pricing-estimator.component.html\x27
+})
+export class PricingEstimatorComponent {
+  // Reactive Signal State (Angular 20)
+  readonly selectedService = signal<ServiceType>(\x27canape\x27);
+  readonly seatsCount = signal<number>(3);
+  readonly hasStainTreatment = signal<boolean>(true);
+
+  // Computed state : recalcul automatique à zéro overhead
+  readonly totalPrice = computed(() => {
+    const base = this.selectedService() === \x27canape\x27 ? 45 * this.seatsCount() : 60;
+    const extra = this.hasStainTreatment() ? 25 : 0;
+    const discount = this.seatsCount() >= 4 ? 0.15 : 0;
+    return (base + extra) * (1 - discount);
+  });
+}`
+            },
+            {
+                name: 'seo-local.service.ts (Schema.org JSON-LD)',
+                lang: 'typescript',
+                code: `@Injectable({ providedIn: \x27root\x27 })
+export class SeoLocalService {
+  constructor(private meta: Meta, private renderer: Renderer2) {}
+
+  public injectLocalBusinessSchema(): void {
+    const script = this.renderer.createElement(\x27script\x27);
+    script.type = \x27application/ld+json\x27;
+    script.text = JSON.stringify({
+      \x27@context\x27: \x27https://schema.org\x27,
+      \x27@type\x27: \x27HomeAndConstructionBusiness\x27,
+      name: \x27H&C Nettoyage & Multiservices\x27,
+      address: {
+        \x27@type\x27: \x27PostalAddress\x27,
+        addressRegion: \x27Gard\x27,
+        postalCode: \x2730000\x27,
+        addressCountry: \x27FR\x27
+      },
+      telephone: \x27+33 7 66 31 93 53\x27,
+      openingHours: \x27Mo-Fr 08:00-17:00\x27
+    });
+    document.head.appendChild(script);
+  }
+}`
+            }
+        ];
+        renderCodeTabs(snippets);
+        return;
+    }
     if (projectKey === 'assala-erp') {
         const snippets = [
             {
@@ -1829,19 +1970,69 @@ document.addEventListener('keydown', (e) => {
 // ==========================================================================
 // 6. Copy Email & Validated Contact Form (Web3Forms + Anti-Spam)
 // ==========================================================================
+function showToast(message, icon = 'fa-solid fa-check') {
+    let container = document.getElementById('toastContainer');
+    if (!container) {
+        container = document.createElement('div');
+        container.id = 'toastContainer';
+        container.className = 'toast-container';
+        container.setAttribute('aria-live', 'polite');
+        document.body.appendChild(container);
+    }
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerHTML = `
+        <span class="toast-icon"><i class="${icon}"></i></span>
+        <span class="toast-msg">${message}</span>
+    `;
+    container.appendChild(toast);
+    requestAnimationFrame(() => toast.classList.add('show'));
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 350);
+    }, 3200);
+}
+
+async function copyEmailToClipboard(email = 'assoilyoussef02@gmail.com') {
+    try {
+        await navigator.clipboard.writeText(email);
+        const msg = currentLang === 'en'
+            ? `Email copied to clipboard! (${email})`
+            : currentLang === 'de'
+            ? `E-Mail kopiert! (${email})`
+            : currentLang === 'ar'
+            ? `تم نسخ البريد الإلكتروني بنجاح! (${email})`
+            : `Email copié dans le presse-papier ! (${email})`;
+        showToast(msg);
+        return true;
+    } catch (err) {
+        window.location.href = `mailto:${email}`;
+        return false;
+    }
+}
+
+// Universal Copy Email listener
+document.addEventListener('click', (e) => {
+    const copyBtn = e.target.closest('[data-copy-email]');
+    if (copyBtn) {
+        e.preventDefault();
+        const email = copyBtn.getAttribute('data-copy-email') || 'assoilyoussef02@gmail.com';
+        copyEmailToClipboard(email);
+    }
+});
+
 const copyEmailBtn = document.getElementById('copyEmailBtn');
 if (copyEmailBtn) {
     copyEmailBtn.addEventListener('click', async () => {
         const email = copyEmailBtn.getAttribute('data-email') || 'assoilyoussef02@gmail.com';
         const span = copyEmailBtn.querySelector('span');
-        try {
-            await navigator.clipboard.writeText(email);
-            if (span) span.textContent = currentLang === 'en' ? '✔ Copied!' : '✔ Copié !';
+        const success = await copyEmailToClipboard(email);
+        if (success && span) {
+            const originalText = span.textContent;
+            span.textContent = currentLang === 'en' ? '✔ Copied!' : '✔ Copié !';
             setTimeout(() => {
-                if (span) span.textContent = I18N[currentLang].btn_copy;
+                if (span) span.textContent = I18N[currentLang].btn_copy || originalText;
             }, 2200);
-        } catch (err) {
-            if (span) span.textContent = email;
         }
     });
 }
