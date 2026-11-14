@@ -671,7 +671,7 @@ a { color: inherit; }
 }
 
 /* Sections */
-.section { padding: 115px 0; }
+.section { padding: 58px 0; }
 
 .eyebrow {
     display: block;
@@ -680,20 +680,20 @@ a { color: inherit; }
     font-weight: 600;
     letter-spacing: 3px;
     text-transform: uppercase;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
 }
 
 .section-title {
-    font-size: 3.1rem;
-    margin-bottom: 70px;
+    font-size: 2.85rem;
+    margin-bottom: 38px;
     text-transform: uppercase;
-    letter-spacing: 2.5px;
+    letter-spacing: 2px;
 }
 
 /* ==========================================================================
    2. Interactive Terminal Widget (Improved Font Size & Contrast)
    ========================================================================== */
-.terminal-section { padding: 10px 0 110px; }
+.terminal-section { padding: 0 0 46px; }
 
 .terminal-window {
     max-width: 840px;
@@ -2458,9 +2458,9 @@ button.portfolio-card {
     .navbar { padding: 14px 0; }
     .logo { font-size: 1.35rem; }
 
-    .section { padding: 72px 0; }
-    .eyebrow { font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 10px; }
-    .section-title { font-size: 1.95rem; margin-bottom: 40px; letter-spacing: 1.5px; }
+    .section { padding: 40px 0; }
+    .eyebrow { font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 8px; }
+    .section-title { font-size: 1.85rem; margin-bottom: 24px; letter-spacing: 1.2px; }
 
     /* Hero Mobile */
     .hero {
@@ -2519,7 +2519,7 @@ button.portfolio-card {
     }
 
     /* Terminal Mobile */
-    .terminal-section { padding-bottom: 68px; }
+    .terminal-section { padding-bottom: 32px; }
     .terminal-header { padding: 11px 14px; }
     .terminal-title { transform: none; font-size: 0.75rem; }
     .terminal-body { padding: 16px; min-height: 190px; max-height: 280px; }
