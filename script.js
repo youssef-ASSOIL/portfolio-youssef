@@ -45,6 +45,7 @@ const I18N = {
         proj_bio_desc: 'Plateforme web moderne et vitrine commerciale pour une entreprise de bio-nettoyage dans le Gard (30). Architecture réactive en Angular 20 et parcours client fluide.',
         proj_bio_role: 'Conception UI/UX, Dev Front-End Angular & SEO Local',
         proj_bio_res: 'Architecture responsive, devis interactif & performance 95+',
+        proj_live_cta: 'Visiter le site web en direct ↗',
 
         term_cmds_label: 'Commandes :',
 
@@ -207,6 +208,7 @@ const I18N = {
         proj_bio_desc: 'Modern web platform and commercial showcase for an eco-cleaning business in Gard (30). Reactive Angular 20 architecture and smooth client booking flow.',
         proj_bio_role: 'UI/UX Design, Angular Front-End Dev & Local SEO',
         proj_bio_res: 'Responsive architecture, live estimator & 95+ performance',
+        proj_live_cta: 'Visit Live Website ↗',
 
         term_cmds_label: 'Commands:',
 
@@ -369,6 +371,7 @@ const I18N = {
         proj_bio_desc: 'Moderne Webplattform für ein Reinigungsunternehmen in Gard (30). Reaktive Angular 20-Architektur und reibungslose Buchung.',
         proj_bio_role: 'UI/UX-Design, Angular-Frontend-Entwicklung & lokales SEO',
         proj_bio_res: 'Responsive Architektur, Live-Kalkulator & 95+ Performance',
+        proj_live_cta: 'Live-Website besuchen ↗',
 
         term_cmds_label: 'Befehle:',
 
@@ -531,6 +534,7 @@ const I18N = {
         proj_bio_desc: 'منصة ويب عصرية وواجهة تجارية لخدمات التنظيف في Gard (30). معمارية تفاعلية بـ Angular 20 وتجربة حجز سلسة.',
         proj_bio_role: 'تصميم الواجهات، تطوير Angular وتهيئة محركات البحث المحلية',
         proj_bio_res: 'تصميم متجاوب، حاسبة أسعار تفاعلية وأداء فائق 95+',
+        proj_live_cta: 'زيارة الموقع مباشرة ↗',
 
         term_cmds_label: 'الأوامر:',
 

@@ -854,8 +854,14 @@ a { color: inherit; }
     width: 100%;
 }
 
-button.portfolio-card {
+button.portfolio-card,
+a.portfolio-card {
     cursor: pointer;
+}
+
+.portfolio-card-link:hover .portfolio-icon {
+    transform: translate(3px, -3px);
+    color: var(--accent);
 }
 
 .skill-card::before,
